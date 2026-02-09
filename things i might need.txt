@@ -1,4 +1,0 @@
-# Example of how to run it safely overnight
-nohup python train.py > swin_training.log 2>&1 &
-
-tail -f swin_training.log

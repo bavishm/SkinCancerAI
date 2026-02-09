@@ -1,9 +1,0 @@
-Test Run (The "Dry Run"):
-
-Change EPOCHS = 1 and N_FOLDS = 1 temporarily in the code.
-
-Run it for 2 minutes to make sure it loads data, starts training, and saves a checkpoint without crashing.
-
-Then change them back to EPOCHS = 20 and N_FOLDS = 5.
-
-Before you start training ConvNeXt, rename the current checkpoints folder to checkpoints_swin.
