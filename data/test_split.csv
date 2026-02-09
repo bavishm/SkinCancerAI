@@ -1,0 +1,1491 @@
+lesion_id,image_id,dx,dx_type,age,sex,localization
+HAM_0000118,ISIC_0027419,Benign Keratosis-like Lesions,histo,80.0,male,scalp
+HAM_0000118,ISIC_0025030,Benign Keratosis-like Lesions,histo,80.0,male,scalp
+HAM_0007207,ISIC_0031326,Benign Keratosis-like Lesions,histo,65.0,male,back
+HAM_0002299,ISIC_0025819,Benign Keratosis-like Lesions,histo,75.0,female,face
+HAM_0002299,ISIC_0032013,Benign Keratosis-like Lesions,histo,75.0,female,face
+HAM_0001221,ISIC_0029301,Benign Keratosis-like Lesions,histo,45.0,male,upper extremity
+HAM_0001221,ISIC_0026637,Benign Keratosis-like Lesions,histo,45.0,male,upper extremity
+HAM_0004341,ISIC_0031967,Benign Keratosis-like Lesions,histo,70.0,female,scalp
+HAM_0004341,ISIC_0031584,Benign Keratosis-like Lesions,histo,70.0,female,scalp
+HAM_0001728,ISIC_0033539,Benign Keratosis-like Lesions,histo,60.0,male,back
+HAM_0002921,ISIC_0029308,Benign Keratosis-like Lesions,histo,60.0,female,face
+HAM_0001665,ISIC_0027957,Benign Keratosis-like Lesions,histo,50.0,male,lower extremity
+HAM_0001665,ISIC_0031212,Benign Keratosis-like Lesions,histo,50.0,male,lower extremity
+HAM_0006085,ISIC_0032949,Benign Keratosis-like Lesions,histo,85.0,female,face
+HAM_0006085,ISIC_0033322,Benign Keratosis-like Lesions,histo,85.0,female,face
+HAM_0006085,ISIC_0033127,Benign Keratosis-like Lesions,histo,85.0,female,face
+HAM_0002040,ISIC_0033041,Benign Keratosis-like Lesions,histo,50.0,female,lower extremity
+HAM_0002040,ISIC_0033900,Benign Keratosis-like Lesions,histo,50.0,female,lower extremity
+HAM_0002040,ISIC_0033361,Benign Keratosis-like Lesions,histo,50.0,female,lower extremity
+HAM_0002774,ISIC_0029683,Benign Keratosis-like Lesions,histo,65.0,male,unknown
+HAM_0006938,ISIC_0033716,Benign Keratosis-like Lesions,histo,45.0,male,face
+HAM_0006938,ISIC_0034011,Benign Keratosis-like Lesions,histo,45.0,male,face
+HAM_0006938,ISIC_0033613,Benign Keratosis-like Lesions,histo,45.0,male,face
+HAM_0007625,ISIC_0033736,Benign Keratosis-like Lesions,histo,75.0,male,lower extremity
+HAM_0007625,ISIC_0033378,Benign Keratosis-like Lesions,histo,75.0,male,lower extremity
+HAM_0002928,ISIC_0032665,Benign Keratosis-like Lesions,histo,80.0,male,trunk
+HAM_0002928,ISIC_0033130,Benign Keratosis-like Lesions,histo,80.0,male,trunk
+HAM_0004458,ISIC_0033853,Benign Keratosis-like Lesions,histo,80.0,male,back
+HAM_0004458,ISIC_0033453,Benign Keratosis-like Lesions,histo,80.0,male,back
+HAM_0004458,ISIC_0034126,Benign Keratosis-like Lesions,histo,80.0,male,back
+HAM_0002372,ISIC_0034303,Benign Keratosis-like Lesions,histo,65.0,male,neck
+HAM_0002372,ISIC_0034031,Benign Keratosis-like Lesions,histo,65.0,male,neck
+HAM_0002372,ISIC_0033124,Benign Keratosis-like Lesions,histo,65.0,male,neck
+HAM_0007402,ISIC_0034003,Benign Keratosis-like Lesions,histo,60.0,female,lower extremity
+HAM_0007402,ISIC_0033079,Benign Keratosis-like Lesions,histo,60.0,female,lower extremity
+HAM_0002050,ISIC_0032215,Benign Keratosis-like Lesions,histo,40.0,male,scalp
+HAM_0004807,ISIC_0030124,Benign Keratosis-like Lesions,histo,65.0,male,back
+HAM_0004491,ISIC_0025157,Benign Keratosis-like Lesions,histo,45.0,male,face
+HAM_0001738,ISIC_0027218,Benign Keratosis-like Lesions,histo,50.0,female,lower extremity
+HAM_0004141,ISIC_0030705,Benign Keratosis-like Lesions,histo,50.0,female,back
+HAM_0002184,ISIC_0032325,Benign Keratosis-like Lesions,histo,70.0,male,scalp
+HAM_0006128,ISIC_0028701,Benign Keratosis-like Lesions,histo,55.0,female,lower extremity
+HAM_0005790,ISIC_0024672,Benign Keratosis-like Lesions,histo,65.0,male,back
+HAM_0004677,ISIC_0027680,Benign Keratosis-like Lesions,histo,80.0,male,back
+HAM_0005915,ISIC_0025656,Benign Keratosis-like Lesions,histo,45.0,male,face
+HAM_0003293,ISIC_0029010,Benign Keratosis-like Lesions,histo,55.0,male,back
+HAM_0004947,ISIC_0029003,Benign Keratosis-like Lesions,histo,75.0,male,abdomen
+HAM_0004947,ISIC_0024711,Benign Keratosis-like Lesions,histo,75.0,male,abdomen
+HAM_0005498,ISIC_0032335,Benign Keratosis-like Lesions,histo,80.0,male,back
+HAM_0003000,ISIC_0025326,Benign Keratosis-like Lesions,histo,50.0,female,upper extremity
+HAM_0000236,ISIC_0024592,Benign Keratosis-like Lesions,histo,40.0,female,abdomen
+HAM_0006769,ISIC_0030721,Benign Keratosis-like Lesions,histo,85.0,male,back
+HAM_0006350,ISIC_0031130,Benign Keratosis-like Lesions,histo,50.0,female,chest
+HAM_0003752,ISIC_0028308,Benign Keratosis-like Lesions,histo,50.0,female,chest
+HAM_0000364,ISIC_0024505,Benign Keratosis-like Lesions,histo,40.0,female,face
+HAM_0007529,ISIC_0026607,Benign Keratosis-like Lesions,histo,50.0,male,chest
+HAM_0004274,ISIC_0025842,Benign Keratosis-like Lesions,histo,60.0,female,neck
+HAM_0003089,ISIC_0030706,Benign Keratosis-like Lesions,histo,85.0,male,back
+HAM_0004928,ISIC_0031424,Benign Keratosis-like Lesions,histo,65.0,male,neck
+HAM_0004928,ISIC_0029770,Benign Keratosis-like Lesions,histo,65.0,male,neck
+HAM_0002585,ISIC_0027026,Benign Keratosis-like Lesions,histo,85.0,female,neck
+HAM_0001546,ISIC_0027584,Benign Keratosis-like Lesions,histo,45.0,male,chest
+HAM_0001389,ISIC_0026775,Benign Keratosis-like Lesions,histo,75.0,male,lower extremity
+HAM_0006294,ISIC_0032348,Benign Keratosis-like Lesions,histo,75.0,female,chest
+HAM_0006541,ISIC_0024883,Benign Keratosis-like Lesions,histo,35.0,female,lower extremity
+HAM_0003913,ISIC_0027295,Benign Keratosis-like Lesions,histo,60.0,male,hand
+HAM_0000933,ISIC_0024358,Benign Keratosis-like Lesions,histo,60.0,female,back
+HAM_0000933,ISIC_0027771,Benign Keratosis-like Lesions,histo,60.0,female,back
+HAM_0004491,ISIC_0028846,Benign Keratosis-like Lesions,histo,45.0,male,face
+HAM_0004491,ISIC_0026159,Benign Keratosis-like Lesions,histo,45.0,male,face
+HAM_0000110,ISIC_0025703,Benign Keratosis-like Lesions,histo,70.0,male,back
+HAM_0001947,ISIC_0032051,Benign Keratosis-like Lesions,histo,50.0,male,chest
+HAM_0007261,ISIC_0031686,Benign Keratosis-like Lesions,histo,65.0,male,face
+HAM_0006128,ISIC_0031770,Benign Keratosis-like Lesions,histo,55.0,female,lower extremity
+HAM_0005596,ISIC_0027706,Benign Keratosis-like Lesions,histo,30.0,female,face
+HAM_0006580,ISIC_0025376,Benign Keratosis-like Lesions,histo,75.0,male,back
+HAM_0005790,ISIC_0024547,Benign Keratosis-like Lesions,histo,65.0,male,back
+HAM_0007591,ISIC_0025351,Benign Keratosis-like Lesions,histo,75.0,male,upper extremity
+HAM_0004143,ISIC_0029031,Benign Keratosis-like Lesions,histo,50.0,male,chest
+HAM_0000973,ISIC_0025222,Benign Keratosis-like Lesions,histo,65.0,female,face
+HAM_0000299,ISIC_0024471,Benign Keratosis-like Lesions,histo,55.0,male,upper extremity
+HAM_0000299,ISIC_0029878,Benign Keratosis-like Lesions,histo,55.0,male,upper extremity
+HAM_0006541,ISIC_0025064,Benign Keratosis-like Lesions,histo,35.0,female,lower extremity
+HAM_0001024,ISIC_0027192,Benign Keratosis-like Lesions,histo,45.0,male,face
+HAM_0001232,ISIC_0026614,Benign Keratosis-like Lesions,histo,45.0,male,chest
+HAM_0000259,ISIC_0028550,Benign Keratosis-like Lesions,histo,60.0,male,back
+HAM_0000259,ISIC_0024477,Benign Keratosis-like Lesions,histo,60.0,male,back
+HAM_0000259,ISIC_0026493,Benign Keratosis-like Lesions,histo,60.0,male,back
+HAM_0000383,ISIC_0029678,Benign Keratosis-like Lesions,histo,85.0,male,back
+HAM_0001024,ISIC_0030683,Benign Keratosis-like Lesions,histo,45.0,male,face
+HAM_0006475,ISIC_0030965,Benign Keratosis-like Lesions,histo,75.0,female,chest
+HAM_0000425,ISIC_0026947,Benign Keratosis-like Lesions,histo,50.0,male,scalp
+HAM_0000425,ISIC_0024839,Benign Keratosis-like Lesions,histo,50.0,male,scalp
+HAM_0004379,ISIC_0031352,Benign Keratosis-like Lesions,histo,55.0,male,face
+HAM_0001094,ISIC_0031150,Benign Keratosis-like Lesions,histo,70.0,female,upper extremity
+HAM_0002303,ISIC_0032024,Benign Keratosis-like Lesions,histo,65.0,female,upper extremity
+HAM_0003664,ISIC_0030533,Benign Keratosis-like Lesions,histo,75.0,female,abdomen
+HAM_0002358,ISIC_0028650,Benign Keratosis-like Lesions,histo,85.0,female,face
+HAM_0002358,ISIC_0027973,Benign Keratosis-like Lesions,histo,85.0,female,face
+HAM_0001486,ISIC_0029384,Benign Keratosis-like Lesions,histo,40.0,male,face
+HAM_0006267,ISIC_0032358,Benign Keratosis-like Lesions,histo,50.0,female,back
+HAM_0006267,ISIC_0031200,Benign Keratosis-like Lesions,histo,50.0,female,back
+HAM_0000383,ISIC_0024612,Benign Keratosis-like Lesions,histo,85.0,male,back
+HAM_0000383,ISIC_0031707,Benign Keratosis-like Lesions,histo,85.0,male,back
+HAM_0006541,ISIC_0025040,Benign Keratosis-like Lesions,histo,35.0,female,lower extremity
+HAM_0003205,ISIC_0031287,Benign Keratosis-like Lesions,histo,75.0,female,lower extremity
+HAM_0000542,ISIC_0025068,Benign Keratosis-like Lesions,histo,80.0,male,face
+HAM_0001722,ISIC_0030976,Benign Keratosis-like Lesions,histo,60.0,male,back
+HAM_0000920,ISIC_0028707,Benign Keratosis-like Lesions,histo,60.0,male,upper extremity
+HAM_0004695,ISIC_0028611,Benign Keratosis-like Lesions,histo,80.0,female,lower extremity
+HAM_0000149,ISIC_0031519,Benign Keratosis-like Lesions,histo,70.0,female,lower extremity
+HAM_0000149,ISIC_0025113,Benign Keratosis-like Lesions,histo,70.0,female,lower extremity
+HAM_0001878,ISIC_0025434,Benign Keratosis-like Lesions,histo,60.0,female,chest
+HAM_0001878,ISIC_0028165,Benign Keratosis-like Lesions,histo,60.0,female,chest
+HAM_0002227,ISIC_0024786,Benign Keratosis-like Lesions,histo,70.0,male,lower extremity
+HAM_0002303,ISIC_0031037,Benign Keratosis-like Lesions,histo,65.0,female,upper extremity
+HAM_0003996,ISIC_0030383,Benign Keratosis-like Lesions,confocal,80.0,female,face
+HAM_0003996,ISIC_0025465,Benign Keratosis-like Lesions,confocal,80.0,female,face
+HAM_0000696,ISIC_0026277,Benign Keratosis-like Lesions,confocal,75.0,male,face
+HAM_0002042,ISIC_0028294,Benign Keratosis-like Lesions,confocal,75.0,female,face
+HAM_0002042,ISIC_0028662,Benign Keratosis-like Lesions,confocal,75.0,female,face
+HAM_0002042,ISIC_0031349,Benign Keratosis-like Lesions,confocal,75.0,female,face
+HAM_0002042,ISIC_0026263,Benign Keratosis-like Lesions,confocal,75.0,female,face
+HAM_0007355,ISIC_0024705,Benign Keratosis-like Lesions,confocal,45.0,female,face
+HAM_0007355,ISIC_0026803,Benign Keratosis-like Lesions,confocal,45.0,female,face
+HAM_0002903,ISIC_0027737,Benign Keratosis-like Lesions,confocal,35.0,female,face
+HAM_0002903,ISIC_0024774,Benign Keratosis-like Lesions,confocal,35.0,female,face
+HAM_0003789,ISIC_0026016,Benign Keratosis-like Lesions,confocal,55.0,female,face
+HAM_0003789,ISIC_0029505,Benign Keratosis-like Lesions,confocal,55.0,female,face
+HAM_0002683,ISIC_0031677,Benign Keratosis-like Lesions,confocal,75.0,male,face
+HAM_0003789,ISIC_0031277,Benign Keratosis-like Lesions,confocal,55.0,female,face
+HAM_0003789,ISIC_0031853,Benign Keratosis-like Lesions,confocal,55.0,female,face
+HAM_0004912,ISIC_0025753,Benign Keratosis-like Lesions,confocal,70.0,male,face
+HAM_0004912,ISIC_0031600,Benign Keratosis-like Lesions,confocal,70.0,male,face
+HAM_0001642,ISIC_0028490,Benign Keratosis-like Lesions,confocal,65.0,male,face
+HAM_0001529,ISIC_0025103,Benign Keratosis-like Lesions,consensus,70.0,female,face
+HAM_0001529,ISIC_0025710,Benign Keratosis-like Lesions,consensus,70.0,female,face
+HAM_0004004,ISIC_0024782,Benign Keratosis-like Lesions,consensus,65.0,female,chest
+HAM_0004004,ISIC_0029872,Benign Keratosis-like Lesions,consensus,65.0,female,chest
+HAM_0007043,ISIC_0029135,Benign Keratosis-like Lesions,consensus,75.0,male,face
+HAM_0007043,ISIC_0029947,Benign Keratosis-like Lesions,consensus,75.0,male,face
+HAM_0003789,ISIC_0029464,Benign Keratosis-like Lesions,confocal,55.0,female,face
+HAM_0003789,ISIC_0024915,Benign Keratosis-like Lesions,confocal,55.0,female,face
+HAM_0002527,ISIC_0026717,Benign Keratosis-like Lesions,consensus,70.0,male,face
+HAM_0001991,ISIC_0028347,Benign Keratosis-like Lesions,consensus,80.0,male,upper extremity
+HAM_0005847,ISIC_0033460,Benign Keratosis-like Lesions,consensus,85.0,male,face
+HAM_0003787,ISIC_0030630,Benign Keratosis-like Lesions,consensus,70.0,male,chest
+HAM_0004245,ISIC_0033701,Benign Keratosis-like Lesions,consensus,70.0,male,back
+HAM_0004245,ISIC_0033884,Benign Keratosis-like Lesions,consensus,70.0,male,back
+HAM_0007395,ISIC_0031133,Benign Keratosis-like Lesions,consensus,70.0,female,trunk
+HAM_0001429,ISIC_0027875,Benign Keratosis-like Lesions,consensus,80.0,male,abdomen
+HAM_0005993,ISIC_0026441,Benign Keratosis-like Lesions,consensus,80.0,male,lower extremity
+HAM_0001167,ISIC_0028448,Benign Keratosis-like Lesions,consensus,55.0,male,trunk
+HAM_0000865,ISIC_0028826,Benign Keratosis-like Lesions,consensus,70.0,male,abdomen
+HAM_0006876,ISIC_0032460,Benign Keratosis-like Lesions,consensus,70.0,male,back
+HAM_0001589,ISIC_0030067,Benign Keratosis-like Lesions,consensus,70.0,male,face
+HAM_0006243,ISIC_0031436,Benign Keratosis-like Lesions,consensus,75.0,male,upper extremity
+HAM_0002034,ISIC_0027954,Benign Keratosis-like Lesions,consensus,5.0,male,abdomen
+HAM_0006124,ISIC_0025131,Benign Keratosis-like Lesions,consensus,75.0,female,back
+HAM_0007219,ISIC_0029227,Benign Keratosis-like Lesions,consensus,70.0,male,hand
+HAM_0003979,ISIC_0026416,Benign Keratosis-like Lesions,consensus,45.0,female,trunk
+HAM_0000105,ISIC_0031362,Benign Keratosis-like Lesions,consensus,70.0,female,trunk
+HAM_0000296,ISIC_0031761,Benign Keratosis-like Lesions,consensus,35.0,female,trunk
+HAM_0007000,ISIC_0026042,Benign Keratosis-like Lesions,consensus,75.0,male,chest
+HAM_0004036,ISIC_0027727,Dermatofibroma,histo,55.0,male,upper extremity
+HAM_0004036,ISIC_0027107,Dermatofibroma,histo,55.0,male,upper extremity
+HAM_0004036,ISIC_0027648,Dermatofibroma,histo,55.0,male,upper extremity
+HAM_0004960,ISIC_0029967,Dermatofibroma,histo,65.0,female,lower extremity
+HAM_0004960,ISIC_0027876,Dermatofibroma,histo,65.0,female,lower extremity
+HAM_0003290,ISIC_0030757,Dermatofibroma,histo,80.0,male,upper extremity
+HAM_0003290,ISIC_0031358,Dermatofibroma,histo,80.0,male,upper extremity
+HAM_0003290,ISIC_0031735,Dermatofibroma,histo,80.0,male,upper extremity
+HAM_0007410,ISIC_0029962,Dermatofibroma,histo,65.0,male,foot
+HAM_0007410,ISIC_0031457,Dermatofibroma,histo,65.0,male,foot
+HAM_0006542,ISIC_0030015,Dermatofibroma,consensus,65.0,male,upper extremity
+HAM_0003487,ISIC_0031123,Dermatofibroma,consensus,40.0,male,lower extremity
+HAM_0003487,ISIC_0024845,Dermatofibroma,consensus,40.0,male,lower extremity
+HAM_0005584,ISIC_0032613,Dermatofibroma,consensus,25.0,female,lower extremity
+HAM_0005584,ISIC_0033256,Dermatofibroma,consensus,25.0,female,lower extremity
+HAM_0000349,ISIC_0033695,Dermatofibroma,consensus,45.0,female,lower extremity
+HAM_0000349,ISIC_0033005,Dermatofibroma,consensus,45.0,female,lower extremity
+HAM_0003597,ISIC_0033422,Dermatofibroma,consensus,45.0,male,lower extremity
+HAM_0003597,ISIC_0027488,Dermatofibroma,consensus,45.0,male,lower extremity
+HAM_0001841,ISIC_0025771,Dermatofibroma,consensus,35.0,female,lower extremity
+HAM_0002153,ISIC_0029297,Dermatofibroma,consensus,40.0,female,lower extremity
+HAM_0002119,ISIC_0032248,Melanoma,histo,75.0,male,neck
+HAM_0003182,ISIC_0029028,Melanoma,histo,85.0,female,trunk
+HAM_0003182,ISIC_0027125,Melanoma,histo,85.0,female,trunk
+HAM_0001747,ISIC_0029575,Melanoma,histo,45.0,male,back
+HAM_0001747,ISIC_0028361,Melanoma,histo,45.0,male,back
+HAM_0006900,ISIC_0031118,Melanoma,histo,75.0,male,upper extremity
+HAM_0006900,ISIC_0030080,Melanoma,histo,75.0,male,upper extremity
+HAM_0005555,ISIC_0032079,Melanoma,histo,60.0,female,chest
+HAM_0006803,ISIC_0032400,Melanoma,histo,60.0,female,abdomen
+HAM_0006803,ISIC_0024545,Melanoma,histo,60.0,female,abdomen
+HAM_0007560,ISIC_0026892,Melanoma,histo,75.0,male,unknown
+HAM_0007560,ISIC_0024987,Melanoma,histo,75.0,male,unknown
+HAM_0002534,ISIC_0024898,Melanoma,histo,80.0,male,lower extremity
+HAM_0002534,ISIC_0029538,Melanoma,histo,80.0,male,lower extremity
+HAM_0002714,ISIC_0026113,Melanoma,histo,50.0,male,abdomen
+HAM_0002714,ISIC_0032265,Melanoma,histo,50.0,male,abdomen
+HAM_0003212,ISIC_0028519,Melanoma,histo,80.0,male,back
+HAM_0003212,ISIC_0024767,Melanoma,histo,80.0,male,back
+HAM_0004483,ISIC_0027487,Melanoma,histo,35.0,female,lower extremity
+HAM_0005084,ISIC_0027261,Melanoma,histo,75.0,male,ear
+HAM_0005084,ISIC_0028505,Melanoma,histo,75.0,male,ear
+HAM_0002557,ISIC_0025927,Melanoma,histo,50.0,female,upper extremity
+HAM_0003683,ISIC_0027352,Melanoma,histo,75.0,male,upper extremity
+HAM_0003683,ISIC_0029558,Melanoma,histo,75.0,male,upper extremity
+HAM_0003449,ISIC_0029242,Melanoma,histo,85.0,male,back
+HAM_0003449,ISIC_0027263,Melanoma,histo,85.0,male,back
+HAM_0000330,ISIC_0030824,Melanoma,histo,60.0,male,chest
+HAM_0005785,ISIC_0028489,Melanoma,histo,70.0,male,upper extremity
+HAM_0005785,ISIC_0026236,Melanoma,histo,70.0,male,upper extremity
+HAM_0003376,ISIC_0025394,Melanoma,histo,45.0,male,trunk
+HAM_0007073,ISIC_0025035,Melanoma,histo,70.0,female,lower extremity
+HAM_0002939,ISIC_0032888,Melanoma,histo,55.0,male,lower extremity
+HAM_0002939,ISIC_0033968,Melanoma,histo,55.0,male,lower extremity
+HAM_0004405,ISIC_0032532,Melanoma,histo,80.0,male,back
+HAM_0004405,ISIC_0033500,Melanoma,histo,80.0,male,back
+HAM_0005500,ISIC_0033636,Melanoma,histo,75.0,male,trunk
+HAM_0001266,ISIC_0029909,Melanoma,histo,75.0,female,ear
+HAM_0005893,ISIC_0033432,Melanoma,histo,55.0,male,trunk
+HAM_0005893,ISIC_0032833,Melanoma,histo,55.0,male,trunk
+HAM_0005893,ISIC_0034236,Melanoma,histo,55.0,male,trunk
+HAM_0000321,ISIC_0032733,Melanoma,histo,70.0,male,back
+HAM_0000321,ISIC_0033183,Melanoma,histo,70.0,male,back
+HAM_0000321,ISIC_0032564,Melanoma,histo,70.0,male,back
+HAM_0002086,ISIC_0033820,Melanoma,histo,70.0,male,face
+HAM_0002086,ISIC_0033814,Melanoma,histo,70.0,male,face
+HAM_0005777,ISIC_0033325,Melanoma,histo,60.0,male,chest
+HAM_0005777,ISIC_0034208,Melanoma,histo,60.0,male,chest
+HAM_0005303,ISIC_0033240,Melanoma,histo,70.0,male,scalp
+HAM_0005303,ISIC_0032782,Melanoma,histo,70.0,male,scalp
+HAM_0005303,ISIC_0032522,Melanoma,histo,70.0,male,scalp
+HAM_0003602,ISIC_0033980,Melanoma,histo,30.0,female,upper extremity
+HAM_0003602,ISIC_0032533,Melanoma,histo,30.0,female,upper extremity
+HAM_0003602,ISIC_0033986,Melanoma,histo,30.0,female,upper extremity
+HAM_0003602,ISIC_0033004,Melanoma,histo,30.0,female,upper extremity
+HAM_0004321,ISIC_0033479,Melanoma,histo,40.0,female,back
+HAM_0004321,ISIC_0033522,Melanoma,histo,40.0,female,back
+HAM_0001524,ISIC_0032915,Melanoma,histo,75.0,male,lower extremity
+HAM_0007021,ISIC_0033477,Melanoma,histo,65.0,male,upper extremity
+HAM_0007021,ISIC_0034092,Melanoma,histo,65.0,male,upper extremity
+HAM_0002993,ISIC_0034104,Melanoma,histo,55.0,male,upper extremity
+HAM_0002993,ISIC_0032547,Melanoma,histo,55.0,male,upper extremity
+HAM_0002993,ISIC_0033644,Melanoma,histo,55.0,male,upper extremity
+HAM_0004881,ISIC_0033806,Melanoma,histo,85.0,male,abdomen
+HAM_0004881,ISIC_0032913,Melanoma,histo,85.0,male,abdomen
+HAM_0006437,ISIC_0033469,Melanoma,histo,65.0,female,ear
+HAM_0000282,ISIC_0031709,Melanoma,histo,65.0,male,neck
+HAM_0004767,ISIC_0025531,Melanoma,histo,80.0,male,face
+HAM_0006802,ISIC_0032610,Melanoma,histo,40.0,male,upper extremity
+HAM_0006824,ISIC_0032958,Melanoma,histo,70.0,male,lower extremity
+HAM_0006824,ISIC_0033538,Melanoma,histo,70.0,male,lower extremity
+HAM_0003073,ISIC_0032836,Melanoma,histo,50.0,male,abdomen
+HAM_0003073,ISIC_0033444,Melanoma,histo,50.0,male,abdomen
+HAM_0003073,ISIC_0034183,Melanoma,histo,50.0,male,abdomen
+HAM_0006556,ISIC_0027402,Melanoma,histo,60.0,male,lower extremity
+HAM_0006802,ISIC_0033279,Melanoma,histo,40.0,male,upper extremity
+HAM_0006802,ISIC_0032887,Melanoma,histo,40.0,male,upper extremity
+HAM_0000799,ISIC_0033611,Melanoma,histo,65.0,male,upper extremity
+HAM_0000799,ISIC_0033586,Melanoma,histo,65.0,male,upper extremity
+HAM_0000799,ISIC_0033226,Melanoma,histo,65.0,male,upper extremity
+HAM_0005809,ISIC_0034107,Melanoma,histo,40.0,female,chest
+HAM_0005809,ISIC_0033368,Melanoma,histo,40.0,female,chest
+HAM_0002617,ISIC_0033957,Melanoma,histo,60.0,male,upper extremity
+HAM_0002617,ISIC_0034172,Melanoma,histo,60.0,male,upper extremity
+HAM_0002617,ISIC_0033393,Melanoma,histo,60.0,male,upper extremity
+HAM_0000176,ISIC_0032862,Melanoma,histo,65.0,male,upper extremity
+HAM_0000176,ISIC_0033073,Melanoma,histo,65.0,male,upper extremity
+HAM_0000176,ISIC_0033696,Melanoma,histo,65.0,male,upper extremity
+HAM_0001793,ISIC_0028520,Melanoma,histo,75.0,male,back
+HAM_0001793,ISIC_0034000,Melanoma,histo,75.0,male,back
+HAM_0002488,ISIC_0032807,Melanoma,histo,50.0,male,face
+HAM_0002488,ISIC_0032645,Melanoma,histo,50.0,male,face
+HAM_0000079,ISIC_0033752,Melanoma,histo,50.0,female,face
+HAM_0000079,ISIC_0033424,Melanoma,histo,50.0,female,face
+HAM_0005737,ISIC_0033885,Melanoma,histo,60.0,female,lower extremity
+HAM_0000988,ISIC_0031186,Melanoma,histo,70.0,male,face
+HAM_0007305,ISIC_0029933,Melanoma,histo,45.0,female,upper extremity
+HAM_0001428,ISIC_0026268,Melanoma,histo,80.0,male,face
+HAM_0006593,ISIC_0025708,Melanoma,histo,30.0,female,back
+HAM_0001950,ISIC_0024449,Melanoma,histo,55.0,male,back
+HAM_0004850,ISIC_0026438,Melanoma,histo,30.0,female,trunk
+HAM_0004850,ISIC_0028126,Melanoma,histo,30.0,female,trunk
+HAM_0005064,ISIC_0028198,Melanoma,histo,40.0,female,back
+HAM_0005064,ISIC_0027144,Melanoma,histo,40.0,female,back
+HAM_0000888,ISIC_0025085,Melanoma,histo,75.0,male,upper extremity
+HAM_0000888,ISIC_0031034,Melanoma,histo,75.0,male,upper extremity
+HAM_0006538,ISIC_0029397,Melanoma,histo,5.0,male,back
+HAM_0006978,ISIC_0029316,Melanoma,histo,45.0,female,neck
+HAM_0002534,ISIC_0027620,Melanoma,histo,80.0,male,lower extremity
+HAM_0002764,ISIC_0030366,Melanoma,histo,60.0,female,back
+HAM_0000241,ISIC_0030932,Melanoma,histo,70.0,female,lower extremity
+HAM_0003608,ISIC_0028228,Melanoma,histo,75.0,female,back
+HAM_0004817,ISIC_0025238,Melanoma,histo,55.0,male,lower extremity
+HAM_0000220,ISIC_0030360,Melanoma,histo,65.0,male,upper extremity
+HAM_0000282,ISIC_0027155,Melanoma,histo,65.0,male,neck
+HAM_0002079,ISIC_0029146,Melanoma,histo,65.0,male,face
+HAM_0002375,ISIC_0027442,Melanoma,histo,80.0,male,neck
+HAM_0002375,ISIC_0024940,Melanoma,histo,80.0,male,neck
+HAM_0001655,ISIC_0030110,Melanoma,histo,50.0,female,upper extremity
+HAM_0002609,ISIC_0029318,Melanoma,histo,60.0,female,back
+HAM_0002609,ISIC_0032070,Melanoma,histo,60.0,female,back
+HAM_0002906,ISIC_0026604,Melanoma,histo,70.0,male,ear
+HAM_0000125,ISIC_0028777,Melanoma,histo,60.0,male,lower extremity
+HAM_0000125,ISIC_0027964,Melanoma,histo,60.0,male,lower extremity
+HAM_0003095,ISIC_0025755,Melanoma,histo,60.0,female,back
+HAM_0005251,ISIC_0026868,Melanoma,histo,75.0,male,lower extremity
+HAM_0005203,ISIC_0027742,Melanoma,histo,60.0,male,back
+HAM_0000125,ISIC_0032372,Melanoma,histo,60.0,male,lower extremity
+HAM_0006940,ISIC_0027021,Melanoma,histo,55.0,male,upper extremity
+HAM_0002906,ISIC_0027517,Melanoma,histo,70.0,male,ear
+HAM_0004507,ISIC_0029958,Melanoma,histo,65.0,female,face
+HAM_0002772,ISIC_0031908,Melanoma,histo,75.0,male,back
+HAM_0002772,ISIC_0026897,Melanoma,histo,75.0,male,back
+HAM_0001976,ISIC_0026586,Melanoma,histo,85.0,male,upper extremity
+HAM_0001976,ISIC_0025732,Melanoma,histo,85.0,male,upper extremity
+HAM_0006160,ISIC_0030950,Melanoma,histo,70.0,female,hand
+HAM_0004164,ISIC_0030695,Melanoma,histo,80.0,male,lower extremity
+HAM_0004507,ISIC_0024554,Melanoma,histo,65.0,female,face
+HAM_0004164,ISIC_0031203,Melanoma,histo,80.0,male,lower extremity
+HAM_0005532,ISIC_0030183,Melanoma,histo,70.0,male,chest
+HAM_0006137,ISIC_0026738,Melanoma,histo,85.0,female,face
+HAM_0007511,ISIC_0024630,Melanoma,histo,85.0,male,lower extremity
+HAM_0007511,ISIC_0024333,Melanoma,histo,85.0,male,lower extremity
+HAM_0000517,ISIC_0031005,Melanoma,histo,65.0,male,back
+HAM_0000517,ISIC_0030507,Melanoma,histo,65.0,male,back
+HAM_0001607,ISIC_0028508,Melanoma,histo,75.0,male,back
+HAM_0003167,ISIC_0024864,Melanoma,histo,40.0,female,lower extremity
+HAM_0004053,ISIC_0027126,Melanoma,histo,80.0,male,lower extremity
+HAM_0000590,ISIC_0030951,Melanoma,histo,85.0,female,lower extremity
+HAM_0004081,ISIC_0031957,Melanoma,histo,70.0,female,lower extremity
+HAM_0004053,ISIC_0027067,Melanoma,histo,80.0,male,lower extremity
+HAM_0004767,ISIC_0028285,Melanoma,histo,80.0,male,face
+HAM_0003504,ISIC_0028075,Melanoma,histo,55.0,male,face
+HAM_0003504,ISIC_0026823,Melanoma,histo,55.0,male,face
+HAM_0003534,ISIC_0028493,Melanoma,histo,85.0,male,chest
+HAM_0001910,ISIC_0028968,Melanoma,histo,55.0,male,upper extremity
+HAM_0001910,ISIC_0024739,Melanoma,histo,55.0,male,upper extremity
+HAM_0003102,ISIC_0032389,Melanoma,histo,65.0,male,face
+HAM_0003102,ISIC_0025709,Melanoma,histo,65.0,male,face
+HAM_0003534,ISIC_0031746,Melanoma,histo,85.0,male,chest
+HAM_0002692,ISIC_0029404,Vascular Lesions,histo,10.0,male,trunk
+HAM_0002692,ISIC_0030275,Vascular Lesions,histo,10.0,male,trunk
+HAM_0005878,ISIC_0033450,Vascular Lesions,histo,15.0,male,chest
+HAM_0005878,ISIC_0033254,Vascular Lesions,histo,15.0,male,chest
+HAM_0000940,ISIC_0032692,Vascular Lesions,histo,35.0,female,lower extremity
+HAM_0000940,ISIC_0033608,Vascular Lesions,histo,35.0,female,lower extremity
+HAM_0000940,ISIC_0033969,Vascular Lesions,histo,35.0,female,lower extremity
+HAM_0003862,ISIC_0033031,Vascular Lesions,histo,45.0,male,upper extremity
+HAM_0003862,ISIC_0032775,Vascular Lesions,histo,45.0,male,upper extremity
+HAM_0003862,ISIC_0033458,Vascular Lesions,histo,45.0,male,upper extremity
+HAM_0004791,ISIC_0033135,Vascular Lesions,histo,80.0,female,lower extremity
+HAM_0004791,ISIC_0032538,Vascular Lesions,histo,80.0,female,lower extremity
+HAM_0004791,ISIC_0033591,Vascular Lesions,histo,80.0,female,lower extremity
+HAM_0001852,ISIC_0033749,Vascular Lesions,histo,80.0,male,lower extremity
+HAM_0001852,ISIC_0034196,Vascular Lesions,histo,80.0,male,lower extremity
+HAM_0005270,ISIC_0032270,Vascular Lesions,histo,70.0,female,lower extremity
+HAM_0005158,ISIC_0031950,Vascular Lesions,histo,40.0,male,lower extremity
+HAM_0000502,ISIC_0031093,Vascular Lesions,consensus,70.0,male,back
+HAM_0000502,ISIC_0029608,Vascular Lesions,consensus,70.0,male,back
+HAM_0007372,ISIC_0030283,Vascular Lesions,consensus,55.0,male,trunk
+HAM_0005475,ISIC_0025628,Vascular Lesions,consensus,80.0,male,abdomen
+HAM_0006193,ISIC_0029877,Vascular Lesions,consensus,80.0,male,lower extremity
+HAM_0005376,ISIC_0025606,Vascular Lesions,consensus,55.0,male,scalp
+HAM_0000109,ISIC_0031065,Vascular Lesions,consensus,35.0,female,trunk
+HAM_0006138,ISIC_0026713,Vascular Lesions,consensus,35.0,female,hand
+HAM_0003220,ISIC_0034093,Basal Cell Carcinoma,histo,80.0,female,face
+HAM_0004388,ISIC_0027135,Basal Cell Carcinoma,histo,60.0,male,back
+HAM_0003738,ISIC_0032139,Basal Cell Carcinoma,histo,85.0,female,face
+HAM_0003738,ISIC_0031243,Basal Cell Carcinoma,histo,85.0,female,face
+HAM_0007446,ISIC_0028457,Basal Cell Carcinoma,histo,75.0,female,face
+HAM_0005530,ISIC_0024360,Basal Cell Carcinoma,histo,50.0,female,chest
+HAM_0005530,ISIC_0029899,Basal Cell Carcinoma,histo,50.0,female,chest
+HAM_0003593,ISIC_0027478,Basal Cell Carcinoma,histo,40.0,male,back
+HAM_0000009,ISIC_0029201,Basal Cell Carcinoma,histo,35.0,male,back
+HAM_0000009,ISIC_0026439,Basal Cell Carcinoma,histo,35.0,male,back
+HAM_0000009,ISIC_0029779,Basal Cell Carcinoma,histo,35.0,male,back
+HAM_0002565,ISIC_0032660,Basal Cell Carcinoma,histo,75.0,male,back
+HAM_0002565,ISIC_0033504,Basal Cell Carcinoma,histo,75.0,male,back
+HAM_0000879,ISIC_0033203,Basal Cell Carcinoma,histo,65.0,female,back
+HAM_0000879,ISIC_0033366,Basal Cell Carcinoma,histo,65.0,female,back
+HAM_0000879,ISIC_0032816,Basal Cell Carcinoma,histo,65.0,female,back
+HAM_0006586,ISIC_0034123,Basal Cell Carcinoma,histo,80.0,female,face
+HAM_0006586,ISIC_0034026,Basal Cell Carcinoma,histo,80.0,female,face
+HAM_0003600,ISIC_0031836,Basal Cell Carcinoma,histo,40.0,female,abdomen
+HAM_0004539,ISIC_0025617,Basal Cell Carcinoma,histo,40.0,female,face
+HAM_0007550,ISIC_0026528,Basal Cell Carcinoma,histo,70.0,male,trunk
+HAM_0000352,ISIC_0031225,Basal Cell Carcinoma,histo,60.0,female,chest
+HAM_0003694,ISIC_0028818,Basal Cell Carcinoma,histo,70.0,male,foot
+HAM_0004273,ISIC_0028059,Basal Cell Carcinoma,histo,40.0,male,back
+HAM_0002069,ISIC_0029331,Basal Cell Carcinoma,histo,50.0,male,lower extremity
+HAM_0000082,ISIC_0031698,Basal Cell Carcinoma,histo,75.0,female,back
+HAM_0006274,ISIC_0031351,Basal Cell Carcinoma,histo,75.0,male,chest
+HAM_0004831,ISIC_0025144,Basal Cell Carcinoma,histo,75.0,male,back
+HAM_0000987,ISIC_0025301,Basal Cell Carcinoma,histo,70.0,male,back
+HAM_0003851,ISIC_0031643,Basal Cell Carcinoma,histo,70.0,male,back
+HAM_0002577,ISIC_0025417,Basal Cell Carcinoma,histo,70.0,male,upper extremity
+HAM_0002577,ISIC_0028035,Basal Cell Carcinoma,histo,70.0,male,upper extremity
+HAM_0005981,ISIC_0028486,Basal Cell Carcinoma,histo,65.0,male,face
+HAM_0005981,ISIC_0027371,Basal Cell Carcinoma,histo,65.0,male,face
+HAM_0000953,ISIC_0026213,Basal Cell Carcinoma,histo,70.0,male,chest
+HAM_0000953,ISIC_0026442,Basal Cell Carcinoma,histo,70.0,male,chest
+HAM_0007313,ISIC_0025299,Basal Cell Carcinoma,histo,70.0,male,back
+HAM_0007313,ISIC_0028739,Basal Cell Carcinoma,histo,70.0,male,back
+HAM_0004147,ISIC_0031712,Basal Cell Carcinoma,histo,75.0,male,back
+HAM_0006575,ISIC_0029391,Basal Cell Carcinoma,histo,65.0,female,chest
+HAM_0005757,ISIC_0026496,Basal Cell Carcinoma,histo,70.0,male,lower extremity
+HAM_0003596,ISIC_0032194,Basal Cell Carcinoma,histo,45.0,male,neck
+HAM_0000719,ISIC_0027915,Basal Cell Carcinoma,histo,80.0,male,abdomen
+HAM_0000719,ISIC_0026337,Basal Cell Carcinoma,histo,80.0,male,abdomen
+HAM_0000719,ISIC_0026902,Basal Cell Carcinoma,histo,80.0,male,abdomen
+HAM_0006727,ISIC_0030197,Basal Cell Carcinoma,histo,75.0,male,back
+HAM_0006727,ISIC_0024582,Basal Cell Carcinoma,histo,75.0,male,back
+HAM_0006727,ISIC_0029655,Basal Cell Carcinoma,histo,75.0,male,back
+HAM_0006386,ISIC_0029035,Basal Cell Carcinoma,histo,70.0,male,face
+HAM_0007557,ISIC_0030964,Basal Cell Carcinoma,histo,55.0,male,back
+HAM_0000987,ISIC_0027722,Basal Cell Carcinoma,histo,70.0,male,back
+HAM_0007611,ISIC_0032314,Basal Cell Carcinoma,histo,85.0,male,back
+HAM_0000872,ISIC_0029323,Basal Cell Carcinoma,histo,75.0,male,chest
+HAM_0000872,ISIC_0031520,Basal Cell Carcinoma,histo,75.0,male,chest
+HAM_0000872,ISIC_0031171,Basal Cell Carcinoma,histo,75.0,male,chest
+HAM_0006872,ISIC_0030514,Basal Cell Carcinoma,histo,85.0,male,back
+HAM_0006872,ISIC_0024345,Basal Cell Carcinoma,histo,85.0,male,back
+HAM_0002998,ISIC_0028928,Basal Cell Carcinoma,histo,55.0,female,lower extremity
+HAM_0002998,ISIC_0031378,Basal Cell Carcinoma,histo,55.0,female,lower extremity
+HAM_0006053,ISIC_0028147,Basal Cell Carcinoma,histo,65.0,female,upper extremity
+HAM_0000352,ISIC_0032132,Basal Cell Carcinoma,histo,60.0,female,chest
+HAM_0000496,ISIC_0029545,Basal Cell Carcinoma,histo,55.0,female,chest
+HAM_0003444,ISIC_0030249,Basal Cell Carcinoma,histo,80.0,female,lower extremity
+HAM_0006658,ISIC_0026154,Basal Cell Carcinoma,histo,85.0,male,neck
+HAM_0007364,ISIC_0029917,Basal Cell Carcinoma,histo,80.0,male,back
+HAM_0003444,ISIC_0028687,Basal Cell Carcinoma,histo,80.0,female,lower extremity
+HAM_0003444,ISIC_0027120,Basal Cell Carcinoma,histo,80.0,female,lower extremity
+HAM_0002018,ISIC_0029501,Basal Cell Carcinoma,histo,70.0,male,upper extremity
+HAM_0006049,ISIC_0031614,Basal Cell Carcinoma,histo,45.0,female,back
+HAM_0005856,ISIC_0024984,Basal Cell Carcinoma,histo,55.0,female,back
+HAM_0005856,ISIC_0029857,Basal Cell Carcinoma,histo,55.0,female,back
+HAM_0007289,ISIC_0031263,Basal Cell Carcinoma,histo,80.0,male,upper extremity
+HAM_0002934,ISIC_0025031,Basal Cell Carcinoma,histo,60.0,male,abdomen
+HAM_0005026,ISIC_0028978,Basal Cell Carcinoma,histo,40.0,female,abdomen
+HAM_0005026,ISIC_0028728,Basal Cell Carcinoma,histo,40.0,female,abdomen
+HAM_0002530,ISIC_0028239,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0000701,ISIC_0032115,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0004098,ISIC_0025843,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0005234,ISIC_0027347,Melanomaanocytic Nevi (moles),follow_up,45.0,female,genital
+HAM_0001594,ISIC_0025311,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0001335,ISIC_0026555,Melanomaanocytic Nevi (moles),follow_up,50.0,male,upper extremity
+HAM_0003882,ISIC_0028266,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0002943,ISIC_0026054,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0004270,ISIC_0028455,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0000758,ISIC_0031974,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0002514,ISIC_0026768,Melanomaanocytic Nevi (moles),follow_up,55.0,male,lower extremity
+HAM_0006224,ISIC_0029351,Melanomaanocytic Nevi (moles),follow_up,55.0,male,abdomen
+HAM_0001061,ISIC_0029526,Melanomaanocytic Nevi (moles),follow_up,45.0,male,back
+HAM_0003516,ISIC_0029540,Melanomaanocytic Nevi (moles),follow_up,55.0,male,upper extremity
+HAM_0000742,ISIC_0032048,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0005103,ISIC_0025079,Melanomaanocytic Nevi (moles),follow_up,55.0,male,foot
+HAM_0001391,ISIC_0024584,Melanomaanocytic Nevi (moles),follow_up,45.0,female,back
+HAM_0005597,ISIC_0025528,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0007230,ISIC_0031164,Melanomaanocytic Nevi (moles),follow_up,30.0,female,abdomen
+HAM_0004951,ISIC_0026339,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0002443,ISIC_0029685,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0000797,ISIC_0026039,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0007378,ISIC_0025692,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0007183,ISIC_0030421,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0003004,ISIC_0028889,Melanomaanocytic Nevi (moles),follow_up,65.0,female,trunk
+HAM_0001467,ISIC_0032501,Melanomaanocytic Nevi (moles),follow_up,35.0,female,genital
+HAM_0003524,ISIC_0028779,Melanomaanocytic Nevi (moles),follow_up,65.0,female,abdomen
+HAM_0003665,ISIC_0030573,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0005647,ISIC_0027717,Melanomaanocytic Nevi (moles),follow_up,50.0,male,upper extremity
+HAM_0006001,ISIC_0028395,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0004074,ISIC_0030599,Melanomaanocytic Nevi (moles),follow_up,45.0,female,back
+HAM_0001627,ISIC_0032153,Melanomaanocytic Nevi (moles),follow_up,45.0,female,back
+HAM_0000041,ISIC_0032211,Melanomaanocytic Nevi (moles),follow_up,45.0,female,scalp
+HAM_0002465,ISIC_0026565,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0002773,ISIC_0028690,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0005038,ISIC_0026914,Melanomaanocytic Nevi (moles),follow_up,55.0,male,back
+HAM_0001915,ISIC_0025813,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0004544,ISIC_0031099,Melanomaanocytic Nevi (moles),follow_up,50.0,male,foot
+HAM_0006544,ISIC_0031881,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0002322,ISIC_0027912,Melanomaanocytic Nevi (moles),follow_up,50.0,female,abdomen
+HAM_0006228,ISIC_0028594,Melanomaanocytic Nevi (moles),follow_up,35.0,female,genital
+HAM_0000329,ISIC_0031185,Melanomaanocytic Nevi (moles),follow_up,35.0,female,back
+HAM_0004177,ISIC_0031907,Melanomaanocytic Nevi (moles),follow_up,45.0,female,abdomen
+HAM_0002433,ISIC_0032011,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0000529,ISIC_0030540,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0007369,ISIC_0024593,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0006969,ISIC_0028007,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0003048,ISIC_0030729,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0003008,ISIC_0029729,Melanomaanocytic Nevi (moles),follow_up,75.0,female,lower extremity
+HAM_0004039,ISIC_0026383,Melanomaanocytic Nevi (moles),follow_up,80.0,male,back
+HAM_0001482,ISIC_0027691,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0001414,ISIC_0024473,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0006166,ISIC_0028805,Melanomaanocytic Nevi (moles),follow_up,50.0,female,abdomen
+HAM_0005424,ISIC_0025052,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0000713,ISIC_0031174,Melanomaanocytic Nevi (moles),follow_up,55.0,male,abdomen
+HAM_0006332,ISIC_0029822,Melanomaanocytic Nevi (moles),follow_up,35.0,female,abdomen
+HAM_0000003,ISIC_0027886,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0003092,ISIC_0027301,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0006871,ISIC_0026836,Melanomaanocytic Nevi (moles),follow_up,40.0,female,face
+HAM_0005800,ISIC_0028864,Melanomaanocytic Nevi (moles),follow_up,40.0,female,upper extremity
+HAM_0006671,ISIC_0027843,Melanomaanocytic Nevi (moles),follow_up,60.0,male,lower extremity
+HAM_0002782,ISIC_0030536,Melanomaanocytic Nevi (moles),follow_up,55.0,male,back
+HAM_0002889,ISIC_0030774,Melanomaanocytic Nevi (moles),follow_up,55.0,male,lower extremity
+HAM_0004134,ISIC_0026075,Melanomaanocytic Nevi (moles),follow_up,30.0,male,back
+HAM_0002080,ISIC_0029619,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0004847,ISIC_0030906,Melanomaanocytic Nevi (moles),follow_up,45.0,female,back
+HAM_0001140,ISIC_0024884,Melanomaanocytic Nevi (moles),follow_up,55.0,male,back
+HAM_0003502,ISIC_0027290,Melanomaanocytic Nevi (moles),follow_up,60.0,male,trunk
+HAM_0001314,ISIC_0029675,Melanomaanocytic Nevi (moles),follow_up,60.0,male,upper extremity
+HAM_0004253,ISIC_0031035,Melanomaanocytic Nevi (moles),follow_up,60.0,male,lower extremity
+HAM_0003233,ISIC_0031571,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0004263,ISIC_0031781,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0002124,ISIC_0025175,Melanomaanocytic Nevi (moles),follow_up,50.0,female,upper extremity
+HAM_0000729,ISIC_0030120,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0007209,ISIC_0028365,Melanomaanocytic Nevi (moles),follow_up,45.0,male,back
+HAM_0002836,ISIC_0030289,Melanomaanocytic Nevi (moles),follow_up,35.0,male,lower extremity
+HAM_0002260,ISIC_0028699,Melanomaanocytic Nevi (moles),follow_up,35.0,male,lower extremity
+HAM_0005229,ISIC_0030003,Melanomaanocytic Nevi (moles),follow_up,35.0,male,lower extremity
+HAM_0005211,ISIC_0030282,Melanomaanocytic Nevi (moles),follow_up,50.0,female,upper extremity
+HAM_0004009,ISIC_0024856,Melanomaanocytic Nevi (moles),follow_up,75.0,male,lower extremity
+HAM_0000507,ISIC_0028921,Melanomaanocytic Nevi (moles),follow_up,75.0,male,abdomen
+HAM_0000617,ISIC_0029703,Melanomaanocytic Nevi (moles),follow_up,75.0,male,trunk
+HAM_0003611,ISIC_0031699,Melanomaanocytic Nevi (moles),follow_up,75.0,male,hand
+HAM_0000235,ISIC_0025910,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0002505,ISIC_0031402,Melanomaanocytic Nevi (moles),follow_up,35.0,female,abdomen
+HAM_0007600,ISIC_0025375,Melanomaanocytic Nevi (moles),follow_up,35.0,female,lower extremity
+HAM_0004683,ISIC_0026079,Melanomaanocytic Nevi (moles),follow_up,35.0,female,back
+HAM_0003131,ISIC_0025833,Melanomaanocytic Nevi (moles),follow_up,35.0,female,trunk
+HAM_0002626,ISIC_0026822,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0003632,ISIC_0029274,Melanomaanocytic Nevi (moles),follow_up,45.0,male,upper extremity
+HAM_0000546,ISIC_0028337,Melanomaanocytic Nevi (moles),follow_up,55.0,male,upper extremity
+HAM_0005621,ISIC_0028861,Melanomaanocytic Nevi (moles),follow_up,55.0,male,back
+HAM_0006780,ISIC_0031021,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0002756,ISIC_0027157,Melanomaanocytic Nevi (moles),follow_up,30.0,male,lower extremity
+HAM_0003674,ISIC_0028660,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0000227,ISIC_0032201,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0001151,ISIC_0024649,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0002459,ISIC_0029305,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0003060,ISIC_0027485,Melanomaanocytic Nevi (moles),follow_up,40.0,male,abdomen
+HAM_0004094,ISIC_0031313,Melanomaanocytic Nevi (moles),follow_up,40.0,male,lower extremity
+HAM_0003924,ISIC_0030569,Melanomaanocytic Nevi (moles),follow_up,80.0,male,trunk
+HAM_0005361,ISIC_0024374,Melanomaanocytic Nevi (moles),follow_up,35.0,female,face
+HAM_0002211,ISIC_0026862,Melanomaanocytic Nevi (moles),follow_up,45.0,female,abdomen
+HAM_0005036,ISIC_0025815,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0001015,ISIC_0028833,Melanomaanocytic Nevi (moles),follow_up,50.0,female,back
+HAM_0004135,ISIC_0025634,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0003032,ISIC_0028789,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0003964,ISIC_0029111,Melanomaanocytic Nevi (moles),follow_up,45.0,female,back
+HAM_0006885,ISIC_0027938,Melanomaanocytic Nevi (moles),follow_up,30.0,male,abdomen
+HAM_0005065,ISIC_0031256,Melanomaanocytic Nevi (moles),follow_up,30.0,male,lower extremity
+HAM_0000852,ISIC_0025461,Melanomaanocytic Nevi (moles),follow_up,55.0,male,upper extremity
+HAM_0001153,ISIC_0025849,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0003644,ISIC_0030202,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0005111,ISIC_0030911,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0002289,ISIC_0032266,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0000205,ISIC_0029471,Melanomaanocytic Nevi (moles),follow_up,35.0,female,trunk
+HAM_0002073,ISIC_0025406,Melanomaanocytic Nevi (moles),follow_up,35.0,female,trunk
+HAM_0004885,ISIC_0030570,Melanomaanocytic Nevi (moles),follow_up,5.0,male,abdomen
+HAM_0001042,ISIC_0025246,Melanomaanocytic Nevi (moles),follow_up,5.0,male,lower extremity
+HAM_0000301,ISIC_0026112,Melanomaanocytic Nevi (moles),follow_up,65.0,female,lower extremity
+HAM_0002460,ISIC_0032336,Melanomaanocytic Nevi (moles),follow_up,35.0,female,lower extremity
+HAM_0005266,ISIC_0027605,Melanomaanocytic Nevi (moles),follow_up,60.0,male,lower extremity
+HAM_0001631,ISIC_0025390,Melanomaanocytic Nevi (moles),follow_up,50.0,female,genital
+HAM_0001213,ISIC_0026731,Melanomaanocytic Nevi (moles),follow_up,50.0,female,upper extremity
+HAM_0004252,ISIC_0030461,Melanomaanocytic Nevi (moles),follow_up,55.0,male,lower extremity
+HAM_0002851,ISIC_0026915,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0003210,ISIC_0030237,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0000882,ISIC_0032241,Melanomaanocytic Nevi (moles),follow_up,50.0,male,back
+HAM_0002991,ISIC_0030502,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0005292,ISIC_0030974,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0005397,ISIC_0028105,Melanomaanocytic Nevi (moles),follow_up,35.0,male,lower extremity
+HAM_0004402,ISIC_0025397,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0003304,ISIC_0029367,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0005123,ISIC_0025877,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0007109,ISIC_0026529,Melanomaanocytic Nevi (moles),follow_up,55.0,male,abdomen
+HAM_0002165,ISIC_0031172,Melanomaanocytic Nevi (moles),follow_up,55.0,male,lower extremity
+HAM_0006976,ISIC_0029689,Melanomaanocytic Nevi (moles),follow_up,65.0,female,trunk
+HAM_0000161,ISIC_0031820,Melanomaanocytic Nevi (moles),follow_up,65.0,female,lower extremity
+HAM_0002418,ISIC_0030711,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0005169,ISIC_0027557,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0003209,ISIC_0031156,Melanomaanocytic Nevi (moles),follow_up,45.0,female,neck
+HAM_0006850,ISIC_0030186,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0001308,ISIC_0025740,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0000640,ISIC_0024663,Melanomaanocytic Nevi (moles),follow_up,55.0,female,abdomen
+HAM_0005377,ISIC_0028936,Melanomaanocytic Nevi (moles),follow_up,65.0,male,abdomen
+HAM_0005031,ISIC_0025109,Melanomaanocytic Nevi (moles),follow_up,65.0,male,abdomen
+HAM_0006176,ISIC_0027539,Melanomaanocytic Nevi (moles),follow_up,40.0,female,abdomen
+HAM_0003126,ISIC_0029181,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0002555,ISIC_0032398,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0001771,ISIC_0030556,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0005946,ISIC_0026368,Melanomaanocytic Nevi (moles),follow_up,55.0,male,genital
+HAM_0001909,ISIC_0025481,Melanomaanocytic Nevi (moles),follow_up,55.0,male,upper extremity
+HAM_0005714,ISIC_0026308,Melanomaanocytic Nevi (moles),follow_up,55.0,male,back
+HAM_0005170,ISIC_0026253,Melanomaanocytic Nevi (moles),follow_up,80.0,male,trunk
+HAM_0001923,ISIC_0029219,Melanomaanocytic Nevi (moles),follow_up,80.0,male,lower extremity
+HAM_0000213,ISIC_0029167,Melanomaanocytic Nevi (moles),follow_up,60.0,female,upper extremity
+HAM_0002398,ISIC_0028208,Melanomaanocytic Nevi (moles),follow_up,70.0,female,foot
+HAM_0004359,ISIC_0025087,Melanomaanocytic Nevi (moles),follow_up,50.0,female,neck
+HAM_0006546,ISIC_0030413,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0003594,ISIC_0027009,Melanomaanocytic Nevi (moles),follow_up,70.0,female,lower extremity
+HAM_0006961,ISIC_0031792,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0006935,ISIC_0026628,Melanomaanocytic Nevi (moles),follow_up,50.0,male,back
+HAM_0004242,ISIC_0028769,Melanomaanocytic Nevi (moles),follow_up,65.0,male,back
+HAM_0003779,ISIC_0024656,Melanomaanocytic Nevi (moles),follow_up,65.0,male,lower extremity
+HAM_0000017,ISIC_0025894,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0007273,ISIC_0025437,Melanomaanocytic Nevi (moles),follow_up,40.0,male,abdomen
+HAM_0006665,ISIC_0030775,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0004682,ISIC_0028474,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0005685,ISIC_0031490,Melanomaanocytic Nevi (moles),follow_up,55.0,female,unknown
+HAM_0006939,ISIC_0031675,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0003724,ISIC_0025036,Melanomaanocytic Nevi (moles),follow_up,50.0,female,abdomen
+HAM_0003714,ISIC_0026064,Melanomaanocytic Nevi (moles),follow_up,55.0,female,abdomen
+HAM_0006413,ISIC_0031165,Melanomaanocytic Nevi (moles),follow_up,55.0,female,upper extremity
+HAM_0007224,ISIC_0024977,Melanomaanocytic Nevi (moles),follow_up,60.0,male,trunk
+HAM_0003052,ISIC_0024796,Melanomaanocytic Nevi (moles),follow_up,60.0,male,lower extremity
+HAM_0006093,ISIC_0024974,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0000426,ISIC_0028182,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0002938,ISIC_0025580,Melanomaanocytic Nevi (moles),follow_up,50.0,male,upper extremity
+HAM_0005538,ISIC_0028246,Melanomaanocytic Nevi (moles),follow_up,45.0,male,abdomen
+HAM_0001408,ISIC_0031004,Melanomaanocytic Nevi (moles),follow_up,80.0,male,back
+HAM_0000251,ISIC_0025404,Melanomaanocytic Nevi (moles),follow_up,80.0,male,abdomen
+HAM_0006862,ISIC_0025296,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0005406,ISIC_0027807,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0002568,ISIC_0030037,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0005782,ISIC_0026906,Melanomaanocytic Nevi (moles),follow_up,55.0,female,abdomen
+HAM_0007198,ISIC_0026200,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0005589,ISIC_0026224,Melanomaanocytic Nevi (moles),follow_up,45.0,male,foot
+HAM_0002735,ISIC_0029992,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0004217,ISIC_0031116,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0005426,ISIC_0028902,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0002407,ISIC_0028731,Melanomaanocytic Nevi (moles),follow_up,75.0,female,lower extremity
+HAM_0002389,ISIC_0026701,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0004723,ISIC_0032413,Melanomaanocytic Nevi (moles),follow_up,60.0,female,genital
+HAM_0000385,ISIC_0024611,Melanomaanocytic Nevi (moles),follow_up,50.0,female,back
+HAM_0001644,ISIC_0029906,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0005850,ISIC_0026708,Melanomaanocytic Nevi (moles),follow_up,50.0,female,back
+HAM_0000824,ISIC_0029702,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0000470,ISIC_0026965,Melanomaanocytic Nevi (moles),follow_up,50.0,female,foot
+HAM_0000646,ISIC_0025890,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0004298,ISIC_0025648,Melanomaanocytic Nevi (moles),follow_up,40.0,male,upper extremity
+HAM_0000839,ISIC_0032049,Melanomaanocytic Nevi (moles),follow_up,55.0,female,trunk
+HAM_0003842,ISIC_0027217,Melanomaanocytic Nevi (moles),follow_up,55.0,female,abdomen
+HAM_0001885,ISIC_0027534,Melanomaanocytic Nevi (moles),follow_up,75.0,female,lower extremity
+HAM_0000946,ISIC_0031775,Melanomaanocytic Nevi (moles),follow_up,60.0,male,trunk
+HAM_0000975,ISIC_0029267,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0005422,ISIC_0030554,Melanomaanocytic Nevi (moles),follow_up,65.0,female,lower extremity
+HAM_0002989,ISIC_0027378,Melanomaanocytic Nevi (moles),follow_up,65.0,female,lower extremity
+HAM_0000530,ISIC_0025135,Melanomaanocytic Nevi (moles),follow_up,60.0,female,abdomen
+HAM_0001047,ISIC_0028853,Melanomaanocytic Nevi (moles),follow_up,35.0,female,back
+HAM_0002831,ISIC_0026977,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0000434,ISIC_0031635,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0001364,ISIC_0029510,Melanomaanocytic Nevi (moles),follow_up,45.0,male,back
+HAM_0001251,ISIC_0026972,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0006338,ISIC_0025125,Melanomaanocytic Nevi (moles),follow_up,70.0,male,abdomen
+HAM_0006931,ISIC_0024588,Melanomaanocytic Nevi (moles),follow_up,40.0,male,neck
+HAM_0006204,ISIC_0029806,Melanomaanocytic Nevi (moles),follow_up,60.0,male,trunk
+HAM_0001098,ISIC_0024671,Melanomaanocytic Nevi (moles),follow_up,35.0,female,abdomen
+HAM_0001447,ISIC_0027247,Melanomaanocytic Nevi (moles),follow_up,45.0,female,back
+HAM_0004822,ISIC_0029788,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0001253,ISIC_0025704,Melanomaanocytic Nevi (moles),follow_up,55.0,female,back
+HAM_0003237,ISIC_0028595,Melanomaanocytic Nevi (moles),follow_up,65.0,male,lower extremity
+HAM_0005431,ISIC_0026413,Melanomaanocytic Nevi (moles),follow_up,65.0,male,lower extremity
+HAM_0000761,ISIC_0026259,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0001459,ISIC_0030529,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0003527,ISIC_0029874,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0002713,ISIC_0026695,Melanomaanocytic Nevi (moles),follow_up,55.0,male,abdomen
+HAM_0004626,ISIC_0026904,Melanomaanocytic Nevi (moles),follow_up,55.0,male,upper extremity
+HAM_0000131,ISIC_0030769,Melanomaanocytic Nevi (moles),follow_up,35.0,male,abdomen
+HAM_0005659,ISIC_0028896,Melanomaanocytic Nevi (moles),follow_up,35.0,male,lower extremity
+HAM_0002203,ISIC_0031391,Melanomaanocytic Nevi (moles),follow_up,45.0,male,back
+HAM_0003100,ISIC_0028976,Melanomaanocytic Nevi (moles),follow_up,70.0,female,trunk
+HAM_0001972,ISIC_0027228,Melanomaanocytic Nevi (moles),follow_up,70.0,female,lower extremity
+HAM_0006075,ISIC_0026999,Melanomaanocytic Nevi (moles),follow_up,60.0,female,trunk
+HAM_0004798,ISIC_0029103,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0002776,ISIC_0026143,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0005706,ISIC_0027205,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0006989,ISIC_0028729,Melanomaanocytic Nevi (moles),follow_up,40.0,female,foot
+HAM_0000413,ISIC_0024589,Melanomaanocytic Nevi (moles),follow_up,45.0,male,genital
+HAM_0004728,ISIC_0026779,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0003916,ISIC_0032370,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0000096,ISIC_0029071,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0000725,ISIC_0027349,Melanomaanocytic Nevi (moles),follow_up,50.0,female,abdomen
+HAM_0001060,ISIC_0024405,Melanomaanocytic Nevi (moles),follow_up,45.0,male,foot
+HAM_0006314,ISIC_0029532,Melanomaanocytic Nevi (moles),follow_up,60.0,male,trunk
+HAM_0006000,ISIC_0032121,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0006248,ISIC_0030087,Melanomaanocytic Nevi (moles),follow_up,60.0,male,abdomen
+HAM_0005929,ISIC_0026638,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0004061,ISIC_0029925,Melanomaanocytic Nevi (moles),follow_up,40.0,female,abdomen
+HAM_0004606,ISIC_0027273,Melanomaanocytic Nevi (moles),follow_up,70.0,male,neck
+HAM_0002492,ISIC_0028875,Melanomaanocytic Nevi (moles),follow_up,70.0,male,back
+HAM_0005472,ISIC_0027173,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0006534,ISIC_0028778,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0005458,ISIC_0030584,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0003994,ISIC_0026648,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0006960,ISIC_0027592,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0002347,ISIC_0030022,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0004561,ISIC_0024775,Melanomaanocytic Nevi (moles),follow_up,50.0,female,back
+HAM_0004323,ISIC_0028492,Melanomaanocytic Nevi (moles),follow_up,50.0,female,foot
+HAM_0000137,ISIC_0027460,Melanomaanocytic Nevi (moles),follow_up,50.0,male,upper extremity
+HAM_0002420,ISIC_0028796,Melanomaanocytic Nevi (moles),follow_up,35.0,female,back
+HAM_0000334,ISIC_0026860,Melanomaanocytic Nevi (moles),follow_up,35.0,female,abdomen
+HAM_0003370,ISIC_0032237,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0002362,ISIC_0025307,Melanomaanocytic Nevi (moles),follow_up,40.0,male,back
+HAM_0003416,ISIC_0030379,Melanomaanocytic Nevi (moles),follow_up,40.0,male,lower extremity
+HAM_0005622,ISIC_0030213,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0006509,ISIC_0025733,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0007007,ISIC_0031665,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0001676,ISIC_0031587,Melanomaanocytic Nevi (moles),follow_up,60.0,male,upper extremity
+HAM_0007120,ISIC_0029782,Melanomaanocytic Nevi (moles),follow_up,60.0,male,trunk
+HAM_0005145,ISIC_0032255,Melanomaanocytic Nevi (moles),follow_up,55.0,male,lower extremity
+HAM_0001748,ISIC_0031739,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0002068,ISIC_0029710,Melanomaanocytic Nevi (moles),follow_up,45.0,female,back
+HAM_0000420,ISIC_0026864,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0006440,ISIC_0028074,Melanomaanocytic Nevi (moles),follow_up,40.0,male,foot
+HAM_0006536,ISIC_0032171,Melanomaanocytic Nevi (moles),follow_up,50.0,female,abdomen
+HAM_0006436,ISIC_0027655,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0002980,ISIC_0030395,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0005516,ISIC_0028748,Melanomaanocytic Nevi (moles),follow_up,50.0,male,abdomen
+HAM_0007194,ISIC_0025920,Melanomaanocytic Nevi (moles),follow_up,55.0,female,abdomen
+HAM_0003168,ISIC_0026228,Melanomaanocytic Nevi (moles),follow_up,55.0,female,back
+HAM_0004950,ISIC_0031878,Melanomaanocytic Nevi (moles),follow_up,70.0,male,trunk
+HAM_0006952,ISIC_0027543,Melanomaanocytic Nevi (moles),follow_up,50.0,female,upper extremity
+HAM_0006141,ISIC_0024603,Melanomaanocytic Nevi (moles),follow_up,65.0,female,lower extremity
+HAM_0003240,ISIC_0026387,Melanomaanocytic Nevi (moles),follow_up,65.0,female,lower extremity
+HAM_0003567,ISIC_0028895,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0003347,ISIC_0032416,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0002401,ISIC_0028204,Melanomaanocytic Nevi (moles),follow_up,40.0,male,abdomen
+HAM_0004684,ISIC_0028394,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0001674,ISIC_0031551,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0001099,ISIC_0027955,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0006573,ISIC_0026918,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0004855,ISIC_0026642,Melanomaanocytic Nevi (moles),follow_up,50.0,male,back
+HAM_0005940,ISIC_0026331,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0007515,ISIC_0025333,Melanomaanocytic Nevi (moles),follow_up,50.0,female,abdomen
+HAM_0000252,ISIC_0024953,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0005171,ISIC_0029380,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0001988,ISIC_0029948,Melanomaanocytic Nevi (moles),follow_up,35.0,male,back
+HAM_0001445,ISIC_0029433,Melanomaanocytic Nevi (moles),follow_up,35.0,male,trunk
+HAM_0002857,ISIC_0024528,Melanomaanocytic Nevi (moles),follow_up,25.0,female,upper extremity
+HAM_0001398,ISIC_0027934,Melanomaanocytic Nevi (moles),follow_up,65.0,female,back
+HAM_0006866,ISIC_0030713,Melanomaanocytic Nevi (moles),follow_up,65.0,female,upper extremity
+HAM_0007473,ISIC_0025858,Melanomaanocytic Nevi (moles),follow_up,60.0,male,upper extremity
+HAM_0001291,ISIC_0024613,Melanomaanocytic Nevi (moles),follow_up,60.0,female,upper extremity
+HAM_0006647,ISIC_0030895,Melanomaanocytic Nevi (moles),follow_up,55.0,male,foot
+HAM_0004913,ISIC_0025770,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0007353,ISIC_0025207,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0002385,ISIC_0024549,Melanomaanocytic Nevi (moles),follow_up,65.0,male,trunk
+HAM_0000583,ISIC_0029681,Melanomaanocytic Nevi (moles),follow_up,65.0,male,trunk
+HAM_0006999,ISIC_0027459,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0004431,ISIC_0024335,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0007223,ISIC_0024783,Melanomaanocytic Nevi (moles),follow_up,35.0,female,abdomen
+HAM_0001348,ISIC_0028259,Melanomaanocytic Nevi (moles),follow_up,35.0,female,upper extremity
+HAM_0000389,ISIC_0029754,Melanomaanocytic Nevi (moles),follow_up,50.0,male,abdomen
+HAM_0004175,ISIC_0028806,Melanomaanocytic Nevi (moles),follow_up,50.0,female,abdomen
+HAM_0000708,ISIC_0024499,Melanomaanocytic Nevi (moles),follow_up,55.0,male,lower extremity
+HAM_0005271,ISIC_0025306,Melanomaanocytic Nevi (moles),follow_up,45.0,female,back
+HAM_0003180,ISIC_0031058,Melanomaanocytic Nevi (moles),follow_up,40.0,male,upper extremity
+HAM_0002995,ISIC_0028886,Melanomaanocytic Nevi (moles),follow_up,60.0,female,back
+HAM_0000670,ISIC_0026204,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0001439,ISIC_0024442,Melanomaanocytic Nevi (moles),follow_up,55.0,female,foot
+HAM_0002679,ISIC_0029590,Melanomaanocytic Nevi (moles),follow_up,45.0,female,foot
+HAM_0002549,ISIC_0030043,Melanomaanocytic Nevi (moles),follow_up,45.0,female,unknown
+HAM_0007363,ISIC_0028013,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0006582,ISIC_0029487,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0006985,ISIC_0029131,Melanomaanocytic Nevi (moles),follow_up,35.0,male,trunk
+HAM_0006068,ISIC_0024591,Melanomaanocytic Nevi (moles),follow_up,35.0,male,back
+HAM_0005372,ISIC_0030476,Melanomaanocytic Nevi (moles),follow_up,55.0,female,unknown
+HAM_0005615,ISIC_0031067,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0000026,ISIC_0029325,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0002883,ISIC_0030071,Melanomaanocytic Nevi (moles),follow_up,50.0,female,foot
+HAM_0005936,ISIC_0024921,Melanomaanocytic Nevi (moles),follow_up,60.0,male,trunk
+HAM_0002251,ISIC_0024438,Melanomaanocytic Nevi (moles),follow_up,50.0,male,back
+HAM_0007414,ISIC_0026434,Melanomaanocytic Nevi (moles),follow_up,40.0,female,abdomen
+HAM_0004023,ISIC_0029766,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0002842,ISIC_0029616,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0001267,ISIC_0030454,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0005638,ISIC_0030201,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0007257,ISIC_0025537,Melanomaanocytic Nevi (moles),follow_up,50.0,female,back
+HAM_0002996,ISIC_0025496,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0006335,ISIC_0028892,Melanomaanocytic Nevi (moles),follow_up,40.0,male,upper extremity
+HAM_0001578,ISIC_0031003,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0001081,ISIC_0026278,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0003616,ISIC_0025291,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0003134,ISIC_0027001,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0002071,ISIC_0031616,Melanomaanocytic Nevi (moles),follow_up,45.0,female,abdomen
+HAM_0001628,ISIC_0024810,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0002992,ISIC_0024627,Melanomaanocytic Nevi (moles),follow_up,75.0,male,trunk
+HAM_0003477,ISIC_0029207,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0001421,ISIC_0027586,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0000732,ISIC_0026183,Melanomaanocytic Nevi (moles),follow_up,35.0,male,trunk
+HAM_0006758,ISIC_0029234,Melanomaanocytic Nevi (moles),follow_up,35.0,male,lower extremity
+HAM_0004228,ISIC_0027748,Melanomaanocytic Nevi (moles),follow_up,65.0,male,lower extremity
+HAM_0001585,ISIC_0028697,Melanomaanocytic Nevi (moles),follow_up,80.0,male,lower extremity
+HAM_0007556,ISIC_0028893,Melanomaanocytic Nevi (moles),follow_up,35.0,male,back
+HAM_0005796,ISIC_0030078,Melanomaanocytic Nevi (moles),follow_up,50.0,female,upper extremity
+HAM_0004115,ISIC_0027676,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0004488,ISIC_0030601,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0003377,ISIC_0032085,Melanomaanocytic Nevi (moles),follow_up,55.0,female,back
+HAM_0005012,ISIC_0031251,Melanomaanocytic Nevi (moles),follow_up,45.0,female,back
+HAM_0000242,ISIC_0028273,Melanomaanocytic Nevi (moles),follow_up,20.0,female,neck
+HAM_0007485,ISIC_0032438,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0004445,ISIC_0030551,Melanomaanocytic Nevi (moles),follow_up,60.0,female,lower extremity
+HAM_0002310,ISIC_0025848,Melanomaanocytic Nevi (moles),follow_up,60.0,male,abdomen
+HAM_0004493,ISIC_0030325,Melanomaanocytic Nevi (moles),follow_up,60.0,male,upper extremity
+HAM_0001315,ISIC_0031628,Melanomaanocytic Nevi (moles),follow_up,75.0,male,lower extremity
+HAM_0001658,ISIC_0030001,Melanomaanocytic Nevi (moles),follow_up,75.0,male,abdomen
+HAM_0007423,ISIC_0025582,Melanomaanocytic Nevi (moles),follow_up,60.0,male,trunk
+HAM_0004808,ISIC_0029078,Melanomaanocytic Nevi (moles),follow_up,60.0,male,trunk
+HAM_0001516,ISIC_0027830,Melanomaanocytic Nevi (moles),follow_up,70.0,male,lower extremity
+HAM_0000365,ISIC_0026534,Melanomaanocytic Nevi (moles),follow_up,70.0,male,lower extremity
+HAM_0005220,ISIC_0025479,Melanomaanocytic Nevi (moles),follow_up,35.0,male,back
+HAM_0003737,ISIC_0024451,Melanomaanocytic Nevi (moles),follow_up,35.0,male,lower extremity
+HAM_0006022,ISIC_0029901,Melanomaanocytic Nevi (moles),follow_up,35.0,male,lower extremity
+HAM_0003645,ISIC_0024390,Melanomaanocytic Nevi (moles),follow_up,65.0,male,upper extremity
+HAM_0005976,ISIC_0030638,Melanomaanocytic Nevi (moles),follow_up,65.0,male,abdomen
+HAM_0002146,ISIC_0025686,Melanomaanocytic Nevi (moles),follow_up,65.0,male,trunk
+HAM_0005161,ISIC_0030472,Melanomaanocytic Nevi (moles),follow_up,65.0,male,trunk
+HAM_0007613,ISIC_0024912,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0000066,ISIC_0025014,Melanomaanocytic Nevi (moles),follow_up,35.0,male,trunk
+HAM_0005515,ISIC_0031020,Melanomaanocytic Nevi (moles),follow_up,50.0,female,back
+HAM_0001577,ISIC_0029818,Melanomaanocytic Nevi (moles),follow_up,65.0,male,abdomen
+HAM_0001779,ISIC_0031439,Melanomaanocytic Nevi (moles),follow_up,65.0,male,upper extremity
+HAM_0004502,ISIC_0024541,Melanomaanocytic Nevi (moles),follow_up,65.0,male,lower extremity
+HAM_0001184,ISIC_0028330,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0004111,ISIC_0028138,Melanomaanocytic Nevi (moles),follow_up,55.0,male,abdomen
+HAM_0004666,ISIC_0029165,Melanomaanocytic Nevi (moles),follow_up,55.0,male,upper extremity
+HAM_0001204,ISIC_0030185,Melanomaanocytic Nevi (moles),follow_up,55.0,male,back
+HAM_0004136,ISIC_0029787,Melanomaanocytic Nevi (moles),follow_up,55.0,male,back
+HAM_0000661,ISIC_0025538,Melanomaanocytic Nevi (moles),follow_up,55.0,male,upper extremity
+HAM_0002315,ISIC_0028312,Melanomaanocytic Nevi (moles),follow_up,50.0,male,abdomen
+HAM_0000804,ISIC_0029863,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0000537,ISIC_0027095,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0002847,ISIC_0024353,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0007382,ISIC_0030030,Melanomaanocytic Nevi (moles),follow_up,50.0,female,upper extremity
+HAM_0004294,ISIC_0028153,Melanomaanocytic Nevi (moles),follow_up,50.0,female,foot
+HAM_0006095,ISIC_0025933,Melanomaanocytic Nevi (moles),follow_up,50.0,female,back
+HAM_0003678,ISIC_0026197,Melanomaanocytic Nevi (moles),follow_up,55.0,female,abdomen
+HAM_0007256,ISIC_0031480,Melanomaanocytic Nevi (moles),follow_up,40.0,male,upper extremity
+HAM_0002901,ISIC_0028722,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0004168,ISIC_0029477,Melanomaanocytic Nevi (moles),follow_up,85.0,male,trunk
+HAM_0001108,ISIC_0027313,Melanomaanocytic Nevi (moles),follow_up,75.0,male,lower extremity
+HAM_0003629,ISIC_0024978,Melanomaanocytic Nevi (moles),follow_up,45.0,male,back
+HAM_0004451,ISIC_0027992,Melanomaanocytic Nevi (moles),follow_up,55.0,female,trunk
+HAM_0002963,ISIC_0032435,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0003538,ISIC_0031246,Melanomaanocytic Nevi (moles),follow_up,55.0,female,abdomen
+HAM_0002437,ISIC_0031899,Melanomaanocytic Nevi (moles),follow_up,55.0,female,lower extremity
+HAM_0001059,ISIC_0029282,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0005235,ISIC_0029437,Melanomaanocytic Nevi (moles),follow_up,55.0,male,back
+HAM_0002852,ISIC_0031530,Melanomaanocytic Nevi (moles),follow_up,55.0,male,back
+HAM_0001489,ISIC_0031765,Melanomaanocytic Nevi (moles),follow_up,50.0,female,foot
+HAM_0003975,ISIC_0030098,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0000411,ISIC_0031283,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0006045,ISIC_0029910,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0001681,ISIC_0024651,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0007357,ISIC_0031265,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0002077,ISIC_0031936,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0005653,ISIC_0027701,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0000192,ISIC_0025595,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0002140,ISIC_0032472,Melanomaanocytic Nevi (moles),follow_up,45.0,female,abdomen
+HAM_0001472,ISIC_0024334,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0000254,ISIC_0026939,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0003211,ISIC_0029942,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0002968,ISIC_0027446,Melanomaanocytic Nevi (moles),follow_up,40.0,male,back
+HAM_0002406,ISIC_0030568,Melanomaanocytic Nevi (moles),follow_up,50.0,female,upper extremity
+HAM_0003342,ISIC_0027726,Melanomaanocytic Nevi (moles),follow_up,60.0,male,upper extremity
+HAM_0005582,ISIC_0030433,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0006984,ISIC_0026894,Melanomaanocytic Nevi (moles),follow_up,45.0,female,abdomen
+HAM_0001375,ISIC_0026238,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0006781,ISIC_0025765,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0002687,ISIC_0032037,Melanomaanocytic Nevi (moles),follow_up,60.0,female,back
+HAM_0000635,ISIC_0028663,Melanomaanocytic Nevi (moles),follow_up,60.0,female,lower extremity
+HAM_0006487,ISIC_0028617,Melanomaanocytic Nevi (moles),follow_up,70.0,female,lower extremity
+HAM_0005437,ISIC_0030029,Melanomaanocytic Nevi (moles),follow_up,45.0,male,foot
+HAM_0000860,ISIC_0029796,Melanomaanocytic Nevi (moles),follow_up,45.0,male,upper extremity
+HAM_0005043,ISIC_0025004,Melanomaanocytic Nevi (moles),follow_up,35.0,male,back
+HAM_0004906,ISIC_0028522,Melanomaanocytic Nevi (moles),follow_up,35.0,male,lower extremity
+HAM_0001560,ISIC_0026181,Melanomaanocytic Nevi (moles),follow_up,35.0,female,back
+HAM_0004449,ISIC_0032332,Melanomaanocytic Nevi (moles),follow_up,35.0,female,lower extremity
+HAM_0004645,ISIC_0030028,Melanomaanocytic Nevi (moles),follow_up,40.0,female,upper extremity
+HAM_0005144,ISIC_0026130,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0000292,ISIC_0031445,Melanomaanocytic Nevi (moles),follow_up,45.0,male,upper extremity
+HAM_0005391,ISIC_0030633,Melanomaanocytic Nevi (moles),follow_up,45.0,male,back
+HAM_0001092,ISIC_0031962,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0007318,ISIC_0029005,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0004072,ISIC_0032130,Melanomaanocytic Nevi (moles),follow_up,60.0,male,upper extremity
+HAM_0003339,ISIC_0030715,Melanomaanocytic Nevi (moles),follow_up,50.0,female,lower extremity
+HAM_0006486,ISIC_0026880,Melanomaanocytic Nevi (moles),follow_up,25.0,female,lower extremity
+HAM_0001709,ISIC_0030364,Melanomaanocytic Nevi (moles),follow_up,45.0,female,back
+HAM_0002805,ISIC_0031722,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0004509,ISIC_0028028,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0002382,ISIC_0025916,Melanomaanocytic Nevi (moles),follow_up,50.0,female,trunk
+HAM_0001050,ISIC_0030317,Melanomaanocytic Nevi (moles),follow_up,50.0,female,upper extremity
+HAM_0004041,ISIC_0026375,Melanomaanocytic Nevi (moles),follow_up,50.0,female,foot
+HAM_0004403,ISIC_0028006,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0006209,ISIC_0028626,Melanomaanocytic Nevi (moles),follow_up,45.0,male,abdomen
+HAM_0003889,ISIC_0026005,Melanomaanocytic Nevi (moles),follow_up,45.0,male,back
+HAM_0003589,ISIC_0025403,Melanomaanocytic Nevi (moles),follow_up,45.0,male,trunk
+HAM_0001602,ISIC_0032458,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0001132,ISIC_0031562,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0003573,ISIC_0026447,Melanomaanocytic Nevi (moles),follow_up,40.0,male,lower extremity
+HAM_0006928,ISIC_0028097,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0004904,ISIC_0032381,Melanomaanocytic Nevi (moles),follow_up,55.0,male,lower extremity
+HAM_0006452,ISIC_0030424,Melanomaanocytic Nevi (moles),follow_up,55.0,male,abdomen
+HAM_0003471,ISIC_0025284,Melanomaanocytic Nevi (moles),follow_up,75.0,male,trunk
+HAM_0003391,ISIC_0030025,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0000134,ISIC_0029064,Melanomaanocytic Nevi (moles),follow_up,60.0,female,lower extremity
+HAM_0006714,ISIC_0029850,Melanomaanocytic Nevi (moles),follow_up,60.0,female,abdomen
+HAM_0005941,ISIC_0029295,Melanomaanocytic Nevi (moles),follow_up,40.0,male,abdomen
+HAM_0003333,ISIC_0028379,Melanomaanocytic Nevi (moles),follow_up,35.0,female,back
+HAM_0000890,ISIC_0029185,Melanomaanocytic Nevi (moles),follow_up,40.0,male,abdomen
+HAM_0005667,ISIC_0032394,Melanomaanocytic Nevi (moles),follow_up,40.0,male,back
+HAM_0002860,ISIC_0030027,Melanomaanocytic Nevi (moles),follow_up,20.0,male,lower extremity
+HAM_0002178,ISIC_0024401,Melanomaanocytic Nevi (moles),follow_up,25.0,female,lower extremity
+HAM_0001776,ISIC_0030044,Melanomaanocytic Nevi (moles),follow_up,25.0,female,lower extremity
+HAM_0003024,ISIC_0024768,Melanomaanocytic Nevi (moles),follow_up,35.0,female,trunk
+HAM_0003173,ISIC_0032131,Melanomaanocytic Nevi (moles),follow_up,35.0,female,upper extremity
+HAM_0003336,ISIC_0030298,Melanomaanocytic Nevi (moles),follow_up,35.0,female,lower extremity
+HAM_0005089,ISIC_0025673,Melanomaanocytic Nevi (moles),follow_up,45.0,male,upper extremity
+HAM_0003955,ISIC_0026250,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0002435,ISIC_0028366,Melanomaanocytic Nevi (moles),follow_up,45.0,female,lower extremity
+HAM_0002222,ISIC_0025021,Melanomaanocytic Nevi (moles),follow_up,40.0,male,abdomen
+HAM_0004385,ISIC_0026310,Melanomaanocytic Nevi (moles),follow_up,40.0,male,abdomen
+HAM_0006264,ISIC_0024350,Melanomaanocytic Nevi (moles),follow_up,35.0,male,lower extremity
+HAM_0002041,ISIC_0028532,Melanomaanocytic Nevi (moles),follow_up,35.0,male,abdomen
+HAM_0005906,ISIC_0025609,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0003746,ISIC_0030437,Melanomaanocytic Nevi (moles),follow_up,25.0,male,trunk
+HAM_0004358,ISIC_0025393,Melanomaanocytic Nevi (moles),follow_up,25.0,female,face
+HAM_0007489,ISIC_0028011,Melanomaanocytic Nevi (moles),follow_up,35.0,male,back
+HAM_0000325,ISIC_0029832,Melanomaanocytic Nevi (moles),follow_up,35.0,male,back
+HAM_0005680,ISIC_0027177,Melanomaanocytic Nevi (moles),follow_up,25.0,male,trunk
+HAM_0003388,ISIC_0027176,Melanomaanocytic Nevi (moles),follow_up,30.0,male,abdomen
+HAM_0000461,ISIC_0027750,Melanomaanocytic Nevi (moles),follow_up,30.0,female,abdomen
+HAM_0001075,ISIC_0028743,Melanomaanocytic Nevi (moles),follow_up,30.0,female,back
+HAM_0003019,ISIC_0032001,Melanomaanocytic Nevi (moles),follow_up,30.0,female,lower extremity
+HAM_0004469,ISIC_0025787,Melanomaanocytic Nevi (moles),follow_up,30.0,female,upper extremity
+HAM_0006468,ISIC_0030162,Melanomaanocytic Nevi (moles),follow_up,30.0,female,back
+HAM_0003334,ISIC_0030886,Melanomaanocytic Nevi (moles),follow_up,45.0,female,trunk
+HAM_0002174,ISIC_0025138,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0005380,ISIC_0027464,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0004067,ISIC_0029065,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0003242,ISIC_0031242,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0005900,ISIC_0028726,Melanomaanocytic Nevi (moles),follow_up,40.0,male,back
+HAM_0002422,ISIC_0031566,Melanomaanocytic Nevi (moles),follow_up,60.0,male,lower extremity
+HAM_0001638,ISIC_0031006,Melanomaanocytic Nevi (moles),follow_up,55.0,male,abdomen
+HAM_0005507,ISIC_0029159,Melanomaanocytic Nevi (moles),follow_up,35.0,male,trunk
+HAM_0002356,ISIC_0030889,Melanomaanocytic Nevi (moles),follow_up,35.0,male,trunk
+HAM_0002783,ISIC_0029507,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0004092,ISIC_0028300,Melanomaanocytic Nevi (moles),follow_up,55.0,female,back
+HAM_0003190,ISIC_0030571,Melanomaanocytic Nevi (moles),follow_up,55.0,female,trunk
+HAM_0005148,ISIC_0026969,Melanomaanocytic Nevi (moles),follow_up,35.0,female,back
+HAM_0006677,ISIC_0025426,Melanomaanocytic Nevi (moles),follow_up,60.0,male,trunk
+HAM_0004001,ISIC_0029996,Melanomaanocytic Nevi (moles),follow_up,60.0,male,lower extremity
+HAM_0005025,ISIC_0032261,Melanomaanocytic Nevi (moles),follow_up,40.0,male,trunk
+HAM_0001197,ISIC_0031420,Melanomaanocytic Nevi (moles),follow_up,30.0,female,upper extremity
+HAM_0001714,ISIC_0032354,Melanomaanocytic Nevi (moles),follow_up,30.0,female,trunk
+HAM_0000932,ISIC_0026288,Melanomaanocytic Nevi (moles),follow_up,30.0,female,trunk
+HAM_0000430,ISIC_0032477,Melanomaanocytic Nevi (moles),follow_up,35.0,male,abdomen
+HAM_0001732,ISIC_0024502,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0002504,ISIC_0025455,Melanomaanocytic Nevi (moles),follow_up,50.0,male,back
+HAM_0004774,ISIC_0031497,Melanomaanocytic Nevi (moles),follow_up,30.0,female,trunk
+HAM_0007540,ISIC_0032118,Melanomaanocytic Nevi (moles),follow_up,45.0,male,abdomen
+HAM_0001370,ISIC_0030257,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0001304,ISIC_0028328,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0003494,ISIC_0031347,Melanomaanocytic Nevi (moles),follow_up,40.0,female,back
+HAM_0003776,ISIC_0025347,Melanomaanocytic Nevi (moles),follow_up,35.0,female,trunk
+HAM_0003443,ISIC_0032485,Melanomaanocytic Nevi (moles),follow_up,35.0,female,abdomen
+HAM_0003995,ISIC_0029799,Melanomaanocytic Nevi (moles),follow_up,65.0,male,trunk
+HAM_0006083,ISIC_0028178,Melanomaanocytic Nevi (moles),follow_up,30.0,female,upper extremity
+HAM_0002273,ISIC_0026772,Melanomaanocytic Nevi (moles),follow_up,70.0,male,lower extremity
+HAM_0007277,ISIC_0031195,Melanomaanocytic Nevi (moles),follow_up,40.0,male,back
+HAM_0000936,ISIC_0030388,Melanomaanocytic Nevi (moles),follow_up,40.0,female,trunk
+HAM_0000601,ISIC_0026578,Melanomaanocytic Nevi (moles),follow_up,40.0,female,abdomen
+HAM_0003316,ISIC_0031472,Melanomaanocytic Nevi (moles),follow_up,40.0,female,lower extremity
+HAM_0003844,ISIC_0027169,Melanomaanocytic Nevi (moles),follow_up,50.0,male,back
+HAM_0002929,ISIC_0032068,Melanomaanocytic Nevi (moles),follow_up,45.0,male,lower extremity
+HAM_0005644,ISIC_0027899,Melanomaanocytic Nevi (moles),follow_up,45.0,male,back
+HAM_0003687,ISIC_0027515,Melanomaanocytic Nevi (moles),follow_up,40.0,female,foot
+HAM_0007322,ISIC_0030205,Melanomaanocytic Nevi (moles),follow_up,35.0,female,trunk
+HAM_0006958,ISIC_0029395,Melanomaanocytic Nevi (moles),follow_up,65.0,female,lower extremity
+HAM_0003532,ISIC_0026517,Melanomaanocytic Nevi (moles),follow_up,65.0,female,back
+HAM_0005707,ISIC_0029821,Melanomaanocytic Nevi (moles),follow_up,50.0,male,abdomen
+HAM_0004893,ISIC_0031906,Melanomaanocytic Nevi (moles),follow_up,50.0,male,abdomen
+HAM_0003550,ISIC_0026334,Melanomaanocytic Nevi (moles),follow_up,50.0,male,abdomen
+HAM_0001984,ISIC_0025092,Melanomaanocytic Nevi (moles),follow_up,50.0,male,trunk
+HAM_0005165,ISIC_0030108,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0001144,ISIC_0030673,Melanomaanocytic Nevi (moles),follow_up,50.0,male,lower extremity
+HAM_0005512,ISIC_0025194,Melanomaanocytic Nevi (moles),follow_up,35.0,female,abdomen
+HAM_0004393,ISIC_0029774,Melanomaanocytic Nevi (moles),follow_up,55.0,male,trunk
+HAM_0005544,ISIC_0027791,Melanomaanocytic Nevi (moles),follow_up,55.0,male,lower extremity
+HAM_0003261,ISIC_0026031,Melanomaanocytic Nevi (moles),follow_up,60.0,male,back
+HAM_0006795,ISIC_0031892,Melanomaanocytic Nevi (moles),follow_up,55.0,female,back
+HAM_0003269,ISIC_0028904,Melanomaanocytic Nevi (moles),follow_up,55.0,female,upper extremity
+HAM_0002780,ISIC_0028732,Melanomaanocytic Nevi (moles),follow_up,70.0,male,lower extremity
+HAM_0005402,ISIC_0031695,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0004995,ISIC_0029869,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0004150,ISIC_0026632,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0004605,ISIC_0032267,Melanomaanocytic Nevi (moles),follow_up,45.0,female,upper extremity
+HAM_0007112,ISIC_0027757,Melanomaanocytic Nevi (moles),histo,10.0,female,back
+HAM_0007112,ISIC_0026819,Melanomaanocytic Nevi (moles),histo,10.0,female,back
+HAM_0006032,ISIC_0028791,Melanomaanocytic Nevi (moles),histo,30.0,male,lower extremity
+HAM_0006032,ISIC_0027501,Melanomaanocytic Nevi (moles),histo,30.0,male,lower extremity
+HAM_0007255,ISIC_0026519,Melanomaanocytic Nevi (moles),histo,40.0,male,lower extremity
+HAM_0007255,ISIC_0030672,Melanomaanocytic Nevi (moles),histo,40.0,male,lower extremity
+HAM_0003303,ISIC_0030980,Melanomaanocytic Nevi (moles),histo,20.0,male,back
+HAM_0003303,ISIC_0024597,Melanomaanocytic Nevi (moles),histo,20.0,male,back
+HAM_0000892,ISIC_0024594,Melanomaanocytic Nevi (moles),histo,40.0,male,trunk
+HAM_0000892,ISIC_0029845,Melanomaanocytic Nevi (moles),histo,40.0,male,trunk
+HAM_0006347,ISIC_0027444,Melanomaanocytic Nevi (moles),histo,80.0,female,lower extremity
+HAM_0006347,ISIC_0025702,Melanomaanocytic Nevi (moles),histo,80.0,female,lower extremity
+HAM_0000376,ISIC_0031617,Melanomaanocytic Nevi (moles),histo,55.0,female,abdomen
+HAM_0000376,ISIC_0025173,Melanomaanocytic Nevi (moles),histo,55.0,female,abdomen
+HAM_0001107,ISIC_0027644,Melanomaanocytic Nevi (moles),histo,40.0,male,upper extremity
+HAM_0001684,ISIC_0028576,Melanomaanocytic Nevi (moles),histo,30.0,female,trunk
+HAM_0001684,ISIC_0029790,Melanomaanocytic Nevi (moles),histo,30.0,female,trunk
+HAM_0000028,ISIC_0026012,Melanomaanocytic Nevi (moles),histo,35.0,female,back
+HAM_0000028,ISIC_0029752,Melanomaanocytic Nevi (moles),histo,35.0,female,back
+HAM_0006150,ISIC_0031404,Melanomaanocytic Nevi (moles),histo,70.0,male,back
+HAM_0006150,ISIC_0026569,Melanomaanocytic Nevi (moles),histo,70.0,male,back
+HAM_0000947,ISIC_0024642,Melanomaanocytic Nevi (moles),histo,55.0,female,abdomen
+HAM_0000947,ISIC_0025959,Melanomaanocytic Nevi (moles),histo,55.0,female,abdomen
+HAM_0000068,ISIC_0029045,Melanomaanocytic Nevi (moles),histo,35.0,female,upper extremity
+HAM_0000068,ISIC_0031160,Melanomaanocytic Nevi (moles),histo,35.0,female,upper extremity
+HAM_0005188,ISIC_0024824,Melanomaanocytic Nevi (moles),histo,50.0,female,upper extremity
+HAM_0005188,ISIC_0030666,Melanomaanocytic Nevi (moles),histo,50.0,female,upper extremity
+HAM_0003627,ISIC_0024855,Melanomaanocytic Nevi (moles),histo,30.0,female,back
+HAM_0003627,ISIC_0026497,Melanomaanocytic Nevi (moles),histo,30.0,female,back
+HAM_0001696,ISIC_0027408,Melanomaanocytic Nevi (moles),histo,80.0,male,back
+HAM_0001696,ISIC_0030460,Melanomaanocytic Nevi (moles),histo,80.0,male,back
+HAM_0000589,ISIC_0030194,Melanomaanocytic Nevi (moles),histo,15.0,female,neck
+HAM_0000589,ISIC_0027103,Melanomaanocytic Nevi (moles),histo,15.0,female,neck
+HAM_0002975,ISIC_0026148,Melanomaanocytic Nevi (moles),histo,45.0,male,upper extremity
+HAM_0002975,ISIC_0028810,Melanomaanocytic Nevi (moles),histo,45.0,male,upper extremity
+HAM_0003222,ISIC_0031720,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0003222,ISIC_0026382,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0007553,ISIC_0031676,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0007553,ISIC_0032151,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0007579,ISIC_0029402,Melanomaanocytic Nevi (moles),histo,30.0,male,lower extremity
+HAM_0007579,ISIC_0027571,Melanomaanocytic Nevi (moles),histo,30.0,male,lower extremity
+HAM_0006185,ISIC_0032309,Melanomaanocytic Nevi (moles),histo,25.0,male,trunk
+HAM_0006185,ISIC_0028759,Melanomaanocytic Nevi (moles),histo,25.0,male,trunk
+HAM_0002484,ISIC_0029846,Melanomaanocytic Nevi (moles),histo,30.0,male,upper extremity
+HAM_0002484,ISIC_0029194,Melanomaanocytic Nevi (moles),histo,30.0,male,upper extremity
+HAM_0005519,ISIC_0026215,Melanomaanocytic Nevi (moles),histo,55.0,female,upper extremity
+HAM_0005519,ISIC_0032029,Melanomaanocytic Nevi (moles),histo,55.0,female,upper extremity
+HAM_0003653,ISIC_0028534,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0003653,ISIC_0030139,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0006837,ISIC_0031674,Melanomaanocytic Nevi (moles),histo,40.0,male,scalp
+HAM_0006837,ISIC_0025834,Melanomaanocytic Nevi (moles),histo,40.0,male,scalp
+HAM_0005561,ISIC_0028961,Melanomaanocytic Nevi (moles),histo,30.0,female,abdomen
+HAM_0005561,ISIC_0031080,Melanomaanocytic Nevi (moles),histo,30.0,female,abdomen
+HAM_0006062,ISIC_0029435,Melanomaanocytic Nevi (moles),histo,30.0,female,back
+HAM_0002231,ISIC_0028235,Melanomaanocytic Nevi (moles),histo,15.0,male,face
+HAM_0002106,ISIC_0026186,Melanomaanocytic Nevi (moles),histo,45.0,male,foot
+HAM_0002106,ISIC_0025156,Melanomaanocytic Nevi (moles),histo,45.0,male,foot
+HAM_0004986,ISIC_0025598,Melanomaanocytic Nevi (moles),histo,65.0,female,upper extremity
+HAM_0005213,ISIC_0033356,Melanomaanocytic Nevi (moles),histo,30.0,female,chest
+HAM_0005213,ISIC_0033998,Melanomaanocytic Nevi (moles),histo,30.0,female,chest
+HAM_0005159,ISIC_0029826,Melanomaanocytic Nevi (moles),histo,50.0,male,back
+HAM_0005159,ISIC_0025352,Melanomaanocytic Nevi (moles),histo,50.0,male,back
+HAM_0003468,ISIC_0025641,Melanomaanocytic Nevi (moles),histo,60.0,female,lower extremity
+HAM_0001651,ISIC_0033251,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0001651,ISIC_0033402,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0001651,ISIC_0034204,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0004708,ISIC_0033852,Melanomaanocytic Nevi (moles),histo,45.0,male,trunk
+HAM_0004708,ISIC_0033775,Melanomaanocytic Nevi (moles),histo,45.0,male,trunk
+HAM_0004708,ISIC_0033561,Melanomaanocytic Nevi (moles),histo,45.0,male,trunk
+HAM_0003505,ISIC_0033032,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0003505,ISIC_0034227,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0003505,ISIC_0033563,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0005048,ISIC_0029553,Melanomaanocytic Nevi (moles),histo,35.0,male,trunk
+HAM_0005523,ISIC_0027087,Melanomaanocytic Nevi (moles),histo,25.0,male,lower extremity
+HAM_0005300,ISIC_0033767,Melanomaanocytic Nevi (moles),histo,35.0,female,lower extremity
+HAM_0005300,ISIC_0033755,Melanomaanocytic Nevi (moles),histo,35.0,female,lower extremity
+HAM_0005300,ISIC_0033625,Melanomaanocytic Nevi (moles),histo,35.0,female,lower extremity
+HAM_0000459,ISIC_0026584,Melanomaanocytic Nevi (moles),histo,75.0,male,upper extremity
+HAM_0006810,ISIC_0030546,Melanomaanocytic Nevi (moles),histo,20.0,female,back
+HAM_0006583,ISIC_0026177,Melanomaanocytic Nevi (moles),histo,30.0,male,trunk
+HAM_0001097,ISIC_0032950,Melanomaanocytic Nevi (moles),histo,50.0,female,chest
+HAM_0001097,ISIC_0034156,Melanomaanocytic Nevi (moles),histo,50.0,female,chest
+HAM_0006187,ISIC_0028214,Melanomaanocytic Nevi (moles),histo,50.0,male,scalp
+HAM_0006187,ISIC_0025453,Melanomaanocytic Nevi (moles),histo,50.0,male,scalp
+HAM_0000138,ISIC_0028780,Melanomaanocytic Nevi (moles),histo,25.0,male,back
+HAM_0000138,ISIC_0029902,Melanomaanocytic Nevi (moles),histo,25.0,male,back
+HAM_0001220,ISIC_0029636,Melanomaanocytic Nevi (moles),histo,60.0,female,chest
+HAM_0001220,ISIC_0027931,Melanomaanocytic Nevi (moles),histo,60.0,female,chest
+HAM_0001107,ISIC_0032009,Melanomaanocytic Nevi (moles),histo,40.0,male,upper extremity
+HAM_0001046,ISIC_0034146,Melanomaanocytic Nevi (moles),histo,40.0,male,abdomen
+HAM_0001046,ISIC_0033964,Melanomaanocytic Nevi (moles),histo,40.0,male,abdomen
+HAM_0001046,ISIC_0032951,Melanomaanocytic Nevi (moles),histo,40.0,male,abdomen
+HAM_0001400,ISIC_0033059,Melanomaanocytic Nevi (moles),histo,35.0,male,upper extremity
+HAM_0001400,ISIC_0033113,Melanomaanocytic Nevi (moles),histo,35.0,male,upper extremity
+HAM_0001400,ISIC_0033547,Melanomaanocytic Nevi (moles),histo,35.0,male,upper extremity
+HAM_0002574,ISIC_0032666,Melanomaanocytic Nevi (moles),histo,55.0,male,chest
+HAM_0002574,ISIC_0033157,Melanomaanocytic Nevi (moles),histo,55.0,male,chest
+HAM_0002574,ISIC_0032811,Melanomaanocytic Nevi (moles),histo,55.0,male,chest
+HAM_0006391,ISIC_0032821,Melanomaanocytic Nevi (moles),histo,70.0,female,lower extremity
+HAM_0006391,ISIC_0032783,Melanomaanocytic Nevi (moles),histo,70.0,female,lower extremity
+HAM_0006391,ISIC_0034139,Melanomaanocytic Nevi (moles),histo,70.0,female,lower extremity
+HAM_0005265,ISIC_0033633,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0005265,ISIC_0034199,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0005265,ISIC_0032998,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0002878,ISIC_0033984,Melanomaanocytic Nevi (moles),histo,45.0,female,back
+HAM_0002878,ISIC_0032640,Melanomaanocytic Nevi (moles),histo,45.0,female,back
+HAM_0007005,ISIC_0032568,Melanomaanocytic Nevi (moles),histo,40.0,female,acral
+HAM_0007005,ISIC_0033126,Melanomaanocytic Nevi (moles),histo,40.0,female,acral
+HAM_0007005,ISIC_0034099,Melanomaanocytic Nevi (moles),histo,40.0,female,acral
+HAM_0003713,ISIC_0032885,Melanomaanocytic Nevi (moles),histo,35.0,male,trunk
+HAM_0003713,ISIC_0033291,Melanomaanocytic Nevi (moles),histo,35.0,male,trunk
+HAM_0003713,ISIC_0034102,Melanomaanocytic Nevi (moles),histo,35.0,male,trunk
+HAM_0005905,ISIC_0034257,Melanomaanocytic Nevi (moles),histo,50.0,male,back
+HAM_0007259,ISIC_0032999,Melanomaanocytic Nevi (moles),histo,45.0,male,foot
+HAM_0007259,ISIC_0032669,Melanomaanocytic Nevi (moles),histo,45.0,male,foot
+HAM_0007259,ISIC_0033236,Melanomaanocytic Nevi (moles),histo,45.0,male,foot
+HAM_0005433,ISIC_0033906,Melanomaanocytic Nevi (moles),histo,55.0,female,trunk
+HAM_0005433,ISIC_0033298,Melanomaanocytic Nevi (moles),histo,55.0,female,trunk
+HAM_0005433,ISIC_0034210,Melanomaanocytic Nevi (moles),histo,55.0,female,trunk
+HAM_0003824,ISIC_0033091,Melanomaanocytic Nevi (moles),histo,15.0,female,lower extremity
+HAM_0003824,ISIC_0034138,Melanomaanocytic Nevi (moles),histo,15.0,female,lower extremity
+HAM_0003824,ISIC_0032971,Melanomaanocytic Nevi (moles),histo,15.0,female,lower extremity
+HAM_0004176,ISIC_0034286,Melanomaanocytic Nevi (moles),histo,0.0,male,upper extremity
+HAM_0004176,ISIC_0033373,Melanomaanocytic Nevi (moles),histo,0.0,male,upper extremity
+HAM_0006158,ISIC_0033096,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0006158,ISIC_0033972,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0006158,ISIC_0033367,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0001133,ISIC_0034179,Melanomaanocytic Nevi (moles),histo,20.0,female,back
+HAM_0001133,ISIC_0034206,Melanomaanocytic Nevi (moles),histo,20.0,female,back
+HAM_0001133,ISIC_0032980,Melanomaanocytic Nevi (moles),histo,20.0,female,back
+HAM_0003735,ISIC_0032512,Melanomaanocytic Nevi (moles),histo,40.0,female,back
+HAM_0003735,ISIC_0034149,Melanomaanocytic Nevi (moles),histo,40.0,female,back
+HAM_0003735,ISIC_0033800,Melanomaanocytic Nevi (moles),histo,40.0,female,back
+HAM_0005331,ISIC_0033803,Melanomaanocytic Nevi (moles),histo,40.0,female,neck
+HAM_0005331,ISIC_0032860,Melanomaanocytic Nevi (moles),histo,40.0,female,neck
+HAM_0001889,ISIC_0033621,Melanomaanocytic Nevi (moles),histo,35.0,female,trunk
+HAM_0001889,ISIC_0034116,Melanomaanocytic Nevi (moles),histo,35.0,female,trunk
+HAM_0001889,ISIC_0034073,Melanomaanocytic Nevi (moles),histo,35.0,female,trunk
+HAM_0004814,ISIC_0032702,Melanomaanocytic Nevi (moles),histo,65.0,male,lower extremity
+HAM_0004814,ISIC_0033667,Melanomaanocytic Nevi (moles),histo,65.0,male,lower extremity
+HAM_0004814,ISIC_0033107,Melanomaanocytic Nevi (moles),histo,65.0,male,lower extremity
+HAM_0006666,ISIC_0034088,Melanomaanocytic Nevi (moles),histo,35.0,female,abdomen
+HAM_0006666,ISIC_0034268,Melanomaanocytic Nevi (moles),histo,35.0,female,abdomen
+HAM_0006666,ISIC_0032908,Melanomaanocytic Nevi (moles),histo,35.0,female,abdomen
+HAM_0005190,ISIC_0034203,Melanomaanocytic Nevi (moles),histo,40.0,female,back
+HAM_0005190,ISIC_0033311,Melanomaanocytic Nevi (moles),histo,40.0,female,back
+HAM_0005190,ISIC_0032700,Melanomaanocytic Nevi (moles),histo,40.0,female,back
+HAM_0007124,ISIC_0032707,Melanomaanocytic Nevi (moles),histo,55.0,male,back
+HAM_0007124,ISIC_0034311,Melanomaanocytic Nevi (moles),histo,55.0,male,back
+HAM_0002367,ISIC_0033150,Melanomaanocytic Nevi (moles),histo,60.0,male,abdomen
+HAM_0002367,ISIC_0033698,Melanomaanocytic Nevi (moles),histo,60.0,male,abdomen
+HAM_0002367,ISIC_0034240,Melanomaanocytic Nevi (moles),histo,60.0,male,abdomen
+HAM_0005194,ISIC_0034213,Melanomaanocytic Nevi (moles),histo,55.0,male,lower extremity
+HAM_0005194,ISIC_0032561,Melanomaanocytic Nevi (moles),histo,55.0,male,lower extremity
+HAM_0005194,ISIC_0033839,Melanomaanocytic Nevi (moles),histo,55.0,male,lower extremity
+HAM_0007148,ISIC_0032858,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0007148,ISIC_0033965,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0003243,ISIC_0026279,Melanomaanocytic Nevi (moles),histo,30.0,female,upper extremity
+HAM_0003243,ISIC_0031814,Melanomaanocytic Nevi (moles),histo,30.0,female,upper extremity
+HAM_0002208,ISIC_0033940,Melanomaanocytic Nevi (moles),histo,20.0,female,lower extremity
+HAM_0002208,ISIC_0033818,Melanomaanocytic Nevi (moles),histo,20.0,female,lower extremity
+HAM_0002208,ISIC_0034029,Melanomaanocytic Nevi (moles),histo,20.0,female,lower extremity
+HAM_0004038,ISIC_0032582,Melanomaanocytic Nevi (moles),histo,50.0,female,back
+HAM_0004038,ISIC_0033052,Melanomaanocytic Nevi (moles),histo,50.0,female,back
+HAM_0004038,ISIC_0032990,Melanomaanocytic Nevi (moles),histo,50.0,female,back
+HAM_0001908,ISIC_0033519,Melanomaanocytic Nevi (moles),histo,40.0,male,abdomen
+HAM_0001908,ISIC_0032851,Melanomaanocytic Nevi (moles),histo,40.0,male,abdomen
+HAM_0001839,ISIC_0033943,Melanomaanocytic Nevi (moles),histo,70.0,male,back
+HAM_0001839,ISIC_0033434,Melanomaanocytic Nevi (moles),histo,70.0,male,back
+HAM_0003744,ISIC_0033006,Melanomaanocytic Nevi (moles),histo,5.0,female,foot
+HAM_0003744,ISIC_0032518,Melanomaanocytic Nevi (moles),histo,5.0,female,foot
+HAM_0003744,ISIC_0033548,Melanomaanocytic Nevi (moles),histo,5.0,female,foot
+HAM_0007433,ISIC_0033077,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0007433,ISIC_0033951,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0007433,ISIC_0033149,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0001673,ISIC_0034285,Melanomaanocytic Nevi (moles),histo,15.0,female,lower extremity
+HAM_0001673,ISIC_0033966,Melanomaanocytic Nevi (moles),histo,15.0,female,lower extremity
+HAM_0001872,ISIC_0031290,Melanomaanocytic Nevi (moles),histo,60.0,female,lower extremity
+HAM_0003535,ISIC_0033960,Melanomaanocytic Nevi (moles),histo,35.0,female,trunk
+HAM_0003535,ISIC_0033259,Melanomaanocytic Nevi (moles),histo,35.0,female,trunk
+HAM_0003535,ISIC_0033403,Melanomaanocytic Nevi (moles),histo,35.0,female,trunk
+HAM_0002015,ISIC_0033954,Melanomaanocytic Nevi (moles),histo,30.0,female,lower extremity
+HAM_0002015,ISIC_0033771,Melanomaanocytic Nevi (moles),histo,30.0,female,lower extremity
+HAM_0002015,ISIC_0034035,Melanomaanocytic Nevi (moles),histo,30.0,female,lower extremity
+HAM_0004375,ISIC_0034278,Melanomaanocytic Nevi (moles),histo,35.0,male,back
+HAM_0004375,ISIC_0033102,Melanomaanocytic Nevi (moles),histo,35.0,male,back
+HAM_0004226,ISIC_0032494,Melanomaanocytic Nevi (moles),histo,25.0,female,trunk
+HAM_0004226,ISIC_0032760,Melanomaanocytic Nevi (moles),histo,25.0,female,trunk
+HAM_0004226,ISIC_0034128,Melanomaanocytic Nevi (moles),histo,25.0,female,trunk
+HAM_0003248,ISIC_0032380,Melanomaanocytic Nevi (moles),histo,30.0,female,back
+HAM_0003248,ISIC_0025447,Melanomaanocytic Nevi (moles),histo,30.0,female,back
+HAM_0004043,ISIC_0033792,Melanomaanocytic Nevi (moles),histo,65.0,female,back
+HAM_0004043,ISIC_0030492,Melanomaanocytic Nevi (moles),histo,65.0,female,back
+HAM_0004043,ISIC_0033926,Melanomaanocytic Nevi (moles),histo,65.0,female,back
+HAM_0002519,ISIC_0033148,Melanomaanocytic Nevi (moles),histo,45.0,female,abdomen
+HAM_0002519,ISIC_0033109,Melanomaanocytic Nevi (moles),histo,45.0,female,abdomen
+HAM_0002519,ISIC_0032986,Melanomaanocytic Nevi (moles),histo,45.0,female,abdomen
+HAM_0004367,ISIC_0033723,Melanomaanocytic Nevi (moles),histo,80.0,male,back
+HAM_0004367,ISIC_0033396,Melanomaanocytic Nevi (moles),histo,80.0,male,back
+HAM_0007052,ISIC_0032752,Melanomaanocytic Nevi (moles),histo,50.0,male,abdomen
+HAM_0007052,ISIC_0033794,Melanomaanocytic Nevi (moles),histo,50.0,male,abdomen
+HAM_0004587,ISIC_0034181,Melanomaanocytic Nevi (moles),consensus,55.0,male,unknown
+HAM_0003523,ISIC_0030447,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0004063,ISIC_0032896,Melanomaanocytic Nevi (moles),histo,15.0,female,hand
+HAM_0004063,ISIC_0034166,Melanomaanocytic Nevi (moles),histo,15.0,female,hand
+HAM_0002600,ISIC_0032588,Melanomaanocytic Nevi (moles),consensus,25.0,male,unknown
+HAM_0002603,ISIC_0033697,Melanomaanocytic Nevi (moles),consensus,25.0,male,unknown
+HAM_0001052,ISIC_0031053,Melanomaanocytic Nevi (moles),histo,30.0,male,lower extremity
+HAM_0002432,ISIC_0029775,Melanomaanocytic Nevi (moles),histo,45.0,male,lower extremity
+HAM_0001136,ISIC_0031848,Melanomaanocytic Nevi (moles),histo,40.0,male,chest
+HAM_0007164,ISIC_0025972,Melanomaanocytic Nevi (moles),histo,75.0,male,trunk
+HAM_0007195,ISIC_0031923,Melanomaanocytic Nevi (moles),histo,40.0,female,lower extremity
+HAM_0003891,ISIC_0028487,Melanomaanocytic Nevi (moles),histo,35.0,male,back
+HAM_0003675,ISIC_0028573,Melanomaanocytic Nevi (moles),histo,65.0,male,back
+HAM_0005590,ISIC_0024458,Melanomaanocytic Nevi (moles),histo,30.0,male,chest
+HAM_0005092,ISIC_0030232,Melanomaanocytic Nevi (moles),histo,20.0,female,lower extremity
+HAM_0005605,ISIC_0024361,Melanomaanocytic Nevi (moles),histo,35.0,male,chest
+HAM_0005902,ISIC_0027285,Melanomaanocytic Nevi (moles),histo,40.0,female,foot
+HAM_0004450,ISIC_0028868,Melanomaanocytic Nevi (moles),histo,30.0,male,chest
+HAM_0003639,ISIC_0028894,Melanomaanocytic Nevi (moles),histo,60.0,female,abdomen
+HAM_0006754,ISIC_0029664,Melanomaanocytic Nevi (moles),histo,55.0,female,upper extremity
+HAM_0004719,ISIC_0029276,Melanomaanocytic Nevi (moles),histo,25.0,male,lower extremity
+HAM_0003044,ISIC_0028544,Melanomaanocytic Nevi (moles),histo,55.0,male,back
+HAM_0006041,ISIC_0029313,Melanomaanocytic Nevi (moles),histo,30.0,male,lower extremity
+HAM_0006041,ISIC_0030508,Melanomaanocytic Nevi (moles),histo,30.0,male,lower extremity
+HAM_0001137,ISIC_0029359,Melanomaanocytic Nevi (moles),histo,60.0,female,chest
+HAM_0001137,ISIC_0029746,Melanomaanocytic Nevi (moles),histo,60.0,female,chest
+HAM_0001872,ISIC_0029188,Melanomaanocytic Nevi (moles),histo,60.0,female,lower extremity
+HAM_0001872,ISIC_0027800,Melanomaanocytic Nevi (moles),histo,60.0,female,lower extremity
+HAM_0003833,ISIC_0026841,Melanomaanocytic Nevi (moles),histo,75.0,female,lower extremity
+HAM_0003833,ISIC_0025945,Melanomaanocytic Nevi (moles),histo,75.0,female,lower extremity
+HAM_0003833,ISIC_0031149,Melanomaanocytic Nevi (moles),histo,75.0,female,lower extremity
+HAM_0001715,ISIC_0027208,Melanomaanocytic Nevi (moles),histo,30.0,female,lower extremity
+HAM_0001715,ISIC_0032368,Melanomaanocytic Nevi (moles),histo,30.0,female,lower extremity
+HAM_0001715,ISIC_0029504,Melanomaanocytic Nevi (moles),histo,30.0,female,lower extremity
+HAM_0000963,ISIC_0032227,Melanomaanocytic Nevi (moles),histo,35.0,male,trunk
+HAM_0001297,ISIC_0030135,Melanomaanocytic Nevi (moles),histo,60.0,male,back
+HAM_0001297,ISIC_0030941,Melanomaanocytic Nevi (moles),histo,60.0,male,back
+HAM_0002216,ISIC_0026305,Melanomaanocytic Nevi (moles),histo,60.0,male,back
+HAM_0002216,ISIC_0028454,Melanomaanocytic Nevi (moles),histo,60.0,male,back
+HAM_0006430,ISIC_0031984,Melanomaanocytic Nevi (moles),histo,20.0,female,back
+HAM_0006430,ISIC_0026487,Melanomaanocytic Nevi (moles),histo,20.0,female,back
+HAM_0004443,ISIC_0030945,Melanomaanocytic Nevi (moles),histo,75.0,male,face
+HAM_0002150,ISIC_0027364,Melanomaanocytic Nevi (moles),histo,25.0,male,chest
+HAM_0002835,ISIC_0028510,Melanomaanocytic Nevi (moles),histo,30.0,female,foot
+HAM_0000302,ISIC_0025942,Melanomaanocytic Nevi (moles),histo,50.0,female,upper extremity
+HAM_0004924,ISIC_0027040,Melanomaanocytic Nevi (moles),histo,,female,trunk
+HAM_0003580,ISIC_0026030,Melanomaanocytic Nevi (moles),histo,50.0,female,lower extremity
+HAM_0004443,ISIC_0028758,Melanomaanocytic Nevi (moles),histo,75.0,male,face
+HAM_0007456,ISIC_0028167,Melanomaanocytic Nevi (moles),histo,65.0,female,lower extremity
+HAM_0007049,ISIC_0028216,Melanomaanocytic Nevi (moles),histo,55.0,male,lower extremity
+HAM_0000525,ISIC_0031510,Melanomaanocytic Nevi (moles),histo,60.0,male,neck
+HAM_0002298,ISIC_0031483,Melanomaanocytic Nevi (moles),histo,25.0,male,lower extremity
+HAM_0001207,ISIC_0032436,Melanomaanocytic Nevi (moles),histo,50.0,female,back
+HAM_0002668,ISIC_0027224,Melanomaanocytic Nevi (moles),histo,30.0,male,back
+HAM_0002668,ISIC_0026784,Melanomaanocytic Nevi (moles),histo,30.0,male,back
+HAM_0007518,ISIC_0031015,Melanomaanocytic Nevi (moles),histo,60.0,male,back
+HAM_0001427,ISIC_0032163,Melanomaanocytic Nevi (moles),histo,50.0,male,back
+HAM_0001656,ISIC_0026759,Melanomaanocytic Nevi (moles),histo,70.0,female,lower extremity
+HAM_0006968,ISIC_0025340,Melanomaanocytic Nevi (moles),histo,70.0,male,abdomen
+HAM_0003282,ISIC_0032474,Melanomaanocytic Nevi (moles),histo,60.0,male,chest
+HAM_0007080,ISIC_0029994,Melanomaanocytic Nevi (moles),histo,50.0,male,back
+HAM_0003088,ISIC_0030121,Melanomaanocytic Nevi (moles),histo,35.0,male,back
+HAM_0003088,ISIC_0029736,Melanomaanocytic Nevi (moles),histo,35.0,male,back
+HAM_0001406,ISIC_0026592,Melanomaanocytic Nevi (moles),histo,25.0,female,chest
+HAM_0001406,ISIC_0030914,Melanomaanocytic Nevi (moles),histo,25.0,female,chest
+HAM_0006086,ISIC_0025563,Melanomaanocytic Nevi (moles),histo,35.0,female,hand
+HAM_0005176,ISIC_0031117,Melanomaanocytic Nevi (moles),histo,70.0,male,back
+HAM_0000771,ISIC_0029349,Melanomaanocytic Nevi (moles),histo,25.0,female,back
+HAM_0005568,ISIC_0032047,Melanomaanocytic Nevi (moles),histo,50.0,female,unknown
+HAM_0000891,ISIC_0027963,Melanomaanocytic Nevi (moles),histo,30.0,female,lower extremity
+HAM_0004505,ISIC_0029369,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0000668,ISIC_0024808,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0003980,ISIC_0026712,Melanomaanocytic Nevi (moles),histo,65.0,female,back
+HAM_0000225,ISIC_0029645,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0003944,ISIC_0026672,Melanomaanocytic Nevi (moles),histo,80.0,male,abdomen
+HAM_0000634,ISIC_0028186,Melanomaanocytic Nevi (moles),histo,65.0,female,back
+HAM_0000634,ISIC_0026099,Melanomaanocytic Nevi (moles),histo,65.0,female,back
+HAM_0000674,ISIC_0028983,Melanomaanocytic Nevi (moles),histo,35.0,female,back
+HAM_0000362,ISIC_0030180,Melanomaanocytic Nevi (moles),histo,30.0,male,lower extremity
+HAM_0000362,ISIC_0026043,Melanomaanocytic Nevi (moles),histo,30.0,male,lower extremity
+HAM_0003821,ISIC_0026588,Melanomaanocytic Nevi (moles),histo,60.0,male,back
+HAM_0005631,ISIC_0024439,Melanomaanocytic Nevi (moles),histo,55.0,male,back
+HAM_0005631,ISIC_0025492,Melanomaanocytic Nevi (moles),histo,55.0,male,back
+HAM_0001319,ISIC_0026053,Melanomaanocytic Nevi (moles),histo,70.0,male,back
+HAM_0001319,ISIC_0028599,Melanomaanocytic Nevi (moles),histo,70.0,male,back
+HAM_0003241,ISIC_0030079,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0003241,ISIC_0024908,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0004681,ISIC_0031919,Melanomaanocytic Nevi (moles),histo,65.0,male,back
+HAM_0001762,ISIC_0030535,Melanomaanocytic Nevi (moles),histo,60.0,male,lower extremity
+HAM_0006110,ISIC_0025289,Melanomaanocytic Nevi (moles),histo,50.0,male,back
+HAM_0006681,ISIC_0030219,Melanomaanocytic Nevi (moles),histo,70.0,female,back
+HAM_0006251,ISIC_0026437,Melanomaanocytic Nevi (moles),histo,80.0,male,lower extremity
+HAM_0000896,ISIC_0026560,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0000896,ISIC_0025051,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0006684,ISIC_0029614,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0006028,ISIC_0032189,Melanomaanocytic Nevi (moles),histo,40.0,male,chest
+HAM_0007504,ISIC_0026359,Melanomaanocytic Nevi (moles),histo,60.0,male,back
+HAM_0003919,ISIC_0024781,Melanomaanocytic Nevi (moles),histo,35.0,male,hand
+HAM_0002518,ISIC_0032028,Melanomaanocytic Nevi (moles),histo,60.0,male,abdomen
+HAM_0000302,ISIC_0032175,Melanomaanocytic Nevi (moles),histo,50.0,female,upper extremity
+HAM_0004806,ISIC_0032327,Melanomaanocytic Nevi (moles),histo,80.0,male,back
+HAM_0002490,ISIC_0027889,Melanomaanocytic Nevi (moles),histo,70.0,female,foot
+HAM_0005745,ISIC_0030873,Melanomaanocytic Nevi (moles),histo,45.0,male,abdomen
+HAM_0005666,ISIC_0028355,Melanomaanocytic Nevi (moles),histo,30.0,female,hand
+HAM_0005666,ISIC_0025171,Melanomaanocytic Nevi (moles),histo,30.0,female,hand
+HAM_0005980,ISIC_0030422,Melanomaanocytic Nevi (moles),histo,45.0,female,abdomen
+HAM_0006069,ISIC_0031681,Melanomaanocytic Nevi (moles),histo,45.0,female,abdomen
+HAM_0007075,ISIC_0025463,Melanomaanocytic Nevi (moles),histo,50.0,male,upper extremity
+HAM_0007049,ISIC_0028179,Melanomaanocytic Nevi (moles),histo,55.0,male,lower extremity
+HAM_0001455,ISIC_0032405,Melanomaanocytic Nevi (moles),histo,35.0,female,upper extremity
+HAM_0001455,ISIC_0031933,Melanomaanocytic Nevi (moles),histo,35.0,female,upper extremity
+HAM_0002201,ISIC_0024514,Melanomaanocytic Nevi (moles),histo,50.0,male,back
+HAM_0004806,ISIC_0031031,Melanomaanocytic Nevi (moles),histo,80.0,male,back
+HAM_0003590,ISIC_0032459,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0007075,ISIC_0032195,Melanomaanocytic Nevi (moles),histo,50.0,male,upper extremity
+HAM_0001617,ISIC_0027091,Melanomaanocytic Nevi (moles),histo,15.0,male,foot
+HAM_0000267,ISIC_0029530,Melanomaanocytic Nevi (moles),histo,80.0,male,lower extremity
+HAM_0007342,ISIC_0030625,Melanomaanocytic Nevi (moles),histo,35.0,male,back
+HAM_0002905,ISIC_0029026,Melanomaanocytic Nevi (moles),histo,40.0,male,neck
+HAM_0001891,ISIC_0030598,Melanomaanocytic Nevi (moles),histo,50.0,male,scalp
+HAM_0006225,ISIC_0031871,Melanomaanocytic Nevi (moles),histo,45.0,female,abdomen
+HAM_0006225,ISIC_0029075,Melanomaanocytic Nevi (moles),histo,45.0,female,abdomen
+HAM_0006225,ISIC_0028887,Melanomaanocytic Nevi (moles),histo,45.0,female,abdomen
+HAM_0000762,ISIC_0025667,Melanomaanocytic Nevi (moles),histo,30.0,female,back
+HAM_0000762,ISIC_0028982,Melanomaanocytic Nevi (moles),histo,30.0,female,back
+HAM_0000762,ISIC_0027137,Melanomaanocytic Nevi (moles),histo,30.0,female,back
+HAM_0003142,ISIC_0026956,Melanomaanocytic Nevi (moles),histo,60.0,female,back
+HAM_0003142,ISIC_0031806,Melanomaanocytic Nevi (moles),histo,60.0,female,back
+HAM_0006526,ISIC_0026671,Melanomaanocytic Nevi (moles),histo,55.0,male,lower extremity
+HAM_0005828,ISIC_0026554,Melanomaanocytic Nevi (moles),histo,75.0,male,back
+HAM_0006921,ISIC_0030603,Melanomaanocytic Nevi (moles),histo,75.0,female,upper extremity
+HAM_0005828,ISIC_0031085,Melanomaanocytic Nevi (moles),histo,75.0,male,back
+HAM_0005695,ISIC_0030198,Melanomaanocytic Nevi (moles),histo,45.0,female,foot
+HAM_0000104,ISIC_0032186,Melanomaanocytic Nevi (moles),histo,65.0,male,back
+HAM_0003523,ISIC_0026179,Melanomaanocytic Nevi (moles),histo,40.0,male,back
+HAM_0005745,ISIC_0028447,Melanomaanocytic Nevi (moles),histo,45.0,male,abdomen
+HAM_0002888,ISIC_0029079,Melanomaanocytic Nevi (moles),histo,50.0,male,trunk
+HAM_0002888,ISIC_0025571,Melanomaanocytic Nevi (moles),histo,50.0,male,trunk
+HAM_0003785,ISIC_0025776,Melanomaanocytic Nevi (moles),histo,65.0,male,back
+HAM_0003785,ISIC_0025908,Melanomaanocytic Nevi (moles),histo,65.0,male,back
+HAM_0004443,ISIC_0031131,Melanomaanocytic Nevi (moles),histo,75.0,male,face
+HAM_0004443,ISIC_0031473,Melanomaanocytic Nevi (moles),histo,75.0,male,face
+HAM_0003919,ISIC_0031011,Melanomaanocytic Nevi (moles),histo,35.0,male,hand
+HAM_0000486,ISIC_0028882,Melanomaanocytic Nevi (moles),histo,35.0,male,upper extremity
+HAM_0001891,ISIC_0024466,Melanomaanocytic Nevi (moles),histo,50.0,male,scalp
+HAM_0004008,ISIC_0027997,Melanomaanocytic Nevi (moles),histo,70.0,female,back
+HAM_0001230,ISIC_0025295,Melanomaanocytic Nevi (moles),histo,80.0,male,back
+HAM_0006273,ISIC_0028571,Melanomaanocytic Nevi (moles),histo,75.0,male,back
+HAM_0006273,ISIC_0031573,Melanomaanocytic Nevi (moles),histo,75.0,male,back
+HAM_0004656,ISIC_0029771,Melanomaanocytic Nevi (moles),histo,45.0,female,abdomen
+HAM_0004656,ISIC_0027475,Melanomaanocytic Nevi (moles),histo,45.0,female,abdomen
+HAM_0000104,ISIC_0031913,Melanomaanocytic Nevi (moles),histo,65.0,male,back
+HAM_0002490,ISIC_0030694,Melanomaanocytic Nevi (moles),histo,70.0,female,foot
+HAM_0004600,ISIC_0028865,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0004600,ISIC_0028464,Melanomaanocytic Nevi (moles),histo,45.0,male,back
+HAM_0004614,ISIC_0030151,Melanomaanocytic Nevi (moles),histo,65.0,female,upper extremity
+HAM_0002936,ISIC_0030279,Melanomaanocytic Nevi (moles),histo,60.0,male,back
+HAM_0002936,ISIC_0024380,Melanomaanocytic Nevi (moles),histo,60.0,male,back
+HAM_0003919,ISIC_0032344,Melanomaanocytic Nevi (moles),histo,35.0,male,hand
+HAM_0003590,ISIC_0027262,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0003590,ISIC_0024916,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0003710,ISIC_0031611,Melanomaanocytic Nevi (moles),histo,60.0,male,abdomen
+HAM_0003710,ISIC_0032074,Melanomaanocytic Nevi (moles),histo,60.0,male,abdomen
+HAM_0002088,ISIC_0024377,Melanomaanocytic Nevi (moles),histo,45.0,female,lower extremity
+HAM_0007030,ISIC_0026711,Melanomaanocytic Nevi (moles),histo,50.0,male,chest
+HAM_0000267,ISIC_0026809,Melanomaanocytic Nevi (moles),histo,80.0,male,lower extremity
+HAM_0005733,ISIC_0030434,Melanomaanocytic Nevi (moles),histo,25.0,female,back
+HAM_0005008,ISIC_0026580,Melanomaanocytic Nevi (moles),histo,60.0,male,lower extremity
+HAM_0005008,ISIC_0030919,Melanomaanocytic Nevi (moles),histo,60.0,male,lower extremity
+HAM_0005329,ISIC_0028686,Melanomaanocytic Nevi (moles),histo,45.0,female,chest
+HAM_0002189,ISIC_0030940,Melanomaanocytic Nevi (moles),histo,55.0,male,scalp
+HAM_0000604,ISIC_0029208,Melanomaanocytic Nevi (moles),histo,35.0,male,ear
+HAM_0001689,ISIC_0025166,Melanomaanocytic Nevi (moles),consensus,0.0,female,upper extremity
+HAM_0001689,ISIC_0028938,Melanomaanocytic Nevi (moles),consensus,0.0,female,upper extremity
+HAM_0001541,ISIC_0026218,Melanomaanocytic Nevi (moles),consensus,30.0,male,trunk
+HAM_0001541,ISIC_0028766,Melanomaanocytic Nevi (moles),consensus,30.0,male,trunk
+HAM_0001329,ISIC_0029650,Melanomaanocytic Nevi (moles),consensus,40.0,female,lower extremity
+HAM_0001329,ISIC_0029879,Melanomaanocytic Nevi (moles),consensus,40.0,female,lower extremity
+HAM_0005154,ISIC_0030977,Melanomaanocytic Nevi (moles),consensus,55.0,male,back
+HAM_0005154,ISIC_0024762,Melanomaanocytic Nevi (moles),consensus,55.0,male,back
+HAM_0006645,ISIC_0024818,Melanomaanocytic Nevi (moles),consensus,40.0,male,back
+HAM_0006645,ISIC_0031595,Melanomaanocytic Nevi (moles),consensus,40.0,male,back
+HAM_0000144,ISIC_0031127,Melanomaanocytic Nevi (moles),consensus,40.0,male,back
+HAM_0000144,ISIC_0027558,Melanomaanocytic Nevi (moles),consensus,40.0,male,back
+HAM_0003035,ISIC_0025168,Melanomaanocytic Nevi (moles),consensus,10.0,female,upper extremity
+HAM_0003035,ISIC_0024617,Melanomaanocytic Nevi (moles),consensus,10.0,female,upper extremity
+HAM_0005193,ISIC_0026742,Melanomaanocytic Nevi (moles),consensus,50.0,female,ear
+HAM_0005193,ISIC_0028665,Melanomaanocytic Nevi (moles),consensus,50.0,female,ear
+HAM_0004646,ISIC_0029140,Melanomaanocytic Nevi (moles),consensus,25.0,male,back
+HAM_0004646,ISIC_0030557,Melanomaanocytic Nevi (moles),consensus,25.0,male,back
+HAM_0002832,ISIC_0029091,Melanomaanocytic Nevi (moles),consensus,5.0,male,trunk
+HAM_0002832,ISIC_0032026,Melanomaanocytic Nevi (moles),consensus,5.0,male,trunk
+HAM_0004777,ISIC_0026749,Melanomaanocytic Nevi (moles),consensus,25.0,female,foot
+HAM_0004777,ISIC_0029895,Melanomaanocytic Nevi (moles),consensus,25.0,female,foot
+HAM_0004703,ISIC_0028658,Melanomaanocytic Nevi (moles),consensus,10.0,male,abdomen
+HAM_0002147,ISIC_0029537,Melanomaanocytic Nevi (moles),consensus,5.0,female,hand
+HAM_0005974,ISIC_0031395,Melanomaanocytic Nevi (moles),consensus,80.0,male,upper extremity
+HAM_0000765,ISIC_0033445,Melanomaanocytic Nevi (moles),consensus,70.0,male,trunk
+HAM_0003362,ISIC_0033313,Melanomaanocytic Nevi (moles),consensus,45.0,female,unknown
+HAM_0003356,ISIC_0033105,Melanomaanocytic Nevi (moles),consensus,45.0,female,unknown
+HAM_0003356,ISIC_0032572,Melanomaanocytic Nevi (moles),consensus,45.0,female,unknown
+HAM_0003357,ISIC_0032912,Melanomaanocytic Nevi (moles),consensus,45.0,female,unknown
+HAM_0003540,ISIC_0029808,Melanomaanocytic Nevi (moles),consensus,75.0,male,back
+HAM_0001009,ISIC_0029401,Melanomaanocytic Nevi (moles),consensus,35.0,male,foot
+HAM_0005263,ISIC_0034163,Melanomaanocytic Nevi (moles),consensus,40.0,male,trunk
+HAM_0005263,ISIC_0034277,Melanomaanocytic Nevi (moles),consensus,40.0,male,trunk
+HAM_0005263,ISIC_0034147,Melanomaanocytic Nevi (moles),consensus,40.0,male,trunk
+HAM_0005263,ISIC_0033247,Melanomaanocytic Nevi (moles),consensus,40.0,male,trunk
+HAM_0005263,ISIC_0033918,Melanomaanocytic Nevi (moles),consensus,40.0,male,trunk
+HAM_0005263,ISIC_0032889,Melanomaanocytic Nevi (moles),consensus,40.0,male,trunk
+HAM_0004387,ISIC_0033132,Melanomaanocytic Nevi (moles),consensus,55.0,female,trunk
+HAM_0004387,ISIC_0033821,Melanomaanocytic Nevi (moles),consensus,55.0,female,trunk
+HAM_0005434,ISIC_0033457,Melanomaanocytic Nevi (moles),consensus,55.0,female,trunk
+HAM_0004392,ISIC_0033395,Melanomaanocytic Nevi (moles),consensus,20.0,female,lower extremity
+HAM_0004392,ISIC_0033355,Melanomaanocytic Nevi (moles),consensus,20.0,female,lower extremity
+HAM_0004392,ISIC_0033095,Melanomaanocytic Nevi (moles),consensus,20.0,female,lower extremity
+HAM_0003945,ISIC_0032528,Melanomaanocytic Nevi (moles),consensus,30.0,male,back
+HAM_0002569,ISIC_0034018,Melanomaanocytic Nevi (moles),consensus,30.0,male,back
+HAM_0002074,ISIC_0032575,Melanomaanocytic Nevi (moles),consensus,40.0,female,face
+HAM_0002074,ISIC_0032793,Melanomaanocytic Nevi (moles),consensus,40.0,female,face
+HAM_0004016,ISIC_0032935,Melanomaanocytic Nevi (moles),consensus,30.0,male,back
+HAM_0004349,ISIC_0033896,Melanomaanocytic Nevi (moles),consensus,40.0,female,unknown
+HAM_0004345,ISIC_0033208,Melanomaanocytic Nevi (moles),consensus,40.0,female,unknown
+HAM_0003817,ISIC_0032800,Melanomaanocytic Nevi (moles),consensus,40.0,male,unknown
+HAM_0006232,ISIC_0033043,Melanomaanocytic Nevi (moles),consensus,60.0,male,unknown
+HAM_0004199,ISIC_0033556,Melanomaanocytic Nevi (moles),consensus,40.0,female,unknown
+HAM_0004181,ISIC_0032571,Melanomaanocytic Nevi (moles),consensus,40.0,female,unknown
+HAM_0004183,ISIC_0032606,Melanomaanocytic Nevi (moles),consensus,40.0,female,unknown
+HAM_0006644,ISIC_0033882,Melanomaanocytic Nevi (moles),consensus,,unknown,unknown
+HAM_0007191,ISIC_0032738,Melanomaanocytic Nevi (moles),consensus,,unknown,unknown
+HAM_0002164,ISIC_0032852,Melanomaanocytic Nevi (moles),consensus,,unknown,unknown
+HAM_0003561,ISIC_0034154,Melanomaanocytic Nevi (moles),consensus,,unknown,unknown
+HAM_0004430,ISIC_0032789,Melanomaanocytic Nevi (moles),consensus,,unknown,unknown
+HAM_0001366,ISIC_0032814,Melanomaanocytic Nevi (moles),consensus,,unknown,unknown
+HAM_0001209,ISIC_0033064,Melanomaanocytic Nevi (moles),consensus,,unknown,unknown
+HAM_0004370,ISIC_0027138,Melanomaanocytic Nevi (moles),consensus,10.0,male,unknown
+HAM_0004370,ISIC_0024757,Melanomaanocytic Nevi (moles),consensus,10.0,male,unknown
+HAM_0001633,ISIC_0028618,Melanomaanocytic Nevi (moles),consensus,70.0,male,unknown
+HAM_0001633,ISIC_0031488,Melanomaanocytic Nevi (moles),consensus,70.0,male,unknown
+HAM_0005091,ISIC_0027345,Melanomaanocytic Nevi (moles),consensus,50.0,female,chest
+HAM_0005091,ISIC_0031148,Melanomaanocytic Nevi (moles),consensus,50.0,female,chest
+HAM_0003384,ISIC_0031299,Melanomaanocytic Nevi (moles),consensus,55.0,female,chest
+HAM_0003384,ISIC_0028438,Melanomaanocytic Nevi (moles),consensus,55.0,female,chest
+HAM_0006002,ISIC_0029915,Actinic Keratoses & Intraepithelial Carcinoma,histo,50.0,female,face
+HAM_0003422,ISIC_0031198,Actinic Keratoses & Intraepithelial Carcinoma,histo,55.0,female,neck
+HAM_0005301,ISIC_0026362,Actinic Keratoses & Intraepithelial Carcinoma,histo,60.0,female,upper extremity
+HAM_0001621,ISIC_0030297,Actinic Keratoses & Intraepithelial Carcinoma,histo,70.0,female,face
+HAM_0006222,ISIC_0025069,Actinic Keratoses & Intraepithelial Carcinoma,histo,75.0,male,upper extremity
+HAM_0002185,ISIC_0030794,Actinic Keratoses & Intraepithelial Carcinoma,histo,65.0,male,lower extremity
+HAM_0003086,ISIC_0032349,Actinic Keratoses & Intraepithelial Carcinoma,histo,60.0,male,lower extremity
+HAM_0004398,ISIC_0025358,Actinic Keratoses & Intraepithelial Carcinoma,histo,60.0,female,face
+HAM_0004384,ISIC_0032422,Actinic Keratoses & Intraepithelial Carcinoma,histo,70.0,male,face
+HAM_0004384,ISIC_0030826,Actinic Keratoses & Intraepithelial Carcinoma,histo,70.0,male,face
+HAM_0003136,ISIC_0026645,Actinic Keratoses & Intraepithelial Carcinoma,histo,65.0,male,back
+HAM_0004609,ISIC_0024710,Actinic Keratoses & Intraepithelial Carcinoma,histo,75.0,male,back
+HAM_0006301,ISIC_0024771,Actinic Keratoses & Intraepithelial Carcinoma,histo,75.0,male,neck
+HAM_0007131,ISIC_0031692,Actinic Keratoses & Intraepithelial Carcinoma,histo,60.0,male,back
+HAM_0002734,ISIC_0028190,Actinic Keratoses & Intraepithelial Carcinoma,histo,45.0,male,face
+HAM_0006434,ISIC_0028314,Actinic Keratoses & Intraepithelial Carcinoma,histo,60.0,male,lower extremity
+HAM_0004563,ISIC_0031211,Actinic Keratoses & Intraepithelial Carcinoma,histo,75.0,male,lower extremity
+HAM_0003939,ISIC_0027172,Actinic Keratoses & Intraepithelial Carcinoma,histo,75.0,male,face
+HAM_0003895,ISIC_0026203,Actinic Keratoses & Intraepithelial Carcinoma,histo,70.0,male,back
+HAM_0004609,ISIC_0030785,Actinic Keratoses & Intraepithelial Carcinoma,histo,75.0,male,back
+HAM_0005978,ISIC_0030143,Actinic Keratoses & Intraepithelial Carcinoma,histo,65.0,female,face
+HAM_0004060,ISIC_0029210,Actinic Keratoses & Intraepithelial Carcinoma,histo,40.0,male,face
+HAM_0003195,ISIC_0026319,Actinic Keratoses & Intraepithelial Carcinoma,histo,80.0,male,chest
+HAM_0003195,ISIC_0025319,Actinic Keratoses & Intraepithelial Carcinoma,histo,80.0,male,chest
+HAM_0002094,ISIC_0030549,Actinic Keratoses & Intraepithelial Carcinoma,histo,50.0,male,upper extremity
+HAM_0004992,ISIC_0026132,Actinic Keratoses & Intraepithelial Carcinoma,histo,70.0,male,chest
+HAM_0001219,ISIC_0028335,Actinic Keratoses & Intraepithelial Carcinoma,histo,60.0,female,lower extremity
+HAM_0006434,ISIC_0028076,Actinic Keratoses & Intraepithelial Carcinoma,histo,60.0,male,lower extremity
+HAM_0006434,ISIC_0030142,Actinic Keratoses & Intraepithelial Carcinoma,histo,60.0,male,lower extremity
+HAM_0006301,ISIC_0024468,Actinic Keratoses & Intraepithelial Carcinoma,histo,75.0,male,neck
+HAM_0006301,ISIC_0031823,Actinic Keratoses & Intraepithelial Carcinoma,histo,75.0,male,neck
+HAM_0001277,ISIC_0031927,Actinic Keratoses & Intraepithelial Carcinoma,histo,75.0,male,chest
+HAM_0007622,ISIC_0027562,Actinic Keratoses & Intraepithelial Carcinoma,histo,60.0,female,face
+HAM_0002551,ISIC_0024539,Actinic Keratoses & Intraepithelial Carcinoma,histo,70.0,male,face
+HAM_0003934,ISIC_0027767,Actinic Keratoses & Intraepithelial Carcinoma,histo,85.0,male,back
+HAM_0004033,ISIC_0027452,Actinic Keratoses & Intraepithelial Carcinoma,histo,70.0,male,upper extremity
+HAM_0004060,ISIC_0030825,Actinic Keratoses & Intraepithelial Carcinoma,histo,40.0,male,face
+HAM_0000931,ISIC_0028820,Actinic Keratoses & Intraepithelial Carcinoma,histo,80.0,male,lower extremity
+HAM_0003949,ISIC_0027254,Actinic Keratoses & Intraepithelial Carcinoma,histo,75.0,male,face
+HAM_0004472,ISIC_0025368,Actinic Keratoses & Intraepithelial Carcinoma,histo,40.0,female,face
+HAM_0004384,ISIC_0029025,Actinic Keratoses & Intraepithelial Carcinoma,histo,70.0,male,face
+HAM_0004462,ISIC_0027334,Actinic Keratoses & Intraepithelial Carcinoma,histo,45.0,male,trunk
+HAM_0002867,ISIC_0033084,Actinic Keratoses & Intraepithelial Carcinoma,histo,40.0,male,abdomen
+HAM_0002867,ISIC_0033550,Actinic Keratoses & Intraepithelial Carcinoma,histo,40.0,male,abdomen
+HAM_0002867,ISIC_0033536,Actinic Keratoses & Intraepithelial Carcinoma,histo,40.0,male,abdomen
