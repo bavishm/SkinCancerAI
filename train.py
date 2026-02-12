@@ -2,15 +2,16 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import pandas as pd
-import numpy as np  # ADDED
+import numpy as np
 from torch.utils.data import DataLoader
 from torch.amp import GradScaler, autocast 
-from sklearn.metrics import f1_score, accuracy_score
+from sklearn.metrics import f1_score, accuracy_score, precision_score, recall_score 
 import os
 import time
 import requests 
 from dotenv import load_dotenv
 from tqdm import tqdm 
+import torch.nn.functional as F  # ADDED for softmax
 
 from dataset_factory import HAM10000Dataset, get_transforms
 from model_factory import get_model
@@ -26,9 +27,9 @@ MODEL_NAME = "swinv2_large_window12to24_192to384_22kft1k" # Model A
 IMG_SIZE = 384
 
 if "convnext" in MODEL_NAME:
-    BATCH_SIZE = 8
+    BATCH_SIZE = 12
 else:    
-    BATCH_SIZE = 16
+    BATCH_SIZE = 24 
 
 EPOCHS = 20
 LEARNING_RATE = 1e-4
@@ -55,7 +56,7 @@ def main():
         return
     
     print("="*50)
-    print(f"Starting 5-Fold Cross-Validation")
+    print(f"Start training")
     print(f"Model: {MODEL_NAME}")
     print(f"PyTorch: {torch.__version__}")
     print(f"GPUs: {torch.cuda.device_count()}")
@@ -64,7 +65,7 @@ def main():
     print(f"Batch Size: {BATCH_SIZE} ({BATCH_SIZE // torch.cuda.device_count()} per GPU)")
     print("="*50)
     
-    send_curl_log({"content": f"Starting 5-Fold CV: {MODEL_NAME}"})
+    send_curl_log({"content": f"Starting 5-Fold CV: {MODEL_NAME} (Batch: {BATCH_SIZE})"})
 
     # Load the Master Folds CSV
     folds_path = os.path.join(DATA_DIR, "train_folds.csv")
@@ -141,12 +142,20 @@ def main():
         scaler = GradScaler('cuda') 
 
         # History
-        history = {'epoch': [], 'train_loss': [], 'val_loss': [], 'val_acc': [], 'val_f1': []}
+        history = {
+            'epoch': [], 
+            'train_loss': [], 
+            'val_loss': [], 
+            'val_acc': [], 
+            'val_f1': [],
+            'val_precision': [], 
+            'val_recall': [] 
+        }
         best_fold_f1 = 0.0
         start_epoch = 0
 
         # ==========================================
-        #          RESUME LOGIC
+        #           RESUME LOGIC
         # ==========================================
         resume_path = os.path.join(CHECKPOINT_DIR, f"last_checkpoint_fold{fold}.pth")
         log_path = os.path.join(CHECKPOINT_DIR, f"log_fold{fold}.csv")
@@ -178,7 +187,6 @@ def main():
         # Check if already done
         if start_epoch >= EPOCHS:
             print(f"Fold {fold} already complete! Skipping.\n")
-            # Still track the result
             if os.path.exists(log_path):
                 fold_df = pd.read_csv(log_path)
                 fold_results.append(fold_df['val_f1'].max())
@@ -218,7 +226,7 @@ def main():
                 running_loss += loss.item()
                 train_loop.set_postfix(loss=loss.item(), lr=f"{current_lr:.2e}")
                 
-                # Memory check
+                # Memory check (First epoch only)
                 if fold == 0 and epoch == 0 and i == 1:
                     tqdm.write(f"\n{'='*50}")
                     tqdm.write("[GPU Memory Check]")
@@ -237,6 +245,7 @@ def main():
             val_running_loss = 0.0
             all_preds = []
             all_labels = []
+            all_probs = [] # ADDED for ROC
             
             val_loop = tqdm(val_loader, desc="Validation", leave=False)
 
@@ -250,6 +259,11 @@ def main():
                         v_loss = criterion(outputs, labels)
                     
                     val_running_loss += v_loss.item()
+                    
+                    # Store Raw Probabilities for ROC
+                    probs = F.softmax(outputs, dim=1)
+                    all_probs.extend(probs.cpu().numpy())
+                    
                     _, preds = torch.max(outputs, 1)
                     all_preds.extend(preds.cpu().numpy())
                     all_labels.extend(labels.cpu().numpy())
@@ -257,6 +271,9 @@ def main():
             val_loss = val_running_loss / len(val_loader)
             val_acc = accuracy_score(all_labels, all_preds)
             val_f1 = f1_score(all_labels, all_preds, average='macro')
+            
+            val_precision = precision_score(all_labels, all_preds, average='macro', zero_division=0)
+            val_recall = recall_score(all_labels, all_preds, average='macro', zero_division=0)
             
             scheduler.step()
 
@@ -266,21 +283,25 @@ def main():
             history['val_loss'].append(val_loss)
             history['val_acc'].append(val_acc)
             history['val_f1'].append(val_f1)
+            history['val_precision'].append(val_precision) 
+            history['val_recall'].append(val_recall)       
+            
+            # SAVES CSV FOR GRAPHING LATER
             pd.DataFrame(history).to_csv(log_path, index=False)
             
             duration = time.time() - start_time
             print(f"Epoch {epoch + 1}/{EPOCHS} | {duration:.1f}s | "
-                  f"Train Loss: {epoch_loss:.4f} | Val Loss: {val_loss:.4f} | "
-                  f"Val F1: {val_f1:.4f} | LR: {current_lr:.2e}")
+                  f"Train Loss: {epoch_loss:.4f} | Val F1: {val_f1:.4f} | "
+                  f"Prec: {val_precision:.4f} | Rec: {val_recall:.4f}")
             
             # Discord tracking 
-            if (epoch + 1) % 5 == 0:
+            if (epoch + 1) % 1 == 0:
                 send_curl_log({
                     "content": f"**Fold {fold + 1} - Epoch {epoch + 1}**\n"
-                              f"Val F1: {val_f1:.4f} | Train Loss: {epoch_loss:.4f}"
+                               f"F1: {val_f1:.4f} | Prec: {val_precision:.4f} | Rec: {val_recall:.4f} | Loss: {epoch_loss:.4f}"
                 })
 
-            # Save best model
+            # Save best model & PREDICTIONS FOR ROC
             if val_f1 > best_fold_f1:
                 best_fold_f1 = val_f1
                 save_name = f"best_{MODEL_NAME}_fold{fold}.pth"
@@ -294,10 +315,20 @@ def main():
                     'model_state_dict': model_state,
                     'best_f1': best_fold_f1,
                     'val_acc': val_acc,
+                    'val_precision': val_precision,
+                    'val_recall': val_recall,
                     'config': {'model': MODEL_NAME, 'img_size': IMG_SIZE}
                 }
                 torch.save(checkpoint, save_path)
-                print(f"  ✓ Saved best model: {save_name} (F1: {best_fold_f1:.4f})")
+                print(f"   Saved best model: {save_name} (F1: {best_fold_f1:.4f})")
+                
+                # === NEW: SAVE PREDICTIONS FOR ROC CURVE ===
+                # We save a CSV with: True Label, Prob_Class_0, Prob_Class_1, ...
+                preds_df = pd.DataFrame(all_probs, columns=[f"prob_{i}" for i in range(7)])
+                preds_df['true_label'] = all_labels
+                preds_path = os.path.join(CHECKPOINT_DIR, f"predictions_fold{fold}.csv")
+                preds_df.to_csv(preds_path, index=False)
+                print(f"   Saved ROC predictions to {preds_path}")
 
             # Save last checkpoint (for resume)
             last_checkpoint = {
@@ -333,8 +364,6 @@ def main():
         std_f1 = np.std(fold_results)
         print(f"Mean F1: {mean_f1:.4f} ± {std_f1:.4f}")
         print(f"Per-fold F1s: {[f'{f:.4f}' for f in fold_results]}")
-        print(f"Min F1: {min(fold_results):.4f}")
-        print(f"Max F1: {max(fold_results):.4f}")
         
         send_curl_log({
             "content": f" **ALL FOLDS COMPLETE**\n"
