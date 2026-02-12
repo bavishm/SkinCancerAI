@@ -26,9 +26,9 @@ MODEL_NAME = "swinv2_large_window12to24_192to384_22kft1k" # Model A
 IMG_SIZE = 384
 
 if "convnext" in MODEL_NAME:
-    BATCH_SIZE = 40
+    BATCH_SIZE = 8
 else:    
-    BATCH_SIZE = 64
+    BATCH_SIZE = 16
 
 EPOCHS = 20
 LEARNING_RATE = 1e-4
