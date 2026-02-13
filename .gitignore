@@ -10,15 +10,12 @@ data/all_images/
 
 # --- Model Checkpoints ---
 checkpoints/
-checkpoints_swin/
-checkpoints_convnext/
 *.pth
 
 # --- Python Cache & Logs ---
 __pycache__/
 *.pyc
 *.log
-*.csv
 *.txt
 .ipynb_checkpoints/
 venv/
