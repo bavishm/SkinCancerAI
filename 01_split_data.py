@@ -10,21 +10,19 @@ def main():
     N_FOLDS = 5       # 5-Fold CV on the remaining 85%
     SEED = 42
     
-    # 1. Load Data
+    # Load Data
     if not os.path.exists(CSV_PATH):
         raise FileNotFoundError(f"Metadata CSV not found at {CSV_PATH}")
     
     print(f"Reading {CSV_PATH}...")
     df = pd.read_csv(CSV_PATH)
     
-    # 2. Group by Lesion ID (Critical for avoiding leakage)
-    # We split based on 'lesion_id', not individual images.
+    # Group by Lesion ID (avoid leakage)
     unique_lesions = df.drop_duplicates(subset=['lesion_id']).reset_index(drop=True)
     
     print(f"Total Unique Lesions: {len(unique_lesions)}")
-    
-    # 3. Create the "Vault" (Test Set)
-    # We split the unique lesions, not the images directly
+
+    # Create the Test Set
     train_val_lesions, test_lesions = train_test_split(
         unique_lesions, 
         test_size=TEST_SIZE, 
@@ -32,7 +30,7 @@ def main():
         random_state=SEED
     )
     
-    # 4. Create the 5 Folds on the 'train_val_lesions' (The remaining 85%)
+    # Create the 5 Folds on the 'train_val_lesions' (The remaining 85%)
     # Initialize fold column
     train_val_lesions = train_val_lesions.copy()
     train_val_lesions["fold"] = -1
@@ -42,7 +40,7 @@ def main():
     for fold_idx, (train_idx, val_idx) in enumerate(skf.split(X=train_val_lesions, y=train_val_lesions["dx"])):
         train_val_lesions.iloc[val_idx, train_val_lesions.columns.get_loc("fold")] = fold_idx
 
-    # 5. Map back to original Images
+    # Map back to original Images
     # We now have lesions assigned to (Test) or (Fold 0, 1, 2, 3, 4)
     # We need to apply this to the full dataframe of images.
     
@@ -54,11 +52,11 @@ def main():
     cv_df = df[df['lesion_id'].isin(train_val_lesions['lesion_id'])].copy()
     cv_df = cv_df.merge(train_val_lesions[['lesion_id', 'fold']], on='lesion_id', how='left')
     
-    # 6. Safety Checks
+    # Safety Checks
     # Ensure no overlap
     assert len(set(test_df['lesion_id']) & set(cv_df['lesion_id'])) == 0, "DATA LEAKAGE DETECTED!"
     
-    # 7. Save Files
+    # Save Files
     test_path = os.path.join(DATA_DIR, "test_split.csv")
     cv_path = os.path.join(DATA_DIR, "train_folds.csv")
     

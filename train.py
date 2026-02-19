@@ -22,8 +22,8 @@ from model_factory import get_model
 load_dotenv()
 WEBHOOK_URL = os.getenv("WEB_HOOK") 
 
-MODEL_NAME = "swinv2_large_window12to24_192to384_22kft1k" # Model A
-# MODEL_NAME = "convnext_xlarge.fb_in22k_ft_in1k_384"     # Model B
+# MODEL_NAME = "swinv2_large_window12to24_192to384_22kft1k" # Model A
+MODEL_NAME = "convnext_xlarge.fb_in22k_ft_in1k_384"     # Model B
 IMG_SIZE = 384
 
 if "convnext" in MODEL_NAME:
