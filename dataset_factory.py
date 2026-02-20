@@ -67,7 +67,6 @@ class HAM10000Dataset(Dataset):
 def get_transforms(img_size=384):
     
     # Returns a dictionary of transformations for Training and Validation.
-    # Targeting 384x384 for SwinV2/EfficientNet on 3090s.
     
     return {
         "train": A.Compose([

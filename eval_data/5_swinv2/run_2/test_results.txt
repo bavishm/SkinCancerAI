@@ -1,0 +1,34 @@
+======================================================================
+ ENSEMBLE TEST SET RESULTS
+======================================================================
+Model:               swinv2_large_window12to24_192to384_22kft1k
+Ensemble Size:       5/5 models
+Melanoma Threshold:  0.2
+
+CLINICAL TRIAGE OVERRIDE
+  Additional melanomas flagged: 90
+  Original melanoma predictions: 144
+  After threshold adjustment:    234
+
+Overall Metrics (Threshold-Adjusted):
+  Accuracy:           0.8517
+  F1 Score (Macro):   0.7141
+  F1 Score (Weighted): 0.8570
+
+======================================================================
+ PER-CLASS CLASSIFICATION REPORT
+======================================================================
+                                               precision    recall  f1-score   support
+
+                Melanomaanocytic Nevi (moles)     0.9540    0.9121    0.9326      1001
+                                     Melanoma     0.5427    0.7987    0.6463       159
+                Benign Keratosis-like Lesions     0.8108    0.7317    0.7692       164
+                         Basal Cell Carcinoma     0.8235    0.7467    0.7832        75
+Actinic Keratoses & Intraepithelial Carcinoma     0.5370    0.6444    0.5859        45
+                             Vascular Lesions     0.8125    0.5200    0.6341        25
+                               Dermatofibroma     0.8462    0.5238    0.6471        21
+
+                                     accuracy                         0.8517      1490
+                                    macro avg     0.7610    0.6968    0.7141      1490
+                                 weighted avg     0.8713    0.8517    0.8570      1490
+
