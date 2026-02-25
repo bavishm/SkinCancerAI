@@ -17,6 +17,48 @@ from dataset_factory import HAM10000Dataset, get_transforms
 from model_factory import get_model
 
 # ==========================================
+#            FOCAL LOSS IMPLEMENTATION
+# ==========================================
+class FocalLoss(nn.Module):
+    def __init__(self, alpha=None, gamma=2.0, reduction='mean'):
+        super(FocalLoss, self).__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+        self.reduction = reduction
+
+    def forward(self, inputs, targets):
+        """
+        Args:
+            inputs: Logits from model [batch_size, num_classes]
+            targets: Ground truth labels [batch_size]
+        """
+        # Compute standard cross entropy
+        ce_loss = F.cross_entropy(inputs, targets, reduction='none')
+        
+        # Get probability of true class
+        p_t = torch.exp(-ce_loss)
+        
+        # Compute focal term: (1 - p_t)^gamma
+        # This down-weights easy examples and focuses on hard ones
+        focal_term = (1 - p_t) ** self.gamma
+        
+        # Apply class weights (alpha) if provided
+        if self.alpha is not None:
+            if self.alpha.device != inputs.device:
+                self.alpha = self.alpha.to(inputs.device)
+            alpha_t = self.alpha.gather(0, targets)
+            focal_loss = alpha_t * focal_term * ce_loss
+        else:
+            focal_loss = focal_term * ce_loss
+        
+        if self.reduction == 'mean':
+            return focal_loss.mean()
+        elif self.reduction == 'sum':
+            return focal_loss.sum()
+        else:
+            return focal_loss
+
+# ==========================================
 #               CONFIGURATION
 # ==========================================
 load_dotenv()
@@ -39,6 +81,10 @@ IMG_DIR = "./data/all_images"
 CHECKPOINT_DIR = "./checkpoints"
 N_FOLDS = 5 
 
+# Focal Loss hyperparameters
+FOCAL_GAMMA = 2.0  # Focusing parameter (2.0 is standard)
+MELANOMA_WEIGHT_BOOST = 1.5  # Multiply melanoma class weight by this factor
+
 def send_curl_log(data):
     if not WEBHOOK_URL or "YOUR_KEY_HERE" in WEBHOOK_URL:
         return 
@@ -58,6 +104,7 @@ def main():
     print("="*50)
     print(f"Start training")
     print(f"Model: {MODEL_NAME}")
+    print(f"Loss: Focal Loss (gamma={FOCAL_GAMMA})")
     print(f"PyTorch: {torch.__version__}")
     print(f"GPUs: {torch.cuda.device_count()}")
     for i in range(torch.cuda.device_count()):
@@ -65,7 +112,7 @@ def main():
     print(f"Batch Size: {BATCH_SIZE} ({BATCH_SIZE // torch.cuda.device_count()} per GPU)")
     print("="*50)
     
-    send_curl_log({"content": f"Starting 5-Fold CV: {MODEL_NAME} (Batch: {BATCH_SIZE})"})
+    send_curl_log({"content": f"Starting 5-Fold CV: {MODEL_NAME} with Focal Loss (gamma={FOCAL_GAMMA})"})
 
     # Load the Master Folds CSV
     folds_path = os.path.join(DATA_DIR, "train_folds.csv")
@@ -126,7 +173,18 @@ def main():
             counts.append(count)
         counts = torch.tensor(counts, dtype=torch.float).to(device)
         class_weights = len(train_df) / (7 * counts)
-        print(f"Weights: {class_weights.cpu().numpy()}\n")
+        
+        # BOOST MELANOMA WEIGHT for better melanoma recall
+        # Find melanoma index dynamically from label_map
+        melanoma_class_name = 'Melanoma'
+        melanoma_idx = label_map.get(melanoma_class_name)
+        
+        if melanoma_idx is not None:
+            original_weight = class_weights[melanoma_idx].item()
+            class_weights[melanoma_idx] *= MELANOMA_WEIGHT_BOOST
+            print(f"Melanoma weight boosted: {original_weight:.3f} -> {class_weights[melanoma_idx].item():.3f}")
+        
+        print(f"Final weights: {class_weights.cpu().numpy()}\n")
 
         # Initialize Model (FRESH for every fold)
         model = get_model(MODEL_NAME, num_classes=7)
@@ -136,7 +194,10 @@ def main():
         model = model.to(device)
 
         # Optimizer, Scheduler, Scaler
-        criterion = nn.CrossEntropyLoss(weight=class_weights)
+        # CHANGED: Using Focal Loss instead of CrossEntropyLoss
+        criterion = FocalLoss(alpha=class_weights, gamma=FOCAL_GAMMA)
+        print(f"Using Focal Loss with gamma={FOCAL_GAMMA}\n")
+        
         optimizer = optim.AdamW(model.parameters(), lr=LEARNING_RATE, weight_decay=0.05)
         scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=EPOCHS)
         scaler = GradScaler('cuda') 
@@ -295,7 +356,7 @@ def main():
                   f"Prec: {val_precision:.4f} | Rec: {val_recall:.4f}")
             
             # Discord tracking 
-            if (epoch + 1) % 1 == 0:
+            if (epoch + 1) % 1 == 0 or (epoch + 1) == EPOCHS:  
                 send_curl_log({
                     "content": f"**Fold {fold + 1} - Epoch {epoch + 1}**\n"
                                f"F1: {val_f1:.4f} | Prec: {val_precision:.4f} | Rec: {val_recall:.4f} | Loss: {epoch_loss:.4f}"
@@ -317,10 +378,15 @@ def main():
                     'val_acc': val_acc,
                     'val_precision': val_precision,
                     'val_recall': val_recall,
-                    'config': {'model': MODEL_NAME, 'img_size': IMG_SIZE}
+                    'config': {'model': MODEL_NAME, 'img_size': IMG_SIZE, 'loss': 'FocalLoss', 'gamma': FOCAL_GAMMA}
                 }
                 torch.save(checkpoint, save_path)
                 print(f"   Saved best model: {save_name} (F1: {best_fold_f1:.4f})")
+                
+                # NEW: Send webhook for new best
+                send_curl_log({
+                    "content": f"**NEW BEST - Fold {fold + 1}**\nEpoch {epoch + 1} | F1: {best_fold_f1:.4f}"
+                })
                 
                 # === NEW: SAVE PREDICTIONS FOR ROC CURVE ===
                 # We save a CSV with: True Label, Prob_Class_0, Prob_Class_1, ...
@@ -362,13 +428,18 @@ def main():
     if len(fold_results) == N_FOLDS:
         mean_f1 = np.mean(fold_results)
         std_f1 = np.std(fold_results)
+        min_f1 = min(fold_results)
+        max_f1 = max(fold_results)
+        
         print(f"Mean F1: {mean_f1:.4f} ± {std_f1:.4f}")
+        print(f"Min F1:  {min_f1:.4f}")
+        print(f"Max F1:  {max_f1:.4f}")
         print(f"Per-fold F1s: {[f'{f:.4f}' for f in fold_results]}")
         
         send_curl_log({
-            "content": f" **ALL FOLDS COMPLETE**\n"
+            "content": f" **ALL FOLDS COMPLETE (Focal Loss)**\n"
                       f"Mean F1: {mean_f1:.4f} ± {std_f1:.4f}\n"
-                      f"Range: [{min(fold_results):.4f}, {max(fold_results):.4f}]"
+                      f"Range: [{min_f1:.4f}, {max_f1:.4f}]"
         })
     else:
         print(f"Warning: Only {len(fold_results)}/{N_FOLDS} folds completed")
