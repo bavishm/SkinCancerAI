@@ -12,6 +12,7 @@ import requests
 from dotenv import load_dotenv
 from tqdm import tqdm 
 import torch.nn.functional as F  # ADDED for softmax
+import gc
 
 from dataset_factory import HAM10000Dataset, get_transforms
 from model_factory import get_model
@@ -65,15 +66,18 @@ load_dotenv()
 WEBHOOK_URL = os.getenv("WEB_HOOK") 
 
 # MODEL_NAME = "swinv2_large_window12to24_192to384_22kft1k" # Model A
-MODEL_NAME = "convnext_xlarge.fb_in22k_ft_in1k_384"     # Model B
+MODEL_NAME = "convnext_xlarge_384_in22ft1k"    # Model B
 IMG_SIZE = 384
 
 if "convnext" in MODEL_NAME:
-    BATCH_SIZE = 12
+    BATCH_SIZE = 64
 else:    
     BATCH_SIZE = 24 
 
-EPOCHS = 20
+# ADDED: Increased epochs and added early stopping patience
+EPOCHS = 50
+EARLY_STOPPING_PATIENCE = 10 
+
 LEARNING_RATE = 1e-4
 NUM_WORKERS = 16
 DATA_DIR = "./data"
@@ -110,9 +114,10 @@ def main():
     for i in range(torch.cuda.device_count()):
         print(f"  GPU {i}: {torch.cuda.get_device_name(i)}")
     print(f"Batch Size: {BATCH_SIZE} ({BATCH_SIZE // torch.cuda.device_count()} per GPU)")
+    print(f"Early Stopping: {EARLY_STOPPING_PATIENCE} epochs") # ADDED
     print("="*50)
     
-    send_curl_log({"content": f"Starting 5-Fold CV: {MODEL_NAME} with Focal Loss (gamma={FOCAL_GAMMA})"})
+    send_curl_log({"content": f"Starting 5-Fold CV: {MODEL_NAME} with Focal Loss (gamma={FOCAL_GAMMA}). Max Epochs: {EPOCHS}"})
 
     # Load the Master Folds CSV
     folds_path = os.path.join(DATA_DIR, "train_folds.csv")
@@ -151,14 +156,15 @@ def main():
             shuffle=True, 
             num_workers=NUM_WORKERS, 
             pin_memory=True, 
-            persistent_workers=True
+            persistent_workers=True,
+            drop_last=True
         )
         val_loader = DataLoader(
             val_ds, 
             batch_size=BATCH_SIZE, 
             shuffle=False, 
             num_workers=NUM_WORKERS, 
-            pin_memory=True, 
+            pin_memory=True,
             persistent_workers=True
         )
 
@@ -175,9 +181,12 @@ def main():
         class_weights = len(train_df) / (7 * counts)
         
         # BOOST MELANOMA WEIGHT for better melanoma recall
-        # Find melanoma index dynamically from label_map
-        melanoma_class_name = 'Melanoma'
-        melanoma_idx = label_map.get(melanoma_class_name)
+        # Find melanoma index dynamically from label_map (case-insensitive)
+        melanoma_idx = None
+        for cls_name, cls_idx in label_map.items():
+            if cls_name.lower() == 'melanoma':
+                melanoma_idx = cls_idx
+                break
         
         if melanoma_idx is not None:
             original_weight = class_weights[melanoma_idx].item()
@@ -198,8 +207,8 @@ def main():
         criterion = FocalLoss(alpha=class_weights, gamma=FOCAL_GAMMA)
         print(f"Using Focal Loss with gamma={FOCAL_GAMMA}\n")
         
-        optimizer = optim.AdamW(model.parameters(), lr=LEARNING_RATE, weight_decay=0.05)
-        scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=EPOCHS)
+        optimizer = optim.AdamW(model.parameters(), lr=LEARNING_RATE, weight_decay=0.01)
+        scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=3, verbose=True)
         scaler = GradScaler('cuda') 
 
         # History
@@ -214,6 +223,7 @@ def main():
         }
         best_fold_f1 = 0.0
         start_epoch = 0
+        epochs_no_improve = 0 # ADDED: Tracker for early stopping
 
         # ==========================================
         #           RESUME LOGIC
@@ -238,19 +248,32 @@ def main():
             start_epoch = checkpoint['epoch']
             best_fold_f1 = checkpoint['best_f1']
             
+            # ADDED: Safely load early stopping counter if it exists in old checkpoint
+            epochs_no_improve = checkpoint.get('epochs_no_improve', 0) 
+            
             print(f"Resuming from epoch {start_epoch + 1}/{EPOCHS}")
             print(f"Best F1 so far: {best_fold_f1:.4f}\n")
             
-            # Reload history
+            # Reload history (with column validation)
             if os.path.exists(log_path):
-                history = pd.read_csv(log_path).to_dict(orient='list')
+                loaded_history = pd.read_csv(log_path).to_dict(orient='list')
+                if set(loaded_history.keys()) == set(history.keys()):
+                    history = loaded_history
+                else:
+                    print(f"[WARNING] History CSV columns mismatch, starting fresh history.")
 
         # Check if already done
-        if start_epoch >= EPOCHS:
-            print(f"Fold {fold} already complete! Skipping.\n")
+        # A fold is complete if: no resume checkpoint AND the best model file exists
+        best_model_path = os.path.join(CHECKPOINT_DIR, f"best_{MODEL_NAME}_fold{fold}.pth")
+        if start_epoch >= EPOCHS or (not os.path.exists(resume_path) and os.path.exists(best_model_path)):
+            print(f"Fold {fold + 1} already complete! Skipping.\n")
             if os.path.exists(log_path):
                 fold_df = pd.read_csv(log_path)
                 fold_results.append(fold_df['val_f1'].max())
+            else:
+                # Fallback: read best F1 from saved checkpoint
+                ckpt = torch.load(best_model_path, map_location='cpu')
+                fold_results.append(ckpt.get('best_f1', 0.0))
             continue
 
         # ==========================
@@ -297,7 +320,7 @@ def main():
                         tqdm.write(f"  GPU {gpu_id}: {allocated:.2f}GB / 24GB (reserved: {reserved:.2f}GB)")
                         if allocated > 20:
                             tqdm.write(f"WARNING: Memory usage is high!")
-                    tqdm.write(f"{'='*50}\n")
+                    tqdm.write(f"{'*'*50}\n")
 
             epoch_loss = running_loss / len(train_loader)
 
@@ -306,7 +329,7 @@ def main():
             val_running_loss = 0.0
             all_preds = []
             all_labels = []
-            all_probs = [] # ADDED for ROC
+            all_probs = []
             
             val_loop = tqdm(val_loader, desc="Validation", leave=False)
 
@@ -336,7 +359,7 @@ def main():
             val_precision = precision_score(all_labels, all_preds, average='macro', zero_division=0)
             val_recall = recall_score(all_labels, all_preds, average='macro', zero_division=0)
             
-            scheduler.step()
+            scheduler.step(val_f1)
 
             # Logging
             history['epoch'].append(epoch + 1)
@@ -365,6 +388,7 @@ def main():
             # Save best model & PREDICTIONS FOR ROC
             if val_f1 > best_fold_f1:
                 best_fold_f1 = val_f1
+                epochs_no_improve = 0  # ADDED: Reset the counter because we found a new best!
                 save_name = f"best_{MODEL_NAME}_fold{fold}.pth"
                 save_path = os.path.join(CHECKPOINT_DIR, save_name)
                 
@@ -395,6 +419,9 @@ def main():
                 preds_path = os.path.join(CHECKPOINT_DIR, f"predictions_fold{fold}.csv")
                 preds_df.to_csv(preds_path, index=False)
                 print(f"   Saved ROC predictions to {preds_path}")
+            else:
+                epochs_no_improve += 1  # ADDED: Increment the early stopping counter
+                print(f"   Early stopping counter: {epochs_no_improve}/{EARLY_STOPPING_PATIENCE}")
 
             # Save last checkpoint (for resume)
             last_checkpoint = {
@@ -404,14 +431,39 @@ def main():
                 'optimizer_state_dict': optimizer.state_dict(),
                 'scaler_state_dict': scaler.state_dict(),
                 'scheduler_state_dict': scheduler.state_dict(),
-                'best_f1': best_fold_f1
+                'best_f1': best_fold_f1,
+                'epochs_no_improve': epochs_no_improve # ADDED: Save early stopping state
             }
             torch.save(last_checkpoint, resume_path)
+
+            # ADDED: Break the loop if patience is exceeded
+            if epochs_no_improve >= EARLY_STOPPING_PATIENCE:
+                print(f"\n[EARLY STOPPING] Fold {fold + 1} triggered early stopping! No improvement for {EARLY_STOPPING_PATIENCE} epochs.")
+                send_curl_log({"content": f" **Early Stopping Triggered** for Fold {fold + 1} at Epoch {epoch + 1}."})
+                break
         
         # Cleanup resume checkpoint after successful completion
         if os.path.exists(resume_path):
             os.remove(resume_path)
             print(f"Cleaned up resume checkpoint")
+        
+        # Free GPU memory between folds
+        # Sync all GPUs to ensure async ops are complete
+        for gpu_id in range(torch.cuda.device_count()):
+            torch.cuda.synchronize(gpu_id)
+        
+        # Delete DataLoaders first to shut down persistent workers
+        del train_loader, val_loader, train_ds, val_ds
+        del model, optimizer, scheduler, scaler, criterion
+        gc.collect()
+        torch.cuda.empty_cache()
+        
+        # Give OS time to fully reclaim worker process memory
+        time.sleep(5)
+        print(f"GPU memory after cleanup:")
+        for gpu_id in range(torch.cuda.device_count()):
+            allocated = torch.cuda.memory_allocated(gpu_id) / 1024**3
+            print(f"  GPU {gpu_id}: {allocated:.2f}GB allocated")
         
         # Track result
         fold_results.append(best_fold_f1)
