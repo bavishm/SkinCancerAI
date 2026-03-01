@@ -1,0 +1,33 @@
+======================================================================
+ ADJUSTED DUAL-ENSEMBLE (MELANOMA >= 0.2)
+======================================================================
+Ensemble Architecture: Dual (CNN + ViT)
+Total Models Fused:    10 Models
+
+CLINICAL TRIAGE OVERRIDE (Threshold: 0.2)
+  Additional melanomas flagged: 131
+  Original melanoma predictions: 151
+  After threshold adjustment:    282
+
+Overall Metrics:
+  Accuracy:           0.8396
+  F1 Score (Macro):   0.7645
+  F1 Score (Weighted): 0.8502
+
+======================================================================
+ PER-CLASS CLASSIFICATION REPORT
+======================================================================
+                                               precision    recall  f1-score   support
+
+                Melanomaanocytic Nevi (moles)     0.9680    0.8751    0.9192      1001
+                                     Melanoma     0.4965    0.8805    0.6349       159
+                Benign Keratosis-like Lesions     0.7778    0.6829    0.7273       164
+                         Basal Cell Carcinoma     0.8310    0.7867    0.8082        75
+Actinic Keratoses & Intraepithelial Carcinoma     0.5882    0.6667    0.6250        45
+                             Vascular Lesions     0.9048    0.7600    0.8261        25
+                               Dermatofibroma     0.9375    0.7143    0.8108        21
+
+                                     accuracy                         0.8396      1490
+                                    macro avg     0.7862    0.7666    0.7645      1490
+                                 weighted avg     0.8769    0.8396    0.8502      1490
+

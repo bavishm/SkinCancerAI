@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 
 # load
-DIR = './eval_data/5_swinv2/run_1/test_results.npy'
+DIR = './eval_data/5_convnext_focal_tta/threshold_0.2/test_results.npy'
 data = np.load(DIR, allow_pickle=True).item()
 
 predictions   = data['predictions']
@@ -15,7 +15,10 @@ true_labels   = data['true_labels']
 probabilities = data['probabilities']
 class_names   = data['class_names']
 metrics       = data['metrics']
-model_name    = data['model_name']
+if "dual" in DIR:
+    model_name = "Dual Ensemble (Swin + ConvNeXt)"
+else:
+    model_name = data['model_name']
 
 # Short class names for readability
 short_names = [

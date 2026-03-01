@@ -77,14 +77,19 @@ def get_transforms(img_size=384):
             A.VerticalFlip(p=0.5),
             A.Rotate(limit=30, p=0.5),
             A.ShiftScaleRotate(shift_limit=0.1, scale_limit=0.1, rotate_limit=0, p=0.2),
+            A.ElasticTransform(alpha=1, sigma=50, p=0.2),
             
             # Color/Texture Augmentations (Simulate different lighting/cameras)
             A.RandomBrightnessContrast(brightness_limit=0.2, contrast_limit=0.2, p=0.5),
             A.HueSaturationValue(hue_shift_limit=10, sat_shift_limit=10, val_shift_limit=10, p=0.3),
+            A.CLAHE(clip_limit=2.0, tile_grid_size=(8, 8), p=0.3),
             A.OneOf([
                 A.GaussianBlur(blur_limit=(3, 5)),
                 A.GaussNoise(var_limit=(10.0, 50.0)),
             ], p=0.2),
+            
+            # Cutout / Dropout (Regularization)
+            A.CoarseDropout(max_holes=8, max_height=32, max_width=32, fill_value=0, p=0.3),
 
             A.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)),
             ToTensorV2()

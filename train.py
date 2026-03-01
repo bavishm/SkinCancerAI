@@ -3,8 +3,9 @@ import torch.nn as nn
 import torch.optim as optim
 import pandas as pd
 import numpy as np
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, WeightedRandomSampler
 from torch.amp import GradScaler, autocast 
+from torch.optim.lr_scheduler import CosineAnnealingLR, LinearLR, SequentialLR
 from sklearn.metrics import f1_score, accuracy_score, precision_score, recall_score 
 import os
 import time
@@ -78,7 +79,10 @@ else:
 EPOCHS = 50
 EARLY_STOPPING_PATIENCE = 10 
 
-LEARNING_RATE = 1e-4
+# Layer-wise learning rates (lower for pretrained backbone, higher for head)
+BACKBONE_LR = 2e-5
+HEAD_LR = 1e-4
+WARMUP_EPOCHS = 3  # Linear warmup before cosine annealing
 NUM_WORKERS = 16
 DATA_DIR = "./data"
 IMG_DIR = "./data/all_images"
@@ -87,7 +91,7 @@ N_FOLDS = 5
 
 # Focal Loss hyperparameters
 FOCAL_GAMMA = 2.0  # Focusing parameter (2.0 is standard)
-MELANOMA_WEIGHT_BOOST = 1.5  # Multiply melanoma class weight by this factor
+# NOTE: No alpha/class weights needed — WeightedRandomSampler handles class balance
 
 def send_curl_log(data):
     if not WEBHOOK_URL or "YOUR_KEY_HERE" in WEBHOOK_URL:
@@ -150,10 +154,17 @@ def main():
         train_ds = HAM10000Dataset(train_df, IMG_DIR, transform=transforms['train'])
         val_ds = HAM10000Dataset(val_df, IMG_DIR, transform=transforms['val'])
         
+        # WeightedRandomSampler: oversample minority classes so the model sees them more often
+        label_map_sampler = train_ds.label_map
+        train_labels = [label_map_sampler[row['dx']] for _, row in train_df.iterrows()]
+        class_counts_sampler = np.bincount(train_labels, minlength=7)
+        sample_weights = [1.0 / class_counts_sampler[lbl] for lbl in train_labels]
+        sampler = WeightedRandomSampler(sample_weights, num_samples=len(train_ds), replacement=True)
+        
         train_loader = DataLoader(
             train_ds, 
             batch_size=BATCH_SIZE, 
-            shuffle=True, 
+            sampler=sampler,  # Replaces shuffle=True
             num_workers=NUM_WORKERS, 
             pin_memory=True, 
             persistent_workers=True,
@@ -168,47 +179,44 @@ def main():
             persistent_workers=True
         )
 
-        # Class Weights
-        print("\nCalculating class weights...")
-        label_map = train_ds.label_map 
-        idx_to_class = {v: k for k, v in label_map.items()}
-        counts = []
-        for i in range(7):
-            class_name = idx_to_class[i]
-            count = len(train_df[train_df['dx'] == class_name])
-            counts.append(count)
-        counts = torch.tensor(counts, dtype=torch.float).to(device)
-        class_weights = len(train_df) / (7 * counts)
-        
-        # BOOST MELANOMA WEIGHT for better melanoma recall
-        # Find melanoma index dynamically from label_map (case-insensitive)
-        melanoma_idx = None
-        for cls_name, cls_idx in label_map.items():
-            if cls_name.lower() == 'melanoma':
-                melanoma_idx = cls_idx
-                break
-        
-        if melanoma_idx is not None:
-            original_weight = class_weights[melanoma_idx].item()
-            class_weights[melanoma_idx] *= MELANOMA_WEIGHT_BOOST
-            print(f"Melanoma weight boosted: {original_weight:.3f} -> {class_weights[melanoma_idx].item():.3f}")
-        
-        print(f"Final weights: {class_weights.cpu().numpy()}\n")
+        # NOTE: Class weights are NOT used in Focal Loss because the WeightedRandomSampler
+        # already balances class frequencies in every batch. Using both would double-compensate,
+        # causing massive over-penalization of minority classes (~3600x for Dermatofibroma).
+        # Focal Loss gamma still handles hard-example focusing without class weights.
 
         # Initialize Model (FRESH for every fold)
         model = get_model(MODEL_NAME, num_classes=7)
+        
+        # Layer-wise LR: separate head (classifier) from backbone before DataParallel
+        head_params = []
+        backbone_params = []
+        for name, param in model.named_parameters():
+            if 'head' in name or 'classifier' in name:
+                head_params.append(param)
+            else:
+                backbone_params.append(param)
+        print(f"Parameters: {len(backbone_params)} backbone groups, {len(head_params)} head groups")
+        print(f"LR: backbone={BACKBONE_LR}, head={HEAD_LR}")
+        
         if torch.cuda.device_count() > 1:
             print(f"Wrapping with DataParallel ({torch.cuda.device_count()} GPUs)\n")
             model = nn.DataParallel(model)
         model = model.to(device)
 
         # Optimizer, Scheduler, Scaler
-        # CHANGED: Using Focal Loss instead of CrossEntropyLoss
-        criterion = FocalLoss(alpha=class_weights, gamma=FOCAL_GAMMA)
+        # Focal Loss with gamma only (no alpha) — sampler handles class balance
+        criterion = FocalLoss(alpha=None, gamma=FOCAL_GAMMA)
         print(f"Using Focal Loss with gamma={FOCAL_GAMMA}\n")
         
-        optimizer = optim.AdamW(model.parameters(), lr=LEARNING_RATE, weight_decay=0.01)
-        scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=3, verbose=True)
+        optimizer = optim.AdamW([
+            {'params': backbone_params, 'lr': BACKBONE_LR},
+            {'params': head_params, 'lr': HEAD_LR}
+        ], weight_decay=0.01)
+        
+        # Cosine Annealing with Linear Warmup
+        warmup_scheduler = LinearLR(optimizer, start_factor=0.01, total_iters=WARMUP_EPOCHS)
+        cosine_scheduler = CosineAnnealingLR(optimizer, T_max=EPOCHS - WARMUP_EPOCHS, eta_min=1e-7)
+        scheduler = SequentialLR(optimizer, schedulers=[warmup_scheduler, cosine_scheduler], milestones=[WARMUP_EPOCHS])
         scaler = GradScaler('cuda') 
 
         # History
@@ -243,7 +251,12 @@ def main():
                 
             optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
             scaler.load_state_dict(checkpoint['scaler_state_dict'])
-            scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
+            
+            # Safely load scheduler state (may fail if scheduler type changed)
+            try:
+                scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
+            except Exception:
+                print("[WARNING] Scheduler state mismatch (likely changed type), reinitializing scheduler.")
             
             start_epoch = checkpoint['epoch']
             best_fold_f1 = checkpoint['best_f1']
@@ -359,7 +372,7 @@ def main():
             val_precision = precision_score(all_labels, all_preds, average='macro', zero_division=0)
             val_recall = recall_score(all_labels, all_preds, average='macro', zero_division=0)
             
-            scheduler.step(val_f1)
+            scheduler.step()
 
             # Logging
             history['epoch'].append(epoch + 1)

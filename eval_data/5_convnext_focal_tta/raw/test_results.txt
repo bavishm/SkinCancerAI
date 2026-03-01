@@ -1,0 +1,27 @@
+======================================================================
+ RAW BASELINE (STANDARD ARGMAX)
+======================================================================
+Model:               convnext_xlarge_384_in22ft1k
+
+Overall Metrics:
+  Accuracy:           0.8779
+  F1 Score (Macro):   0.7858
+  F1 Score (Weighted): 0.8774
+
+======================================================================
+ PER-CLASS CLASSIFICATION REPORT
+======================================================================
+                                               precision    recall  f1-score   support
+
+                Melanomaanocytic Nevi (moles)     0.9387    0.9491    0.9439      1001
+                                     Melanoma     0.6993    0.6730    0.6859       159
+                Benign Keratosis-like Lesions     0.7730    0.7683    0.7706       164
+                         Basal Cell Carcinoma     0.8243    0.8133    0.8188        75
+Actinic Keratoses & Intraepithelial Carcinoma     0.5714    0.6222    0.5957        45
+                             Vascular Lesions     0.9130    0.8400    0.8750        25
+                               Dermatofibroma     0.9375    0.7143    0.8108        21
+
+                                     accuracy                         0.8779      1490
+                                    macro avg     0.8082    0.7686    0.7858      1490
+                                 weighted avg     0.8776    0.8779    0.8774      1490
+

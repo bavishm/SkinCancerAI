@@ -23,19 +23,27 @@ from model_factory import get_model
 # ==========================================
 #               CONFIGURATION
 # ==========================================
-# MODEL_NAME = "swinv2_large_window12to24_192to384_22kft1k" # Model A
-MODEL_NAME = "convnext_xlarge_384_in22ft1k"    # Model B
+# List all the models and their respective checkpoint directories here
+MODELS_TO_ENSEMBLE = [
+    {
+        "name": "swinv2_large_window12to24_192to384_22kft1k",
+        "ckpt_dir": "./checkpoints_swinv2_focal_loss_run_1"
+    },
+    {
+        "name": "convnext_xlarge_384_in22ft1k",
+        "ckpt_dir": "./checkpoints_convnext_focal_loss_run_1"
+    }
+]
+
 IMG_SIZE = 384
-BATCH_SIZE = 16   
+BATCH_SIZE = 16   # Kept at 16 to be ultra-safe for both massive architectures
 NUM_WORKERS = 0    
 
 TEST_CSV_PATH = "./data/test_split.csv" 
 IMG_DIR = "./data/all_images"
-# CHECKPOINT_DIR = "./checkpoints_swin_large_focal_loss" # Model A
-CHECKPOINT_DIR = "./checkpoints_convnext_focal_loss_run_1"
 
-# OUTPUT_DIR = "./eval_data/5_swinv2_focal_tta" # Model A
-OUTPUT_DIR = "./eval_data/5_convnext_focal_tta" # Model B
+# New output directory for the grand ensemble
+OUTPUT_DIR = "./eval_data/10_model_dual_ensemble_focal_tta" 
 MELANOMA_THRESHOLD = 0.20
 ENABLE_TTA = True  # Test-Time Augmentation (original + hflip + vflip + hflip+vflip)
 
@@ -133,8 +141,7 @@ def tta_inference(model, images, use_amp):
             probs_sum += probs
     return (probs_sum / len(augmented)).cpu().numpy()
 
-# ADDED: Reusable function to generate and save all metrics for a specific prediction set
-def evaluate_and_save(y_true, y_probs, y_preds, out_dir, title_prefix, is_adjusted=False, override_stats=None):
+def evaluate_and_save(y_true, y_probs, y_preds, out_dir, title_prefix, valid_models_count, is_adjusted=False, override_stats=None):
     os.makedirs(out_dir, exist_ok=True)
     
     test_acc = accuracy_score(y_true, y_preds)
@@ -144,7 +151,8 @@ def evaluate_and_save(y_true, y_probs, y_preds, out_dir, title_prefix, is_adjust
     
     # Text Report
     output_text = f"""{"="*70}\n {title_prefix.upper()}\n{"="*70}
-Model:               {MODEL_NAME}
+Ensemble Architecture: Dual (CNN + ViT)
+Total Models Fused:    {valid_models_count} Models
 """
     if is_adjusted and override_stats:
         output_text += f"""
@@ -191,7 +199,7 @@ Overall Metrics:
             'f1_macro': float(test_f1_macro),
             'f1_weighted': float(test_f1_weighted)
         },
-        'model_name': MODEL_NAME
+        'num_models': valid_models_count
     }
     np.save(os.path.join(out_dir, 'test_results.npy'), results)
     print(f"  [+] Saved {title_prefix} results to {out_dir}/")
@@ -204,16 +212,14 @@ def main():
         device = torch.device("cuda")
         use_amp = True
         print(f"Using GPU: {torch.cuda.get_device_name(0)}")
-        print(f"VRAM: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB")
     else:
         device = torch.device("cpu")
         use_amp = False
         print("Using CPU")
     
     print(f"\nConfiguration:")
-    print(f"  Model: {MODEL_NAME}")
+    print(f"  Ensembling Architectures: {[m['name'] for m in MODELS_TO_ENSEMBLE]}")
     print(f"  Batch Size: {BATCH_SIZE}")
-    print(f"  Sequential Inference: Enabled (loads 1 model at a time)")
     print(f"  Melanoma Threshold: {MELANOMA_THRESHOLD}")
     print(f"  Test-Time Augmentation: {'ENABLED (4x)' if ENABLE_TTA else 'DISABLED'}")
     
@@ -225,21 +231,10 @@ def main():
     transforms = get_transforms(IMG_SIZE)
     test_ds = HAM10000Dataset(test_df, IMG_DIR, transform=transforms['val'])
     
-    # CRITICAL: Verify class mapping
-    print("\nVerifying dataset label mapping:")
     dataset_label_map = test_ds.label_map
-    for class_name, idx in sorted(dataset_label_map.items(), key=lambda x: x[1]):
-        expected = CLASSES[idx] if idx < len(CLASSES) else "???"
-        match = "OK" if class_name == expected else "MISMATCH"
-        print(f"  [{match}] Index {idx}: {class_name}")
-    
-    # Dynamically find melanoma index instead of hardcoding
     MELANOMA_IDX = dataset_label_map.get('Melanoma')
     if MELANOMA_IDX is None:
         raise ValueError("'Melanoma' class not found in dataset label_map!")
-    
-    print(f"\nMelanoma class index: {MELANOMA_IDX}")
-    print(f"Melanoma threshold: {MELANOMA_THRESHOLD}\n")
     
     test_loader = DataLoader(
         test_ds, 
@@ -249,88 +244,85 @@ def main():
         pin_memory=True if use_amp else False
     )
     
-    # Sequential Ensemble Inference
     print("="*70)
-    print(" SEQUENTIAL ENSEMBLE INFERENCE")
+    print(" DUAL-ARCHITECTURE ENSEMBLE INFERENCE")
     print("="*70)
-    print("Loading one model at a time to conserve VRAM\n")
     
     num_samples = len(test_ds)
     ensemble_probs = np.zeros((num_samples, len(CLASSES)))
     y_true = None
     valid_models_count = 0
     
-    for fold in range(5):
-        path = os.path.join(CHECKPOINT_DIR, f"best_{MODEL_NAME}_fold{fold}.pth")
+    # THE DOUBLE LOOP: Iterate through architectures, then through folds
+    for model_config in MODELS_TO_ENSEMBLE:
+        arch_name = model_config["name"]
+        ckpt_dir = model_config["ckpt_dir"]
         
-        if not os.path.exists(path):
-            print(f"[Fold {fold}] WARNING: Checkpoint not found, skipping")
-            continue
+        print(f"\n>>> Processing Architecture: {arch_name} <<<")
         
-        print(f"\n[Fold {fold}] Loading model...")
-        try:
-            model = get_model(MODEL_NAME, num_classes=len(CLASSES), pretrained=False)
-            checkpoint = torch.load(path, map_location=device)
-            model.load_state_dict(checkpoint['model_state_dict'])
-            model = model.to(device)
-            model.eval()
+        for fold in range(5):
+            path = os.path.join(ckpt_dir, f"best_{arch_name}_fold{fold}.pth")
             
-            fold_f1 = checkpoint.get('best_f1', 'N/A')
-            print(f"[Fold {fold}] Loaded (CV F1: {fold_f1:.4f})" if isinstance(fold_f1, float) else f"[Fold {fold}] Loaded")
+            if not os.path.exists(path):
+                print(f"  [Fold {fold}] WARNING: Checkpoint not found in {ckpt_dir}, skipping")
+                continue
             
-            valid_models_count += 1
-            
-            # Run inference for this fold
-            fold_probs = []
-            fold_labels = []
-            
-            with torch.no_grad():
-                for images, labels in tqdm(test_loader, desc=f"[Fold {fold}] Inference", ncols=70, leave=False):
-                    images = images.to(device)
-                    
-                    if ENABLE_TTA:
-                        probs = tta_inference(model, images, use_amp)
-                    else:
-                        if use_amp:
-                            with autocast(device_type='cuda'):
-                                outputs = model(images)
+            print(f"  [Fold {fold}] Loading model...")
+            try:
+                model = get_model(arch_name, num_classes=len(CLASSES), pretrained=False)
+                checkpoint = torch.load(path, map_location=device)
+                model.load_state_dict(checkpoint['model_state_dict'])
+                model = model.to(device)
+                model.eval()
+                
+                valid_models_count += 1
+                
+                fold_probs = []
+                fold_labels = []
+                
+                with torch.no_grad():
+                    for images, labels in tqdm(test_loader, desc=f"  [Fold {fold}] Inference", ncols=70, leave=False):
+                        images = images.to(device)
+                        
+                        if ENABLE_TTA:
+                            probs = tta_inference(model, images, use_amp)
                         else:
-                            outputs = model(images)
-                        probs = F.softmax(outputs, dim=1).cpu().numpy()
-                    
-                    fold_probs.append(probs)
-                    
-                    # Only collect labels once
-                    if valid_models_count == 1:
-                        fold_labels.extend(labels.numpy())
-            
-            # Accumulate probabilities
-            fold_probs = np.vstack(fold_probs)
-            ensemble_probs += fold_probs
-            
-            if valid_models_count == 1:
-                y_true = np.array(fold_labels)
-            
-            print(f"[Fold {fold}] Complete, clearing VRAM...")
-            
-            # Clear VRAM
-            del model, checkpoint
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
-            gc.collect()
-            
-        except Exception as e:
-            print(f"[Fold {fold}] ERROR: {e}")
-            continue
+                            if use_amp:
+                                with autocast(device_type='cuda'):
+                                    outputs = model(images)
+                            else:
+                                outputs = model(images)
+                            probs = F.softmax(outputs, dim=1).cpu().numpy()
+                        
+                        fold_probs.append(probs)
+                        
+                        if valid_models_count == 1:
+                            fold_labels.extend(labels.numpy())
+                
+                fold_probs = np.vstack(fold_probs)
+                ensemble_probs += fold_probs
+                
+                if valid_models_count == 1:
+                    y_true = np.array(fold_labels)
+                
+                # Clear VRAM perfectly between models
+                del model, checkpoint
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+                gc.collect()
+                
+            except Exception as e:
+                print(f"  [Fold {fold}] ERROR: {e}")
+                continue
     
     if valid_models_count == 0:
         raise RuntimeError("Failed to load any models!")
     
     print(f"\n{'='*70}")
-    print(f"Successfully completed inference with {valid_models_count}/5 models")
+    print(f"Successfully fused {valid_models_count} total models")
     print(f"{'='*70}\n")
     
-    # 1. Average probabilities across the ensemble
+    # 1. Average probabilities across the massive ensemble
     y_probs = ensemble_probs / valid_models_count
     
     # 2. RAW PREDICTIONS (Standard 50% Argmax)
@@ -358,20 +350,20 @@ def main():
     # ==========================================
     print("Generating Reports & Plots...")
     
-    # Process RAW
     raw_dir = os.path.join(OUTPUT_DIR, "raw")
     evaluate_and_save(
         y_true, y_probs, y_preds_raw, 
         out_dir=raw_dir, 
-        title_prefix="Raw Baseline (Standard Argmax)"
+        title_prefix="Raw Dual-Ensemble (Standard Argmax)",
+        valid_models_count=valid_models_count
     )
     
-    # Process ADJUSTED
     adj_dir = os.path.join(OUTPUT_DIR, f"threshold_{MELANOMA_THRESHOLD}")
     evaluate_and_save(
         y_true, y_probs, y_preds_adjusted, 
         out_dir=adj_dir, 
-        title_prefix=f"Threshold Adjusted (Melanoma >= {MELANOMA_THRESHOLD})",
+        title_prefix=f"Adjusted Dual-Ensemble (Melanoma >= {MELANOMA_THRESHOLD})",
+        valid_models_count=valid_models_count,
         is_adjusted=True,
         override_stats=override_stats
     )
