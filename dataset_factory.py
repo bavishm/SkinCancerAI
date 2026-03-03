@@ -6,6 +6,54 @@ import numpy as np
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 
+# ==========================================
+#         METADATA ENCODING CONSTANTS
+# ==========================================
+# Fixed ordering for reproducible one-hot encoding across train/val/test
+LOCALIZATION_CLASSES = [
+    'abdomen', 'acral', 'back', 'chest', 'ear', 'face', 'foot',
+    'genital', 'hand', 'lower extremity', 'neck', 'scalp',
+    'trunk', 'unknown', 'upper extremity'
+]
+METADATA_DIM = 1 + 1 + len(LOCALIZATION_CLASSES)  # age + sex + localization one-hot = 17
+
+def encode_metadata(age, sex, localization):
+    """Encode patient metadata into a fixed-size float vector.
+    
+    Returns: np.array of shape (METADATA_DIM,) = (17,)
+        [0]    : age (normalized 0-1, NaN → 0.5)
+        [1]    : sex (male=0, female=1, unknown=0.5)
+        [2-16] : localization one-hot (15 categories)
+    """
+    meta = np.zeros(METADATA_DIM, dtype=np.float32)
+    
+    # Age: normalize to [0, 1], NaN → 0.5 (population median is ~50)
+    if pd.isna(age) or age is None:
+        meta[0] = 0.5
+    else:
+        meta[0] = float(age) / 85.0  # max age in dataset is 85
+    
+    # Sex: binary + unknown
+    if sex == 'female':
+        meta[1] = 1.0
+    elif sex == 'male':
+        meta[1] = 0.0
+    else:
+        meta[1] = 0.5  # unknown
+    
+    # Localization: one-hot
+    loc_str = str(localization).lower().strip() if pd.notna(localization) else 'unknown'
+    if loc_str in LOCALIZATION_CLASSES:
+        loc_idx = LOCALIZATION_CLASSES.index(loc_str)
+    else:
+        loc_idx = LOCALIZATION_CLASSES.index('unknown')
+    meta[2 + loc_idx] = 1.0
+    
+    return meta
+
+# Need pandas for NaN checks in encode_metadata
+import pandas as pd
+
 class HAM10000Dataset(Dataset):
     def __init__(self, df, img_dir, transform=None):
         self.df = df
@@ -62,7 +110,10 @@ class HAM10000Dataset(Dataset):
             
         label = self.label_map[label_str]
         
-        return image, torch.tensor(label, dtype=torch.long)
+        # Encode metadata (age, sex, localization) for FiLM conditioning
+        metadata = encode_metadata(row.get('age'), row.get('sex'), row.get('localization'))
+        
+        return image, torch.tensor(metadata, dtype=torch.float32), torch.tensor(label, dtype=torch.long)
 
 def get_transforms(img_size=384):
     

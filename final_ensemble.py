@@ -46,6 +46,7 @@ IMG_DIR = "./data/all_images"
 OUTPUT_DIR = "./eval_data/10_model_dual_ensemble_focal_tta" 
 MELANOMA_THRESHOLD = 0.20
 ENABLE_TTA = True  # Test-Time Augmentation (original + hflip + vflip + hflip+vflip)
+USE_FILM = True  # Must match the training setting
 
 # Dataset class names 
 CLASSES = [
@@ -119,7 +120,7 @@ def plot_multiclass_roc(y_true, y_probs, classes, save_path, title_prefix=""):
     plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.close()
 
-def tta_inference(model, images, use_amp):
+def tta_inference(model, images, metadata, use_amp):
     """Test-Time Augmentation: run model on original + 3 flipped versions, average probs."""
     augmented = [
         images,                           # original
@@ -131,9 +132,9 @@ def tta_inference(model, images, use_amp):
     for aug_images in augmented:
         if use_amp:
             with autocast(device_type='cuda'):
-                outputs = model(aug_images)
+                outputs = model(aug_images, metadata)
         else:
-            outputs = model(aug_images)
+            outputs = model(aug_images, metadata)
         probs = F.softmax(outputs, dim=1)
         if probs_sum is None:
             probs_sum = probs
@@ -269,7 +270,7 @@ def main():
             
             print(f"  [Fold {fold}] Loading model...")
             try:
-                model = get_model(arch_name, num_classes=len(CLASSES), pretrained=False)
+                model = get_model(arch_name, num_classes=len(CLASSES), pretrained=False, use_film=USE_FILM)
                 checkpoint = torch.load(path, map_location=device)
                 model.load_state_dict(checkpoint['model_state_dict'])
                 model = model.to(device)
@@ -281,17 +282,18 @@ def main():
                 fold_labels = []
                 
                 with torch.no_grad():
-                    for images, labels in tqdm(test_loader, desc=f"  [Fold {fold}] Inference", ncols=70, leave=False):
+                    for images, metadata, labels in tqdm(test_loader, desc=f"  [Fold {fold}] Inference", ncols=70, leave=False):
                         images = images.to(device)
+                        metadata = metadata.to(device)
                         
                         if ENABLE_TTA:
-                            probs = tta_inference(model, images, use_amp)
+                            probs = tta_inference(model, images, metadata, use_amp)
                         else:
                             if use_amp:
                                 with autocast(device_type='cuda'):
-                                    outputs = model(images)
+                                    outputs = model(images, metadata)
                             else:
-                                outputs = model(images)
+                                outputs = model(images, metadata)
                             probs = F.softmax(outputs, dim=1).cpu().numpy()
                         
                         fold_probs.append(probs)

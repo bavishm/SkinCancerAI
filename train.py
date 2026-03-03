@@ -22,11 +22,12 @@ from model_factory import get_model
 #            FOCAL LOSS IMPLEMENTATION
 # ==========================================
 class FocalLoss(nn.Module):
-    def __init__(self, alpha=None, gamma=2.0, reduction='mean'):
+    def __init__(self, alpha=None, gamma=2.0, reduction='mean', label_smoothing=0.0):
         super(FocalLoss, self).__init__()
         self.alpha = alpha
         self.gamma = gamma
         self.reduction = reduction
+        self.label_smoothing = label_smoothing
 
     def forward(self, inputs, targets):
         """
@@ -34,11 +35,12 @@ class FocalLoss(nn.Module):
             inputs: Logits from model [batch_size, num_classes]
             targets: Ground truth labels [batch_size]
         """
-        # Compute standard cross entropy
-        ce_loss = F.cross_entropy(inputs, targets, reduction='none')
+        # Compute cross entropy WITH label smoothing (prevents overconfident logits)
+        ce_loss = F.cross_entropy(inputs, targets, reduction='none', label_smoothing=self.label_smoothing)
         
-        # Get probability of true class
-        p_t = torch.exp(-ce_loss)
+        # Compute p_t from UNSMOOTHED CE for accurate focal weighting
+        ce_loss_hard = F.cross_entropy(inputs, targets, reduction='none')
+        p_t = torch.exp(-ce_loss_hard)
         
         # Compute focal term: (1 - p_t)^gamma
         # This down-weights easy examples and focuses on hard ones
@@ -75,9 +77,8 @@ if "convnext" in MODEL_NAME:
 else:    
     BATCH_SIZE = 24 
 
-# ADDED: Increased epochs and added early stopping patience
 EPOCHS = 50
-EARLY_STOPPING_PATIENCE = 10 
+EARLY_STOPPING_PATIENCE = 7 
 
 # Layer-wise learning rates (lower for pretrained backbone, higher for head)
 BACKBONE_LR = 2e-5
@@ -91,7 +92,11 @@ N_FOLDS = 5
 
 # Focal Loss hyperparameters
 FOCAL_GAMMA = 2.0  # Focusing parameter (2.0 is standard)
+LABEL_SMOOTHING = 0.1  # Prevents overconfident logits, reduces val_loss divergence
 # NOTE: No alpha/class weights needed — WeightedRandomSampler handles class balance
+
+# FiLM Conditioning (metadata fusion)
+USE_FILM = True  # Enable FiLM conditioning with patient metadata (age, sex, localization)
 
 def send_curl_log(data):
     if not WEBHOOK_URL or "YOUR_KEY_HERE" in WEBHOOK_URL:
@@ -161,6 +166,28 @@ def main():
         sample_weights = [1.0 / class_counts_sampler[lbl] for lbl in train_labels]
         sampler = WeightedRandomSampler(sample_weights, num_samples=len(train_ds), replacement=True)
         
+        # === AUGMENTATION SUMMARY ===
+        idx_to_class = {v: k for k, v in label_map_sampler.items()}
+        SHORT_NAMES = {0: 'Nevi', 1: 'Melanoma', 2: 'BKL', 3: 'BCC', 4: 'AKIEC', 5: 'Vascular', 6: 'Dermatofibroma'}
+        total_samples_per_epoch = len(train_ds)  # num_samples for sampler
+        print(f"\n{'='*60}")
+        print(f"AUGMENTATION & SAMPLING SUMMARY (Fold {fold + 1})")
+        print(f"{'='*60}")
+        print(f"Original training set: {len(train_df)} unique lesions")
+        print(f"Samples per epoch (with oversampling): {total_samples_per_epoch}")
+        print(f"Augmentation: Every sample is randomly augmented on-the-fly")
+        print(f"  -> Each epoch sees {total_samples_per_epoch} UNIQUE augmented views")
+        print(f"\nOriginal class distribution:")
+        for cls_idx in range(7):
+            name = SHORT_NAMES[cls_idx]
+            count = class_counts_sampler[cls_idx]
+            pct = 100.0 * count / len(train_df)
+            print(f"  [{cls_idx}] {name:15s}: {count:5d} ({pct:5.1f}%)")
+        # Expected samples per class under WeightedRandomSampler (uniform)
+        expected_per_class = total_samples_per_epoch // 7
+        print(f"\nExpected samples per class per epoch (balanced sampler): ~{expected_per_class}")
+        print(f"{'='*60}\n")
+
         train_loader = DataLoader(
             train_ds, 
             batch_size=BATCH_SIZE, 
@@ -185,18 +212,21 @@ def main():
         # Focal Loss gamma still handles hard-example focusing without class weights.
 
         # Initialize Model (FRESH for every fold)
-        model = get_model(MODEL_NAME, num_classes=7)
+        model = get_model(MODEL_NAME, num_classes=7, use_film=USE_FILM)
         
-        # Layer-wise LR: separate head (classifier) from backbone before DataParallel
+        # Layer-wise LR: separate backbone, FiLM, and head parameters
         head_params = []
+        film_params = []
         backbone_params = []
         for name, param in model.named_parameters():
-            if 'head' in name or 'classifier' in name:
+            if 'film_generator' in name:
+                film_params.append(param)
+            elif 'head' in name or 'classifier' in name:
                 head_params.append(param)
             else:
                 backbone_params.append(param)
-        print(f"Parameters: {len(backbone_params)} backbone groups, {len(head_params)} head groups")
-        print(f"LR: backbone={BACKBONE_LR}, head={HEAD_LR}")
+        print(f"Parameters: {len(backbone_params)} backbone, {len(film_params)} FiLM, {len(head_params)} head")
+        print(f"LR: backbone={BACKBONE_LR}, FiLM/head={HEAD_LR}")
         
         if torch.cuda.device_count() > 1:
             print(f"Wrapping with DataParallel ({torch.cuda.device_count()} GPUs)\n")
@@ -205,13 +235,14 @@ def main():
 
         # Optimizer, Scheduler, Scaler
         # Focal Loss with gamma only (no alpha) — sampler handles class balance
-        criterion = FocalLoss(alpha=None, gamma=FOCAL_GAMMA)
-        print(f"Using Focal Loss with gamma={FOCAL_GAMMA}\n")
+        criterion = FocalLoss(alpha=None, gamma=FOCAL_GAMMA, label_smoothing=LABEL_SMOOTHING)
+        print(f"Using Focal Loss with gamma={FOCAL_GAMMA}, label_smoothing={LABEL_SMOOTHING}\n")
         
         optimizer = optim.AdamW([
             {'params': backbone_params, 'lr': BACKBONE_LR},
+            {'params': film_params, 'lr': HEAD_LR},
             {'params': head_params, 'lr': HEAD_LR}
-        ], weight_decay=0.01)
+        ], weight_decay=0.05)
         
         # Cosine Annealing with Linear Warmup
         warmup_scheduler = LinearLR(optimizer, start_factor=0.01, total_iters=WARMUP_EPOCHS)
@@ -296,6 +327,7 @@ def main():
             start_time = time.time()
             model.train()
             running_loss = 0.0
+            epoch_class_counts = np.zeros(7, dtype=int)  # Track per-class samples this epoch
             current_lr = optimizer.param_groups[0]['lr']
             
             train_loop = tqdm(
@@ -304,14 +336,19 @@ def main():
                 leave=False
             )
 
-            for i, (images, labels) in enumerate(train_loop):
+            for i, (images, metadata, labels) in enumerate(train_loop):
                 images = images.to(device, non_blocking=True)
+                metadata = metadata.to(device, non_blocking=True)
                 labels = labels.to(device, non_blocking=True)
+                
+                # Count class distribution for this batch
+                batch_counts = np.bincount(labels.cpu().numpy(), minlength=7)
+                epoch_class_counts += batch_counts
                 
                 optimizer.zero_grad(set_to_none=True)
 
                 with autocast(device_type='cuda'):
-                    outputs = model(images)
+                    outputs = model(images, metadata)
                     loss = criterion(outputs, labels)
 
                 scaler.scale(loss).backward()
@@ -337,6 +374,22 @@ def main():
 
             epoch_loss = running_loss / len(train_loader)
 
+            # Print per-epoch class distribution
+            total_seen = epoch_class_counts.sum()
+            class_dist_str = " | ".join([f"{SHORT_NAMES[c]}: {epoch_class_counts[c]}" for c in range(7)])
+            print(f"  Epoch {epoch + 1} samples seen: {total_seen} -> {class_dist_str}")
+
+            # Save class distribution to CSV
+            dist_log_path = os.path.join(CHECKPOINT_DIR, f"class_distribution_fold{fold}.csv")
+            dist_row = {'epoch': epoch + 1, 'total_samples': int(total_seen)}
+            for c in range(7):
+                dist_row[SHORT_NAMES[c]] = int(epoch_class_counts[c])
+            dist_df_row = pd.DataFrame([dist_row])
+            if os.path.exists(dist_log_path):
+                dist_df_row.to_csv(dist_log_path, mode='a', header=False, index=False)
+            else:
+                dist_df_row.to_csv(dist_log_path, index=False)
+
             # Validation
             model.eval()
             val_running_loss = 0.0
@@ -347,12 +400,13 @@ def main():
             val_loop = tqdm(val_loader, desc="Validation", leave=False)
 
             with torch.no_grad():
-                for images, labels in val_loop:
+                for images, metadata, labels in val_loop:
                     images = images.to(device, non_blocking=True)
+                    metadata = metadata.to(device, non_blocking=True)
                     labels = labels.to(device, non_blocking=True)
                     
                     with autocast(device_type='cuda'):
-                        outputs = model(images)
+                        outputs = model(images, metadata)
                         v_loss = criterion(outputs, labels)
                     
                     val_running_loss += v_loss.item()
@@ -415,7 +469,7 @@ def main():
                     'val_acc': val_acc,
                     'val_precision': val_precision,
                     'val_recall': val_recall,
-                    'config': {'model': MODEL_NAME, 'img_size': IMG_SIZE, 'loss': 'FocalLoss', 'gamma': FOCAL_GAMMA}
+                    'config': {'model': MODEL_NAME, 'img_size': IMG_SIZE, 'loss': 'FocalLoss', 'gamma': FOCAL_GAMMA, 'use_film': USE_FILM}
                 }
                 torch.save(checkpoint, save_path)
                 print(f"   Saved best model: {save_name} (F1: {best_fold_f1:.4f})")
