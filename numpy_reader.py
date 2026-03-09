@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 
 # load
-DIR = './eval_data/5_convnext_focal_film_notta/threshold_0.2/test_results.npy'
+DIR = './eval_data/10_model_dual_ensemble_focal_film_aug/threshold_0.2/test_results.npy'
 data = np.load(DIR, allow_pickle=True).item()
 
 predictions   = data['predictions']

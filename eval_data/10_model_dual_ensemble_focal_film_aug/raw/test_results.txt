@@ -1,0 +1,28 @@
+======================================================================
+ RAW DUAL-ENSEMBLE (STANDARD ARGMAX)
+======================================================================
+Ensemble Architecture: Dual (CNN + ViT)
+Total Models Fused:    10 Models
+
+Overall Metrics:
+  Accuracy:           0.8933
+  F1 Score (Macro):   0.7942
+  F1 Score (Weighted): 0.8915
+
+======================================================================
+ PER-CLASS CLASSIFICATION REPORT
+======================================================================
+                                               precision    recall  f1-score   support
+
+                Melanomaanocytic Nevi (moles)     0.9407    0.9660    0.9532      1001
+                                     Melanoma     0.8195    0.6855    0.7466       159
+                Benign Keratosis-like Lesions     0.7725    0.7866    0.7795       164
+                         Basal Cell Carcinoma     0.8101    0.8533    0.8312        75
+Actinic Keratoses & Intraepithelial Carcinoma     0.6087    0.6222    0.6154        45
+                             Vascular Lesions     0.8696    0.8000    0.8333        25
+                               Dermatofibroma     1.0000    0.6667    0.8000        21
+
+                                     accuracy                         0.8933      1490
+                                    macro avg     0.8316    0.7686    0.7942      1490
+                                 weighted avg     0.8923    0.8933    0.8915      1490
+

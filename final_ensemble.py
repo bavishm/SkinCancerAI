@@ -17,8 +17,37 @@ import os
 import gc
 from tqdm import tqdm
 
+import re
+
 from dataset_factory import HAM10000Dataset, get_transforms
 from model_factory import get_model
+
+
+def remap_swin_state_dict(state_dict, model_state_dict):
+    """Remap state_dict keys for timm version compatibility.
+    
+    Older timm puts downsample at end of stage N (layers.N.downsample),
+    newer timm puts it at start of stage N+1 (layers.N+1.downsample).
+    Also strips non-persistent attn_mask buffers.
+    """
+    has_old_keys = any("layers.0.downsample" in k for k in state_dict)
+    needs_new_keys = any("layers.3.downsample" in k for k in model_state_dict)
+    
+    if not (has_old_keys and needs_new_keys):
+        return state_dict
+    
+    print("[INFO] Remapping state_dict keys for timm version compatibility...")
+    new_state_dict = {}
+    for key, value in state_dict.items():
+        new_key = key
+        match = re.match(r"(.*layers\.)(\d+)(\.downsample\..*)", key)
+        if match:
+            old_idx = int(match.group(2))
+            new_key = f"{match.group(1)}{old_idx + 1}{match.group(3)}"
+        if "attn_mask" in key and key not in model_state_dict:
+            continue
+        new_state_dict[new_key] = value
+    return new_state_dict
 
 # ==========================================
 #               CONFIGURATION
@@ -27,11 +56,11 @@ from model_factory import get_model
 MODELS_TO_ENSEMBLE = [
     {
         "name": "swinv2_large_window12to24_192to384_22kft1k",
-        "ckpt_dir": "./checkpoints_swinv2_focal_loss_run_1"
+        "ckpt_dir": "./checkpoints_swinv2_focal_film_aug"
     },
     {
         "name": "convnext_xlarge_384_in22ft1k",
-        "ckpt_dir": "./checkpoints_convnext_focal_loss_run_1"
+        "ckpt_dir": "./checkpoints_convnext_focal_film_aug"
     }
 ]
 
@@ -43,9 +72,9 @@ TEST_CSV_PATH = "./data/test_split.csv"
 IMG_DIR = "./data/all_images"
 
 # New output directory for the grand ensemble
-OUTPUT_DIR = "./eval_data/10_model_dual_ensemble_focal_tta" 
+OUTPUT_DIR = "./eval_data/10_model_dual_ensemble_focal_film_aug" 
 MELANOMA_THRESHOLD = 0.20
-ENABLE_TTA = True  # Test-Time Augmentation (original + hflip + vflip + hflip+vflip)
+ENABLE_TTA = False  # Test-Time Augmentation (original + hflip + vflip + hflip+vflip)
 USE_FILM = True  # Must match the training setting
 
 # Dataset class names 
@@ -272,7 +301,8 @@ def main():
             try:
                 model = get_model(arch_name, num_classes=len(CLASSES), pretrained=False, use_film=USE_FILM)
                 checkpoint = torch.load(path, map_location=device)
-                model.load_state_dict(checkpoint['model_state_dict'])
+                sd = remap_swin_state_dict(checkpoint['model_state_dict'], model.state_dict())
+                model.load_state_dict(sd)
                 model = model.to(device)
                 model.eval()
                 

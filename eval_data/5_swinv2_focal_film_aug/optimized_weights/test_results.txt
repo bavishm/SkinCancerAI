@@ -1,0 +1,27 @@
+======================================================================
+ PER-CLASS OPTIMIZED WEIGHTS
+======================================================================
+Model:               swinv2_large_window12to24_192to384_22kft1k
+
+Overall Metrics:
+  Accuracy:           0.8597
+  F1 Score (Macro):   0.7359
+  F1 Score (Weighted): 0.8581
+
+======================================================================
+ PER-CLASS CLASSIFICATION REPORT
+======================================================================
+                                               precision    recall  f1-score   support
+
+                Melanomaanocytic Nevi (moles)     0.9350    0.9481    0.9415      1001
+                                     Melanoma     0.7097    0.5535    0.6219       159
+                Benign Keratosis-like Lesions     0.7697    0.7134    0.7405       164
+                         Basal Cell Carcinoma     0.5739    0.8800    0.6947        75
+Actinic Keratoses & Intraepithelial Carcinoma     0.6000    0.6667    0.6316        45
+                             Vascular Lesions     0.8696    0.8000    0.8333        25
+                               Dermatofibroma     1.0000    0.5238    0.6875        21
+
+                                     accuracy                         0.8597      1490
+                                    macro avg     0.7797    0.7265    0.7359      1490
+                                 weighted avg     0.8643    0.8597    0.8581      1490
+

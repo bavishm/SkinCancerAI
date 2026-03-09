@@ -19,26 +19,61 @@ from tqdm import tqdm
 
 from dataset_factory import HAM10000Dataset, get_transforms
 from model_factory import get_model
+import re
+
+
+def remap_swin_state_dict(state_dict, model_state_dict):
+    """Remap state_dict keys for timm version compatibility.
+    
+    Older timm puts downsample at end of stage N (layers.N.downsample),
+    newer timm puts it at start of stage N+1 (layers.N+1.downsample).
+    Also strips non-persistent attn_mask buffers.
+    """
+    # Check if remapping is needed by looking for the version mismatch signature
+    has_old_keys = any("layers.0.downsample" in k for k in state_dict)
+    needs_new_keys = any("layers.3.downsample" in k for k in model_state_dict)
+    
+    if not (has_old_keys and needs_new_keys):
+        return state_dict
+    
+    print("[INFO] Remapping state_dict keys for timm version compatibility...")
+    new_state_dict = {}
+    for key, value in state_dict.items():
+        new_key = key
+        # Shift downsample layer indices: N → N+1
+        match = re.match(r"(.*layers\.)(\d+)(\.downsample\..*)", key)
+        if match:
+            old_idx = int(match.group(2))
+            new_key = f"{match.group(1)}{old_idx + 1}{match.group(3)}"
+        # Skip non-persistent attn_mask buffers
+        if "attn_mask" in key and key not in model_state_dict:
+            continue
+        new_state_dict[new_key] = value
+    return new_state_dict
 
 # ==========================================
 #               CONFIGURATION
 # ==========================================
-# MODEL_NAME = "swinv2_large_window12to24_192to384_22kft1k" # Model A
-MODEL_NAME = "convnext_xlarge_384_in22ft1k"    # Model B
+MODEL_NAME = "swinv2_large_window12to24_192to384_22kft1k" # Model A
+# MODEL_NAME = "convnext_xlarge_384_in22ft1k"    # Model B
 IMG_SIZE = 384
 BATCH_SIZE = 16   
 NUM_WORKERS = 0    
 
 TEST_CSV_PATH = "./data/test_split.csv" 
 IMG_DIR = "./data/all_images"
-# CHECKPOINT_DIR = "./checkpoints_swin_large_focal_loss" # Model A
-CHECKPOINT_DIR = "./checkpoints_convnext_focal_film"
+CHECKPOINT_DIR = "./checkpoints_swinv2_focal_film_aug" # Model A
+# CHECKPOINT_DIR = "./checkpoints_convnext_focal_film_aug"
 
 # OUTPUT_DIR = "./eval_data/5_swinv2_focal_tta" # Model A
-OUTPUT_DIR = "./eval_data/5_convnext_focal_film_notta" # Model B
+OUTPUT_DIR = "./eval_data/5_swinv2_focal_film_aug" # Model B
 MELANOMA_THRESHOLD = 0.20
 ENABLE_TTA = False  # Test-Time Augmentation (original + hflip + vflip + hflip+vflip)
 USE_FILM = True  # Must match the training setting
+
+# Per-class optimized weights (from 03_optimize_thresholds.py)
+# Loaded from checkpoint dir so weights stay with their model
+CLASS_WEIGHTS_PATH = os.path.join(CHECKPOINT_DIR, "class_weights_optimized.npy")  # Set to None to disable
 
 # Dataset class names 
 CLASSES = [
@@ -272,7 +307,8 @@ def main():
         try:
             model = get_model(MODEL_NAME, num_classes=len(CLASSES), pretrained=False, use_film=USE_FILM)
             checkpoint = torch.load(path, map_location=device)
-            model.load_state_dict(checkpoint['model_state_dict'])
+            sd = remap_swin_state_dict(checkpoint['model_state_dict'], model.state_dict())
+            model.load_state_dict(sd)
             model = model.to(device)
             model.eval()
             
@@ -354,6 +390,19 @@ def main():
         'old_count': old_mel_count,
         'new_count': new_mel_count
     }
+    
+    # 4. PER-CLASS OPTIMIZED WEIGHTS
+    class_weights = None
+    if CLASS_WEIGHTS_PATH and os.path.exists(CLASS_WEIGHTS_PATH):
+        weights_data = np.load(CLASS_WEIGHTS_PATH, allow_pickle=True).item()
+        class_weights = weights_data['weights']
+        print(f"\nLoaded optimized class weights from {CLASS_WEIGHTS_PATH}")
+        print(f"  Weights: {np.array2string(class_weights, precision=4, separator=', ')}")
+        y_probs_scaled = y_probs * class_weights[np.newaxis, :]
+        y_preds_optimized = np.argmax(y_probs_scaled, axis=1)
+    elif CLASS_WEIGHTS_PATH:
+        print(f"\nWARNING: Class weights file not found: {CLASS_WEIGHTS_PATH}")
+        print("  Run 03_optimize_thresholds.py first. Skipping optimized evaluation.")
 
     # ==========================================
     #               SAVE RESULTS
@@ -377,6 +426,15 @@ def main():
         is_adjusted=True,
         override_stats=override_stats
     )
+    
+    # Process OPTIMIZED WEIGHTS
+    if class_weights is not None:
+        opt_dir = os.path.join(OUTPUT_DIR, "optimized_weights")
+        evaluate_and_save(
+            y_true, y_probs, y_preds_optimized, 
+            out_dir=opt_dir, 
+            title_prefix="Per-Class Optimized Weights"
+        )
     
     print(f"\n{'='*70}")
     print(" EVALUATION COMPLETE")

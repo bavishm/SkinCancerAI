@@ -1,0 +1,6 @@
+fold,original_total,augmented_total,balanced_total,Nevi_original,Nevi_augmented,Nevi_balanced,Melanoma_original,Melanoma_augmented,Melanoma_balanced,BKL_original,BKL_augmented,BKL_balanced,BCC_original,BCC_augmented,BCC_balanced,AKIEC_original,AKIEC_augmented,AKIEC_balanced,Vascular_original,Vascular_augmented,Vascular_balanced,Dermatofibroma_original,Dermatofibroma_augmented,Dermatofibroma_balanced
+0,6838,25131,31969,4567,0,4567,775,3792,4567,748,3819,4567,350,4217,4567,225,4342,4567,97,4470,4567,76,4491,4567
+1,6789,24977,31766,4538,0,4538,756,3782,4538,748,3790,4538,352,4186,4538,226,4312,4538,91,4447,4538,78,4460,4538
+2,6826,25199,32025,4575,0,4575,764,3811,4575,747,3828,4575,346,4229,4575,225,4350,4575,92,4483,4575,77,4498,4575
+3,6808,25161,31969,4567,0,4567,760,3807,4567,743,3824,4567,350,4217,4567,227,4340,4567,89,4478,4567,72,4495,4567
+4,6839,25144,31983,4569,0,4569,761,3808,4569,754,3815,4569,358,4211,4569,225,4344,4569,99,4470,4569,73,4496,4569

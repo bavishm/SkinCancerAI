@@ -1,0 +1,32 @@
+======================================================================
+ THRESHOLD ADJUSTED (MELANOMA >= 0.2)
+======================================================================
+Model:               swinv2_large_window12to24_192to384_22kft1k
+
+CLINICAL TRIAGE OVERRIDE (Threshold: 0.2)
+  Additional melanomas flagged: 120
+  Original melanoma predictions: 114
+  After threshold adjustment:    234
+
+Overall Metrics:
+  Accuracy:           0.8349
+  F1 Score (Macro):   0.6985
+  F1 Score (Weighted): 0.8400
+
+======================================================================
+ PER-CLASS CLASSIFICATION REPORT
+======================================================================
+                                               precision    recall  f1-score   support
+
+                Melanomaanocytic Nevi (moles)     0.9429    0.9081    0.9252      1001
+                                     Melanoma     0.4957    0.7296    0.5903       159
+                Benign Keratosis-like Lesions     0.7548    0.7134    0.7335       164
+                         Basal Cell Carcinoma     0.7200    0.7200    0.7200        75
+Actinic Keratoses & Intraepithelial Carcinoma     0.6667    0.5333    0.5926        45
+                             Vascular Lesions     0.8750    0.5600    0.6829        25
+                               Dermatofibroma     1.0000    0.4762    0.6452        21
+
+                                     accuracy                         0.8349      1490
+                                    macro avg     0.7793    0.6629    0.6985      1490
+                                 weighted avg     0.8546    0.8349    0.8400      1490
+

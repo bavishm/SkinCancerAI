@@ -55,9 +55,18 @@ def encode_metadata(age, sex, localization):
 import pandas as pd
 
 class HAM10000Dataset(Dataset):
-    def __init__(self, df, img_dir, transform=None):
+    def __init__(self, df, img_dir, transform=None, aug_img_dir=None):
+        """
+        Args:
+            df: DataFrame with image_id, dx, age, sex, localization columns
+            img_dir: Path to original images (data/all_images/)
+            transform: Albumentations transform pipeline
+            aug_img_dir: Path to augmented images for this fold (data/augmented/fold{N}/).
+                         If None, all images are loaded from img_dir.
+        """
         self.df = df
         self.img_dir = img_dir
+        self.aug_img_dir = aug_img_dir
         self.transform = transform
         
         # Mapping specific long-form CSV labels to integers 0-6.
@@ -85,8 +94,13 @@ class HAM10000Dataset(Dataset):
         # Append .jpg if missing
         if not img_id.endswith('.jpg'):
             img_id = img_id + '.jpg'
-            
-        img_path = os.path.join(self.img_dir, img_id)
+        
+        # Route to correct directory: augmented images go to aug_img_dir, originals to img_dir
+        is_aug = bool(row.get('is_augmented', False))
+        if is_aug and self.aug_img_dir:
+            img_path = os.path.join(self.aug_img_dir, img_id)
+        else:
+            img_path = os.path.join(self.img_dir, img_id)
         
         # Load Image using OpenCV (High performance for servers)
         image = cv2.imread(img_path)
@@ -118,29 +132,18 @@ class HAM10000Dataset(Dataset):
 def get_transforms(img_size=384):
     
     # Returns a dictionary of transformations for Training and Validation.
+    # NOTE: Heavy augmentation (color jitter, elastic, etc.) is applied OFFLINE
+    # during the balancing step. Training transforms are kept light to avoid
+    # double-augmenting the pre-augmented minority class images.
     
     return {
         "train": A.Compose([
             A.Resize(img_size, img_size),
             
-            # Geometric Augmentations (Crucial for invariance)
+            # Light geometric augmentations only (for invariance, not diversity)
             A.HorizontalFlip(p=0.5),
             A.VerticalFlip(p=0.5),
-            A.Rotate(limit=30, p=0.5),
-            A.ShiftScaleRotate(shift_limit=0.1, scale_limit=0.1, rotate_limit=0, p=0.2),
-            A.ElasticTransform(alpha=1, sigma=50, p=0.2),
-            
-            # Color/Texture Augmentations (Simulate different lighting/cameras)
-            A.RandomBrightnessContrast(brightness_limit=0.2, contrast_limit=0.2, p=0.5),
-            A.HueSaturationValue(hue_shift_limit=10, sat_shift_limit=10, val_shift_limit=10, p=0.3),
-            A.CLAHE(clip_limit=2.0, tile_grid_size=(8, 8), p=0.3),
-            A.OneOf([
-                A.GaussianBlur(blur_limit=(3, 5)),
-                A.GaussNoise(var_limit=(10.0, 50.0)),
-            ], p=0.2),
-            
-            # Cutout / Dropout (Regularization)
-            A.CoarseDropout(max_holes=8, max_height=32, max_width=32, fill_value=0, p=0.3),
+            A.Rotate(limit=15, p=0.3),
 
             A.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)),
             ToTensorV2()
