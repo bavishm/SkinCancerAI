@@ -24,7 +24,7 @@ import time
 # ==========================================
 #               CONFIGURATION
 # ==========================================
-CHECKPOINT_DIR = "./checkpoints_swinv2_focal_film_aug"  # Where predictions_fold*.csv are
+CHECKPOINT_DIR = "./checkpoints_convnext_full_film"  # Where predictions_fold*.csv are
 N_FOLDS = 5
 OUTPUT_PATH = os.path.join(CHECKPOINT_DIR, "class_weights_optimized.npy")  # Saved alongside CSVs
 

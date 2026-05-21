@@ -57,18 +57,20 @@ def remap_swin_state_dict(state_dict, model_state_dict):
 MODEL_NAME = "swinv2_large_window12to24_192to384_22kft1k" # Model A
 # MODEL_NAME = "convnext_xlarge_384_in22ft1k"    # Model B
 IMG_SIZE = 384
-BATCH_SIZE = 16   
+# SwinV2 + TTA at 384 needs a very small eval batch on 8GB GPUs.
+BATCH_SIZE = 1
 NUM_WORKERS = 0    
 
 TEST_CSV_PATH = "./data/test_split.csv" 
 IMG_DIR = "./data/all_images"
-CHECKPOINT_DIR = "./checkpoints_swinv2_focal_film_aug" # Model A
-# CHECKPOINT_DIR = "./checkpoints_convnext_focal_film_aug"
+CHECKPOINT_DIR = "./checkpoints_swinv2_full_film" # Model A
+# CHECKPOINT_DIR = "./checkpoints_convnext_full_film"
 
 # OUTPUT_DIR = "./eval_data/5_swinv2_focal_tta" # Model A
-OUTPUT_DIR = "./eval_data/5_swinv2_focal_film_aug" # Model B
+OUTPUT_DIR = "./eval_data/5_swinv2_full_flim_focal_tta" # Model B
 MELANOMA_THRESHOLD = 0.20
-ENABLE_TTA = False  # Test-Time Augmentation (original + hflip + vflip + hflip+vflip)
+# TTA increases VRAM; keep batch size very small when enabled.
+ENABLE_TTA = True  # Test-Time Augmentation (original + hflip + vflip + hflip+vflip)
 USE_FILM = True  # Must match the training setting
 
 # Per-class optimized weights (from 03_optimize_thresholds.py)

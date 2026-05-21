@@ -39,9 +39,12 @@ N_FOLDS = 5
 NUM_WORKERS = min(36, cpu_count())  # leave a few cores free
 SEED = 42
 
-
-# Order is label map index: [nv, mel, bkl, bcc, akiec, vasc, df]
-CLASS_AUG_MULTIPLIERS = [1, 1, 1, 3, 5, 11, 13]
+# Professor-style per-class augmentation multipliers.
+# Interpretation: target_count = ceil(multiplier * original_count).
+# Provide in class-index order [0..6].
+# If the list is shorter than 7, missing classes default to multiplier=1.0.
+# Example style: [2, 2, 3, 5, 6]
+CLASS_AUG_MULTIPLIERS = [1.0, 2.0, 2.0, 3.0, 3.0, 4.0, 4.0]
 
 # On rerun, delete old generated files in each fold directory before regenerating.
 DELETE_OLD_FOLD_AUG_FILES = True

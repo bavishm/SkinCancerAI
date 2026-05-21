@@ -1,0 +1,23 @@
+# --- Security ---
+.env
+.DS_Store
+
+# --- Large Data ---
+data/
+data/all_images/
+*.zip
+*.tar.gz
+
+# --- Model Checkpoints ---
+checkpoints/
+checkpoints_swin/
+checkpoints_convnext/
+*.pth
+
+# --- Python Cache & Logs ---
+__pycache__/
+*.pyc
+*.log
+*.csv
+.ipynb_checkpoints/
+venv/

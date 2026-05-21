@@ -56,25 +56,28 @@ def remap_swin_state_dict(state_dict, model_state_dict):
 MODELS_TO_ENSEMBLE = [
     {
         "name": "swinv2_large_window12to24_192to384_22kft1k",
-        "ckpt_dir": "./checkpoints_swinv2_focal_film_aug"
+        "ckpt_dir": "./checkpoints_swinv2_full_film",
+        "batch_size": 4
     },
     {
         "name": "convnext_xlarge_384_in22ft1k",
-        "ckpt_dir": "./checkpoints_convnext_focal_film_aug"
+        "ckpt_dir": "./checkpoints_convnext_full_film",
+        "batch_size": 4
     }
 ]
 
 IMG_SIZE = 384
-BATCH_SIZE = 16   # Kept at 16 to be ultra-safe for both massive architectures
+# Default batch size if not specified per architecture.
+BATCH_SIZE = 8
 NUM_WORKERS = 0    
 
 TEST_CSV_PATH = "./data/test_split.csv" 
 IMG_DIR = "./data/all_images"
 
 # New output directory for the grand ensemble
-OUTPUT_DIR = "./eval_data/10_model_dual_ensemble_focal_film_aug" 
+OUTPUT_DIR = "./eval_data/10_model_dual_ensemble_full_film_tta" 
 MELANOMA_THRESHOLD = 0.20
-ENABLE_TTA = False  # Test-Time Augmentation (original + hflip + vflip + hflip+vflip)
+ENABLE_TTA = True  # Test-Time Augmentation (original + hflip + vflip + hflip+vflip)
 USE_FILM = True  # Must match the training setting
 
 # Dataset class names 
@@ -249,7 +252,10 @@ def main():
     
     print(f"\nConfiguration:")
     print(f"  Ensembling Architectures: {[m['name'] for m in MODELS_TO_ENSEMBLE]}")
-    print(f"  Batch Size: {BATCH_SIZE}")
+    print("  Batch Size (per-arch):")
+    for m in MODELS_TO_ENSEMBLE:
+        bs = m.get("batch_size", BATCH_SIZE)
+        print(f"    {m['name']}: {bs}")
     print(f"  Melanoma Threshold: {MELANOMA_THRESHOLD}")
     print(f"  Test-Time Augmentation: {'ENABLED (4x)' if ENABLE_TTA else 'DISABLED'}")
     
@@ -266,13 +272,6 @@ def main():
     if MELANOMA_IDX is None:
         raise ValueError("'Melanoma' class not found in dataset label_map!")
     
-    test_loader = DataLoader(
-        test_ds, 
-        batch_size=BATCH_SIZE, 
-        shuffle=False, 
-        num_workers=NUM_WORKERS,
-        pin_memory=True if use_amp else False
-    )
     
     print("="*70)
     print(" DUAL-ARCHITECTURE ENSEMBLE INFERENCE")
@@ -287,6 +286,15 @@ def main():
     for model_config in MODELS_TO_ENSEMBLE:
         arch_name = model_config["name"]
         ckpt_dir = model_config["ckpt_dir"]
+        batch_size = model_config.get("batch_size", BATCH_SIZE)
+        
+        test_loader = DataLoader(
+            test_ds, 
+            batch_size=batch_size, 
+            shuffle=False, 
+            num_workers=NUM_WORKERS,
+            pin_memory=True if use_amp else False
+        )
         
         print(f"\n>>> Processing Architecture: {arch_name} <<<")
         
@@ -305,8 +313,6 @@ def main():
                 model.load_state_dict(sd)
                 model = model.to(device)
                 model.eval()
-                
-                valid_models_count += 1
                 
                 fold_probs = []
                 fold_labels = []
@@ -328,14 +334,16 @@ def main():
                         
                         fold_probs.append(probs)
                         
-                        if valid_models_count == 1:
+                        if y_true is None:
                             fold_labels.extend(labels.numpy())
                 
                 fold_probs = np.vstack(fold_probs)
                 ensemble_probs += fold_probs
-                
-                if valid_models_count == 1:
+
+                if y_true is None:
                     y_true = np.array(fold_labels)
+
+                valid_models_count += 1
                 
                 # Clear VRAM perfectly between models
                 del model, checkpoint

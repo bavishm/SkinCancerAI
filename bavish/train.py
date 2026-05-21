@@ -111,7 +111,7 @@ WARMUP_EPOCHS = 3  # Linear warmup before cosine annealing
 NUM_WORKERS = 16
 DATA_DIR = "./data"
 IMG_DIR = "./data/all_images"
-CHECKPOINT_DIR = "./checkpoints"
+CHECKPOINT_DIR = "./checkpoints_convnext_full_film"
 N_FOLDS = 5 
 SEED = 42
 
